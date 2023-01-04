@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-어드민 인덱스
+어드민 인덱스 han
 </body>
 </html>
