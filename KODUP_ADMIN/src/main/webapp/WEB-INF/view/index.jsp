@@ -32,13 +32,13 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0 text-white btnAdminHome">
                             <ion-icon name="desktop-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                            <a href="#" class="nav-link px-0 text-white btnHome"><span class="ms-1 d-none d-sm-inline">Home</span>
-                            
+                            <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                      <li>
+                     <a href="#" class="nav-link align-middle px-0 text-white btnAdminHome">
                         <ion-icon name="documents-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                            <a href="#" class="nav-link px-0 text-white btnTotalBoard"><span class="ms-1 d-none d-sm-inline">통합 게시물 관리</span></a>
+                           <span class="ms-1 d-none d-sm-inline">통합 게시물 관리</span></a>
                     </li>
                     <li>	
                         <a href="#submenu1"  class="nav-link px-0 align-middle text-white">
