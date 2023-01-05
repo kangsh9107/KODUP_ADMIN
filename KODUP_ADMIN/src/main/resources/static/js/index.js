@@ -1,14 +1,19 @@
 /**
  * 
  */
-
- 
-  $('.btnBoard').on('click',function(){
+  $('.btnChartBoard').on('click',function(){
   console.log("연결");
- 	$('#section').load('/board/board_select2');
+ 	$('#baik_admin_main').load('jsp/admin_chart_board');
  });
  
- $('.btnGuestBook').on('click',function(){
- console.log("연결");
- $('#section').load('/guestbook/guestbook_select'); 
- }); 
+
+
+  $('.btnChartMember').on('click',function(){
+  console.log("연결");
+ 	$('#baik_admin_main').load('jsp/admin_chart_board');
+ });
+ 
+   $('.btnChartUse').on('click',function(){
+  console.log("연결");
+ 	$('#btnChartMember').load('jsp/admin_chart_board');
+ });
