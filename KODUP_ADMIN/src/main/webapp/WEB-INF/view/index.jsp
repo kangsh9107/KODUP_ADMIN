@@ -19,6 +19,7 @@
 </nav>
 
 <!-- 사이드바 -->
+<!-- a태그 class에 data-bs-toggle="collapse"속성 추가하면 펼쳐지고 닫힘기능 추가 ul class 명에 show 추가하면 첫 페이지에 펼쳐져있음 -->
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
@@ -28,9 +29,10 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0 text-white">
+                        <a href="#" class="nav-link align-middle px-0 text-white btnAdminHome">
                             <ion-icon name="desktop-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                             <span class="ms-1 d-none d-sm-inline">Home</span>
+                            
                         </a>
                     </li>
                      <li>
@@ -38,57 +40,57 @@
                             <span class="ms-1 d-none d-sm-inline">통합 게시물 관리</span></a>
                     </li>
                     <li>	
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                        <a href="#submenu1"  class="nav-link px-0 align-middle text-white">
                            <ion-icon name="person-circle-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                                <span class="ms-1 d-none d-sm-inline">회원 관리</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 회원 리스트</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMemberList"> <span class="d-none d-sm-inline">- 회원 리스트</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 회원 정지 관리</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMemberBan"> <span class="d-none d-sm-inline">- 회원 정지 관리</span></a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                        <a href="#submenu2"  class="nav-link px-0 align-middle text-white">
                             <ion-icon name="checkmark-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                              <span class="ms-1 d-none d-sm-inline">인증 관리</span></a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 기업 인증</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnCorpCertification"> <span class="d-none d-sm-inline">- 기업 인증</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 멘토 인증</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMentoCertification"> <span class="d-none d-sm-inline">- 멘토 인증</span></a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                        <a href="#submenu3"  class="nav-link px-0 align-middle text-white">
                            <ion-icon name="cash-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                              <span class="ms-1 d-none d-sm-inline">픽셀 관리</span></a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 환전 승인</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnPixelExchange"> <span class="d-none d-sm-inline">- 환전 승인</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 환율</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnExchangeRate"> <span class="d-none d-sm-inline">- 환율</span></a>
                             </li>
                         </ul>
                     </li>
                      <li>
-                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                        <a href="#submenu4"  class="nav-link px-0 align-middle text-white">
                             <ion-icon name="bar-chart-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                              <span class="ms-1 d-none d-sm-inline">통계</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 게시판 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartBoard"> <span class="d-none d-sm-inline">- 게시판 통계</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 회원 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartMember"> <span class="d-none d-sm-inline">- 회원 통계</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">- 이용 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartUse"> <span class="d-none d-sm-inline">- 이용 통계</span></a>
                             </li>
                         </ul>
                     </li>
