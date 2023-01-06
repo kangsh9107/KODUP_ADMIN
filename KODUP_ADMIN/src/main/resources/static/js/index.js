@@ -66,4 +66,4 @@ $('.btnMemberBan').on('click',function(){
  });
 
 
- $('#center').load('/login/main');
+ $('.center').load('jsp/admin_home');
