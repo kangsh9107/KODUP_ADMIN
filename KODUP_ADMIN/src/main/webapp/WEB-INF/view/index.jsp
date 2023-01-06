@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>KODUP for admin</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link defer rel="stylesheet" href="css/index.css">
+
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -17,7 +19,7 @@
 <!-- 상단 네비바 -->
 <nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important">
   <div class="container-fluid text-white">
-    <span class="navbar-brand mb-0 h1 text-white"><img src="/images/로고1.png" style="width:40px; height:30px;">ADMIN KODUP</span>
+    <span class="navbar-brand mb-0 h1 text-white"><img src="/images/어드민 로고.png" style="width:40px; height:30px;">ADMIN KODUP</span>
   </div>
 </nav>
 
@@ -48,7 +50,7 @@
                                <span class="ms-1 d-none d-sm-inline">회원 관리</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnMemberList"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 회원 리스트</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMemberList"> <span class="d-none d-sm-inline" style="margin-left:30px;"> <span class="sidebar_list">회원 리스트</span></span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnMemberBan"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 회원 정지 관리</span></a>
@@ -112,8 +114,8 @@
             </div>
         </div>
         
-        <div class="col py-3" id="baik_admin_main">
-           
+        <div class="col py-3 " id="baik_admin_main">
+            <div class="center"></div>
         </div>
     </div>
 </div>
