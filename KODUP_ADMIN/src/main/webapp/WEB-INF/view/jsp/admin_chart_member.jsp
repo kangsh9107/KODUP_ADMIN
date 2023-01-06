@@ -11,9 +11,9 @@
 <body>
 <h4>회원통계</h4>
 <div id="admin_chart_member">
-
 	<div id="piechart" style="width: 900px; height: 500px;"></div>
-
-</div>    
+	<hr/>
+	 <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+</div>
 </body>
 </html>

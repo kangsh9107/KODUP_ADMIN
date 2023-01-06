@@ -8,7 +8,6 @@ google.charts.setOnLoadCallback(drawChart);
 
 drawChart();
 function drawChart() {
-	console.log("drawChart2번째");
 	var data = google.visualization.arrayToDataTable([
 		['mm-dd', '게시글수', '댓글수'],
 		['12-11',  5101,      2012],
