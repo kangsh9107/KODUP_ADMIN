@@ -35,7 +35,7 @@ $('.btnExchangeRate').on('click',function(){
 
 
 /*-------------------------------------------------------*/
- $('.btnHome').on('click',function(){
+ $('.btnAdminHome').on('click',function(){
   console.log("연결");
     $('#baik_admin_main').load('jsp/admin_total_board');
  });
@@ -52,7 +52,7 @@ $('.btnMemberList').on('click',function(){
 
 $('.btnMemberBan').on('click',function(){
   console.log("연결");
-    $('#baik_admin_main').load('jsp/admin_total_board');
+    $('#baik_admin_main').load('jsp/admin_ban');
  });
  
  $('.btnCorpCertification').on('click',function(){
