@@ -15,7 +15,7 @@
 </head>
 <body>
 <main>
-  <!-- 검색 폼 -->
+<!-- 검색 폼 -->
     <h4 style="padding-left:40px;">통합 게시물 관리</h4> <br>
     <div class="row g-2" style="padding-left:40px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
@@ -60,7 +60,7 @@
       </div>
     </div>
     
-    <!-- 게시물 리스트 -->
+<!-- 게시물 리스트 -->
     <div class="baik_board_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->

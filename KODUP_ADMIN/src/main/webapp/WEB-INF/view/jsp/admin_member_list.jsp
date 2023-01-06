@@ -57,7 +57,7 @@
     </div>
     
     
-    <!-- 회원 리스트 -->
+ <!-- 회원 리스트 -->
     <div class="baik_member_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->

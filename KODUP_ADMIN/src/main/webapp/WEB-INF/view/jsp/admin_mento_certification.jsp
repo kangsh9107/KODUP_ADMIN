@@ -70,7 +70,8 @@
 	  </div>
 	  <hr class="my-4">
 	</div>
-<!-- 리스트 -->
+	
+<!--멘토 신청 리스트 -->
  <div class="baik_mento_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->

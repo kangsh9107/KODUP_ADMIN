@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.baik_main_center{
+	width:1435px; 
+	height:500px; 
+	border:1px solid #c8c9ca;
+	margin-left:20px;
+}
+
+.card-body ul{
+   list-style: none;
+   padding:20px;
+   border: 1px dotted #c8c9ca;
+}
+
+.card-body li{
+	
+}

@@ -12,7 +12,7 @@
 <title>admin_corp_certification</title>
 </head>
 <body>
-
+<!-- 기업 정보 미리보기 칸 -->
 <h4 style="padding-left:40px;">기업인증</h4><br>
 <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:40px;">
 	<div class="row g-2">
@@ -55,6 +55,7 @@
 	  <hr class="my-4">
 	</div>
 
+<!-- 기업정보 리스트 -->
  <div class="baik_corp_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->

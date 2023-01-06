@@ -34,7 +34,7 @@
 
 #admin_chart_main{
 	position : absolute;
-	bottom : 80px;
+	top : 150px;
 }
 #curve_chart{
 	width: 700px;
