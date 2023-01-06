@@ -41,9 +41,10 @@
     cursor: pointer;
 }
 
-#exchangePageBtn{
-	width: 890px;
-	text-align: center;
+#ExchangePageBtn{
+	width : 890px;
+	text-align : center;
+	margin-top : 10px;
 }
 
 </style>
@@ -161,7 +162,7 @@
       <span class='exchange_button'><input type="button" value="환전승인"></span>
    </div>
 </div>
-<div id="exchangePageBtn">
+<div id="ExchangePageBtn">
 	<input type="button" value="1">
 	<input type="button" value="2">
 	<input type="button" value="3">
