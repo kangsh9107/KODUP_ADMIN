@@ -32,6 +32,14 @@ public class AdminStatisticsController {
 		return mv;
 	}
 	
+	@RequestMapping("jsp/admin_chart_use")
+	public ModelAndView select_chart_use() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("jsp/admin_chart_use");  
+		return mv;
+	}
+	
+	
 	@RequestMapping("jsp/admin_exchange_rate")
 	public ModelAndView select_exchange_rate() {
 		ModelAndView mv = new ModelAndView();

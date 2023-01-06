@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>WEB-INF/view/jsp/admin_chart_board.jsp</title>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script defer src='/js/admin_chart_board.js'></script>
 </head>
 <style>
@@ -15,28 +14,28 @@
 	height : 500px;
 }
 
-#admin_chart_header{
+#admin_chart_board #admin_chart_header{
 	position : relative;
 	height: 50px;
 	border-bottom : 1px solid #2D3644;
 	verticla-align : center;
 }
-#admin_chart_header_left{
+#admin_chart_board #admin_chart_header_left{
 	position : absolute;
 	top : 10px;
 	left :10px;
 }
-#admin_chart_header_right{
+#admin_chart_board #admin_chart_header_right{
 	position : absolute;
 	top : 10px;
 	right :10px;
 }
 
-#admin_chart_main{
+#admin_chart_board #admin_chart_main{
 	position : absolute;
-	bottom : 80px;
+	top : 150px;
 }
-#curve_chart{
+#admin_chart_board #curve_chart{
 	width: 700px;
 	height: 400px;
 }

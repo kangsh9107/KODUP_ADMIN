@@ -71,15 +71,17 @@ function drawChart2() {
  //등급별 통계 세로행 그래프
  
    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart3);
-    function drawChart3() {
+   google.charts.setOnLoadCallback(drawChart3);
+   function drawChart3() {
       var data = google.visualization.arrayToDataTable([
         ["유저등급", "Density", { role: "style" } ],
         ["일반회원", 40, "#2D3644"],
-        ["퍼스널멘토", 30, "#2D3644"],
-        ["플러스멘토", 20, "#2D3644"],
+        ["퍼스널멘토", 29, "#2D3644"],
+        ["플러스멘토", 21, "#2D3644"],
         ["파트너멘토", 10, "#2D3644"]
       ]);
+
+
 
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
@@ -89,9 +91,22 @@ function drawChart2() {
                          role: "annotation" },
                        2]);
 
-      var options = {
-        legend: { position: "none" },
+      var options= {
+	
+        legend: { position: "none" }
+		//vAxis:{textPosition : 'none'} //세로축 제거
       };
       var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
       chart.draw(view, options);
   }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
