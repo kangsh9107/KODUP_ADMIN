@@ -47,9 +47,9 @@
           </div> 
         </form>
       </div>
+      <hr class="my-4">
     </div>
     
-    <hr class="my-4">
     
     <!-- 회원 리스트 -->
     <div class="baik_member_view" >
