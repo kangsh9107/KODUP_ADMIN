@@ -6,18 +6,24 @@ console.log("차트보드js 연결");
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
+drawChart();
 function drawChart() {
+	console.log("drawChart2번째");
 	var data = google.visualization.arrayToDataTable([
-		['Year', 'Sales', 'Expenses'],
-		['2004',  1000,      400],
-		['2005',  1170,      460],
-		['2006',  660,       1120],
-		['2007',  1030,      540]
+		['mm-dd', '게시글수', '댓글수'],
+		['12-11',  5101,      2012],
+		['12-12',  5370,      2312],
+		['12-13',  6600,      3025],
+		['12-14',  7030,      3513],
+		['12-15',  6170,      2530],
+		['12-16',  6300,      2623],
+		['12-17',  5130,      1400]
 	]);
 	
+	//curveType:'none'을 function' 으로 변경하면 부드러운 곡선으로 출력
 	var options = {
-		title: 'Company Performance',
-		curveType: 'function',
+		title: 'QnA 게시판 기간별 게시글수, 댓글수',
+		curveType: 'none',
 		legend: { position: 'bottom' }
 	};
 	
