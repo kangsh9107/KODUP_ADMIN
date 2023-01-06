@@ -77,7 +77,7 @@
                                 <a href="#" class="nav-link px-0 text-white btnPixelExchange"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 환전 승인</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnExchangeRate"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 환율</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnExchangeRate"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 환전 비율</span></a>
                             </li>
                         </ul>
                     </li>
@@ -95,6 +95,9 @@
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnChartUse"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 이용 통계</span></a>
                             </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 text-white btnChartPixel"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 픽셀 통계</span></a>
+                            </li>
                         </ul>
                     </li>
                    
@@ -110,7 +113,7 @@
         </div>
         
         <div class="col py-3" id="baik_admin_main">
-            Content area...
+           
         </div>
     </div>
 </div>
