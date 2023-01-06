@@ -1,43 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/redmond/jquery-ui.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
 <link defer rel="stylesheet" href="css/admin_total_board.css">
 
-<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
-<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
-<script src="bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+<script src="js/admin_total_board.js"></script>
 
-<script type='text/javascript'>
-
-    $(function(){
-
-        $('.input-group.date').datepicker({
-
-            calendarWeeks: false,
-
-            todayHighlight: true,
-
-            autoclose: true,
-
-            format: "yyyy/mm/dd",
-
-            language: "kr"
-
-        });
-
-    });
-
-    </script>
 
 <title>admin_total_board</title>
 </head>
@@ -45,11 +17,14 @@
 <main>
   <!-- 검색 폼 -->
     <h4 style="padding-left:40px;">통합 게시물 관리</h4> <br>
-    <div class="row g-2" style="padding-left:200px; max-width:1000px;" >
+    <div class="row g-2" style="padding-left:40px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
         <form class="needs-validation" novalidate="">
           <div class="row g-3">
-            <div class="col-md-4" style="width:200px;">
+	          <div class="col-md-2" style="font-size:23px;">
+	              게시판
+	           </div>
+            <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>전체</option>
 				  <option value="1">QnA</option>
@@ -59,29 +34,32 @@
 				  <option value="5">구직</option>
 				</select>
 		   </div>
-		   
-            <div class="col-md-4 input-group date" style="width:200px;">
-	           <input type="text" class="form-control" placeholder="start"><span class="input-group-addon"><ion-icon name="calendar-outline" size="large"></ion-icon></span>
-	        </div>
-            
-            <div class="col-md-4 input-group date" style="width:200px;">
-	           <input type="text" class="form-control" placeholder="end"><span class="input-group-addon"><ion-icon name="calendar-outline" size="large"></ion-icon></span>
-	        </div>
-	      
+		   <div class="col-md-3" style="margin-left:-20px;">
+             <input type='date' class="select_date">
+	       </div>
+	       <span class="col-md-1" style="font-size:23px; width:25px; margin-left:-40px;">~</span>
+	       <div class="col-md-3" style="margin-left:0px;">
+             <input type='date' class="select_date">
+	       </div>
           </div>
           <hr class="my-2">
-          <div class="col-sm-6 col-lg-6">
-		     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
-		   </div>
-		  <hr class="my-2"> 
-		  <div class="d-grid gap-2 col-6 mx-auto text-white">
-            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
-          </div> 
+          <div class="row g-3">
+              <div class="col-md-2" style="font-size:23px;">
+	              검색어
+	           </div>
+	          <div class="col-sm-6 col-lg-6" style="margin-left:-50px;">
+			     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			   </div>
+			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
+	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	          </div> 
+    <hr class="my-4">
+          </div>
+		  
         </form>
       </div>
     </div>
     
-    <hr class="my-4">
     <!-- 게시물 리스트 -->
     <div class="baik_board_view" >
     <ul>

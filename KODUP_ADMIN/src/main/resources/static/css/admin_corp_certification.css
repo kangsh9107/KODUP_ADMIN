@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.baik_corp_view{
+	border: 1px solid #c8c9ca;
+	padding: 20px;
+	width: 850px;
+	margin-left:40px;
+}
+.baik_corp_view>form{
+	text-align: right;
+}
+.baik_corp_view>ul{
+	list-style: none;
+	margin-top: 5px;
+	padding:20px;
+}
+.baik_corp_view li.title{
+	background-color: #2d3644;
+	color: #fff;
+	width:750px;
+}
+.baik_corp_view li.item{
+	display: inline-block;
+	padding: 3px;
+	position: relative;
+	width: 750px;
+}
+.baik_corp_view li.item:hover{
+	background-color: #ccc;
+	cursor: pointer;
+	width: 750px;
+}
+.baik_corp_view li>span{
+	display: inline-block;
+}
+.baik_corp_view li>span.no{
+	width: 50px;
+	text-align: right;
+	margin-right: 20px;
+}
+.baik_corp_view li>span.corp_name{
+	width: 150px;
+}
+.baik_corp_view li>span.manager_name{
+	width: 100px;
+}
+.baik_corp_view li>span.manager_phone{
+	width: 150px;
+}
+
+.baik_corp_view li>span.manager_email{
+	width: 200px;
+}
+

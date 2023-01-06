@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+.select_date{
+	width:150px; 
+	height:38px;
+	border: 1px solid #dee2e6;
+    border-radius: 5px;	
+}
+
+.btnFindstr{
+	margin-left:30px;
+}
+
 .baik_board_view{
 	border: 1px solid #c8c9ca;
 	margin-left : 40px;

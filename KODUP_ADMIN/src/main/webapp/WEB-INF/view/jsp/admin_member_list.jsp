@@ -7,29 +7,36 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link defer rel="stylesheet" href="css/admin_member_list.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="admin_member_list.js"></script>
 <title>admin_member_list</title>
 </head>
 <body>
 <main>
 <!-- 검색 폼 -->
-    <h4 style="padding-left:40px;">회원 관리</h4>
-    <div class="row g-2" style="padding-left:200px; max-width:1000px;" >
+    <h4 style="padding-left:40px;">회원 관리</h4> <br>
+    <div class="row g-2" style="padding-left: 40px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
         <form class="needs-validation" novalidate="">
           <div class="row g-3">
-            <div class="col-md-4" style="width:200px;">
+            <div class="col-md-2" style="font-size:23px;">
+              등급
+            </div>
+            <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>전체</option>
-				  <option value="1">일반회원</option>
-				  <option value="2">퍼스널회원</option>
-				  <option value="3">플러스회원</option>
-				  <option value="4">파트너회원</option>
+				  <option value="1">일반</option>
+				  <option value="2">퍼스널</option>
+				  <option value="3">플러스</option>
+				  <option value="4">파트너</option>
 				</select>
 		   </div>
 		  </div>
           <hr class="my-2">
           <div class="row g-3">
-            <div class="col-md-4" style="width:200px;">
+            <div class="col-md-2" style="font-size:23px;">
+              검색어
+            </div>
+            <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>아이디</option>
 				  <option value="1">이메일</option>
@@ -37,17 +44,16 @@
 				  <option value="3">가입일</option>
 				</select>
 		   </div>
-          <div class="col-md-4">
+          <div class="col-md-4" style="margin-left:-30px;">
 		     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 		   </div>
-		  </div>
-		  <hr class="my-2"> 
-		  <div class="d-grid gap-2 col-6 mx-auto text-white">
+		  <div class="d-grid gap-2 col-2 text-white">
             <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
           </div> 
+		  </div>
+		  <hr class="my-4"> 
         </form>
       </div>
-      <hr class="my-4">
     </div>
     
     
