@@ -11,31 +11,189 @@
 <title>admin_member_list_update</title>
 </head>
 <body>
+<!-- 회원 자체 프로필 -->
 <div class="profile_wrapper">
 	<div class="profile_main">
 		<img src="images/basic_profile.jpg" class="profileImg">
-		<div class="setting_iconDiv">
-			<img src="images/setting_icon.png" class="setting_icon">
-		</div>
-		
 		<div class="profile_nicknameDiv">
 			<span class="profile_nickname">힐따기요</span>
 			<span class="profile_grade">멘토</span>
 		</div>
 		<div class="profile_phrases">만나서 반갑습니당 주 활동시간 : 월~금 12:00~19:00</div>
-		<div class="profile_nav">
-			<nav class="profile_atags">
-				<div id="horizontal-underline"></div>
-	        	<a href="#" id="btnMyarticle" class='atag' onclick="return false">내 게시글</a>
-	        	<a href="#" id="btnMyrepl" class='atag' onclick="return false">내 댓글</a>   
-	        	<a href="#" class='atag' onclick="return false">인스타그램</a>
-			</nav>
+		
+	</div>
+	<br>
+	
+	<!-- 회원 정보 -->
+	<div class="container" id="member_info" style="margin-left:20px;">
+	  <div class="row g-2">
+	    
+	    <div class="col-7">
+	       <div class="row g-2">
+			   <div class="col-2">
+				  아이디
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			  
+			   <div class="col-2">
+				  비밀번호
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		   </div>
+		   <br>
+		   <div class="row g-2">
+			   <div class="col-2">
+				  이메일
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			  
+			   <div class="col-2">
+				  닉네임
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		   </div>
+		   <br>
+		   <div class="row g-2">
+			   <div class="col-2">
+				  성별
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			  
+			   <div class="col-2">
+				  나이
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		   </div>
+		   <br>
+		   <div class="row g-2">
+			   <div class="col-2">
+				  계정유형
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" readOnly type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			 
+			   <div class="col-2">
+				  활동 상태
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		   </div>
+		   <br>
+		   <div class="row g-2">
+			   <div class="col-2">
+				  보유 픽셀
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			   
+			   <div class="col-2">
+				  회원등급
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		   </div>
+		   <br>
+		   <div class="row g-2">
+			   <div class="col-2">
+				  이메일 인증
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+			   
+			   <div class="col-2">
+				  멘토 인증
+		       </div>
+			   <div class="col-4">
+				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+			   </div>
+		     </div>
+		   </div>
+		   <div class="col-5 member_activity" style="padding-left:40px; margin-top:-20px;">
+		    <div class="recent_doc">
+				 <h5>최신 게시글</h5>
+				 <ul>
+				   <li>
+		             <span class="subject">증말 살기 힘드네요</span>
+		             <span class="nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="subject">올해는 lg트윈스가 우승할껍니다! 제가 장담함 진짜로 ㅋㅋ 아 진짜 라니까</span>
+		             <span class="nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="subject">증말 살기 힘드네요</span>
+		             <span class="nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="subject">증말 살기 힘드네요</span>
+		             <span class="nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="subject">증말 살기 힘드네요</span>
+		             <span class="nal">2023.01.02</span>
+				   </li>
+				 </ul>
+			 </div>
+			 <br>	
+			 <div class="recent_repl">
+			    <h5>최신 댓글</h5>
+				 <ul>
+				   <li>
+		             <span class="repl_doc">모두 화이팅 합시다</span>
+		             <span class="repl_nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="repl_doc">모두 화이팅 합시다 즐겁고 활기찬 신묘년이 되시길!하는일도 다 잘되고!</span>
+		             <span class="repl_nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="repl_doc">모두 화이팅 합시다</span>
+		             <span class="repl_nal">2023.01.02</span>
+				   </li>
+				   <li>		
+		             <span class="repl_doc">모두 화이팅 합시다</span>
+		             <span class="repl_nal">2023.01.02</span>
+				   </li>
+				   <li>
+		             <span class="repl_doc">모두 화이팅 합시다</span>
+		             <span class="repl_nal">2023.01.02</span>
+				   </li>
+				 </ul>
+			 </div>
+		   </div>
 		</div>
-	</div>
-	
-	<div id="profile_innerSection">
-	</div>
-	
+		   <br><br>
+			   <div class="row g-2" style="padding-left:70px;">
+			      <div class="col-6"></div>
+			      <div class="d-grid gap-2 col-2 text-white">
+		            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
+		          </div>
+		          <div class="d-grid gap-2 col-2 text-white">
+		            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
+		          </div>
+		          <div class="d-grid gap-2 col-2 text-white">
+		            <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
+		          </div>
+		       </div>
+	    </div>
+	   
 </div>
 </body>
 </html>
