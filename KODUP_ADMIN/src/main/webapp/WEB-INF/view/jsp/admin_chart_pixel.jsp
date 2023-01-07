@@ -47,6 +47,7 @@
 		<div id="admin_chart_header_right">
 			<span>기간</span>
 			<input type='date'> ~ <input type='date'>
+			<input type='button' value="조회">
 		</div>
 	</div>
 	<div id="admin_chart_main">
