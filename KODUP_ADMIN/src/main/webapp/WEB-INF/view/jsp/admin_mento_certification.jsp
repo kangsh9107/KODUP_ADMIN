@@ -15,7 +15,7 @@
 
 <!-- 검색폼 -->
    <div style="padding-left:40px;">
-	<h3>통합 게시물 관리</h3>
+	<h3>멘토 인증</h3>
 	    <hr><br>
    </div>
 
@@ -69,8 +69,9 @@
 		      </div>
 			</div>
 		</div>
-	  <hr class="my-4">
+	  <hr class="my-4"  style="width:800px; ">
 	</div>
+	<br>
 	
 <!--멘토 신청 리스트 -->
  	<div class="baik_mento_view" >

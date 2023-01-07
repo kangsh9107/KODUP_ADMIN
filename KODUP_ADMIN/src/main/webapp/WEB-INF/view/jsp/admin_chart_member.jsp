@@ -14,7 +14,7 @@
 }
 
 #admin_chart{
-   padding-left:40px;
+   padding-left:55px;
 }
 #admin_chart #admin_chart_main1{
 	position : absolute;
@@ -84,7 +84,7 @@
 <body>
 	<div style="padding-left:40px;">
 	    <h3>회원 통계</h3>
-		  <hr><br>
+		  <hr><br><br>
 	</div>
 	<div id="admin_chart">
 		<div id="admin_chart_main1">

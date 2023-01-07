@@ -14,14 +14,14 @@
 <main>
 <!-- 검색 폼 -->
     <div style="padding-left:40px;">
-    <h4>회원 관리</h4>
+    <h3>회원 관리</h3>
     <hr>
     <br>
     </div>
     
-    <div class="row g-2" style="padding-left: 48px; max-width:1000px;" >
+   <form class="needs-validation" novalidate="">
+    <div class="row g-2" style="padding-left: 48px;; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
-        <form class="needs-validation" novalidate="">
           <div class="row g-3">
             <div class="col-md-2" style="font-size:23px;">
               등급
@@ -37,12 +37,14 @@
 				</select>
 		   </div>
 		  </div>
-          <hr class="my-4">
-          <div class="row g-3">
+		</div>
+          <hr class="my-4" style="width:1000px;">
+        <div>
+          <div class="row g-3" style="width:1000px;">
             <div class="col-md-2" style="font-size:23px;">
               검색어
             </div>
-            <div class="col-md-4" style="width:200px; margin-left:-50px;">
+            <div class="col-md-4" style="width:200px; margin-left:-10px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>아이디</option>
 				  <option value="1">이메일</option>
@@ -53,14 +55,15 @@
           <div class="col-md-4" style="margin-left:-30px;">
 		     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 		   </div>
-		  <div class="d-grid gap-2 col-2 text-white">
+		  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
             <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
           </div> 
 		  </div>
-		  <hr class="my-4"> 
-        </form>
-      </div>
+        </div>
+       <hr class="my-4" style="width:1000px;"> 
     </div>
+  </form>
+  <br>
     
     
  <!-- 회원 리스트 -->

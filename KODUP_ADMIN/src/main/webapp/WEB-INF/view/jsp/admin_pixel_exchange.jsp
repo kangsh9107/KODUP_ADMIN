@@ -58,119 +58,121 @@
 
 <body>
 
-<div style="padding-left:40px;">
-    <h3>환전 승인</h3>
-	  <hr><br>
-</div>
+	<div style="padding-left:40px;">
+	    <h3>환전 승인</h3>
+		  <hr><br>
+	</div>
    <div style="padding-left:40px;">
-	<span style="font-size:23px;">지급준비금 현황 : </span><input type="text" readOnly style="width:250px; height:35px;">
-	<br/><br>
-	<span style="font-size:15px;">지급준비금 ()% 기준으로 700,000 원 입니다.</span>
-	<hr/>
-</div>
-<div class="cho_exchange_list" style="padding-left:40px;">
-     <div id="exchange">
-	   <div class='cho_title'>
-	      <span class='exchange_no'>NO</span>
-	      <span class='exchange_id'>ID</span>
-	      <span class='exchange_pixel'>환전신청액(픽셀)</span>
-	      <span class='exchange_money'>환전될금액</span>
-	      <span class='exchange_account'>계좌</span>
-	      <span class='exchange_date'>환전신청일</span>
-	      <span class='exchange_button'>환전승인</span>
-	   </div>
-	   
-	   <div class='item'>
-	      <span class='exchange_no'>1</span>
-	      <span class='exchange_id'>a001</span>
-	      <span class='exchange_pixel'>10000  pixel</span>
-	      <span class='exchange_money'>8000  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>2</span>
-	      <span class='exchange_id'>a002</span>
-	      <span class='exchange_pixel'>15000  pixel</span>
-	      <span class='exchange_money'>12000  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>3</span>
-	      <span class='exchange_id'>a003</span>
-	      <span class='exchange_pixel'>12000  pixel</span>
-	      <span class='exchange_money'>9600  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>4</span>
-	      <span class='exchange_id'>a004</span>
-	      <span class='exchange_pixel'>7000  pixel</span>
-	      <span class='exchange_money'>5600  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>5</span>
-	      <span class='exchange_id'>a005</span>
-	      <span class='exchange_pixel'>8000  pixel</span>
-	      <span class='exchange_money'>6400  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>6</span>
-	      <span class='exchange_id'>a006</span>
-	      <span class='exchange_pixel'>9000  pixel</span>
-	      <span class='exchange_money'>7200  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>7</span>
-	      <span class='exchange_id'>a007</span>
-	      <span class='exchange_pixel'>10000  pixel</span>
-	      <span class='exchange_money'>8000  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>8</span>
-	      <span class='exchange_id'>a008</span>
-	      <span class='exchange_pixel'>40000  pixel</span>
-	      <span class='exchange_money'>32000  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>9</span>
-	      <span class='exchange_id'>a009</span>
-	      <span class='exchange_pixel'>20000  pixel</span>
-	      <span class='exchange_money'>16000  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-	   <div class='item'>
-	      <span class='exchange_no'>10</span>
-	      <span class='exchange_id'>a010</span>
-	      <span class='exchange_pixel'>13000  pixel</span>
-	      <span class='exchange_money'>10400  원</span>
-	      <span class='exchange_account'>110-1234-1234</span>
-	      <span class='exchange_date'>2023-01-05</span>
-	      <span class='exchange_button'><input type="button" value="환전승인"></span>
-	   </div>
-</div>
+		<span style="font-size:20px;">지급준비금 현황 : </span><input type="text" readOnly style="width:250px; height:35px;">
+		<br/><br>
+		<span style="font-size:15px;">지급준비금 ()% 기준으로 700,000 원 입니다.</span>
+		<hr style="width:1000px;">
+	</div>
+	<br>
+
+	<div class="cho_exchange_list" style="padding-left:40px;">
+	     <div id="exchange">
+		   <div class='cho_title'>
+		      <span class='exchange_no'>NO</span>
+		      <span class='exchange_id'>ID</span>
+		      <span class='exchange_pixel'>환전신청액(픽셀)</span>
+		      <span class='exchange_money'>환전될금액</span>
+		      <span class='exchange_account'>계좌</span>
+		      <span class='exchange_date'>환전신청일</span>
+		      <span class='exchange_button'>환전승인</span>
+		   </div>
+		   
+		   <div class='item'>
+		      <span class='exchange_no'>1</span>
+		      <span class='exchange_id'>a001</span>
+		      <span class='exchange_pixel'>10000  pixel</span>
+		      <span class='exchange_money'>8000  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>2</span>
+		      <span class='exchange_id'>a002</span>
+		      <span class='exchange_pixel'>15000  pixel</span>
+		      <span class='exchange_money'>12000  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>3</span>
+		      <span class='exchange_id'>a003</span>
+		      <span class='exchange_pixel'>12000  pixel</span>
+		      <span class='exchange_money'>9600  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>4</span>
+		      <span class='exchange_id'>a004</span>
+		      <span class='exchange_pixel'>7000  pixel</span>
+		      <span class='exchange_money'>5600  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>5</span>
+		      <span class='exchange_id'>a005</span>
+		      <span class='exchange_pixel'>8000  pixel</span>
+		      <span class='exchange_money'>6400  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>6</span>
+		      <span class='exchange_id'>a006</span>
+		      <span class='exchange_pixel'>9000  pixel</span>
+		      <span class='exchange_money'>7200  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>7</span>
+		      <span class='exchange_id'>a007</span>
+		      <span class='exchange_pixel'>10000  pixel</span>
+		      <span class='exchange_money'>8000  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>8</span>
+		      <span class='exchange_id'>a008</span>
+		      <span class='exchange_pixel'>40000  pixel</span>
+		      <span class='exchange_money'>32000  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>9</span>
+		      <span class='exchange_id'>a009</span>
+		      <span class='exchange_pixel'>20000  pixel</span>
+		      <span class='exchange_money'>16000  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+		   <div class='item'>
+		      <span class='exchange_no'>10</span>
+		      <span class='exchange_id'>a010</span>
+		      <span class='exchange_pixel'>13000  pixel</span>
+		      <span class='exchange_money'>10400  원</span>
+		      <span class='exchange_account'>110-1234-1234</span>
+		      <span class='exchange_date'>2023-01-05</span>
+		      <span class='exchange_button'><input type="button" value="환전승인"></span>
+		   </div>
+	</div>
 
 <!-- PageButton -->
 	<div class="btn-toolbar" style="justify-content: center; margin-top:20px;" role="toolbar" aria-label="Toolbar with button groups">

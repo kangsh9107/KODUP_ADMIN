@@ -54,9 +54,10 @@
 		  </div>
 		</div>      
 	  </div>
-	  <hr class="my-4">
+	  <hr class="my-4" style="width:850px; margin-left:-6px;">
 	</div>
-
+    <br>
+    
 <!-- 기업정보 리스트 -->
     <div class="baik_corp_view" >
        <ul>

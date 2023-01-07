@@ -36,11 +36,12 @@
 			  <div class="d-grid gap-2 col-2 text-white">
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
-		       <hr class="my-4"> 
 		    </div>
+		   <hr class="my-4" style="width:750px; margin-left:-6px;"> 
           </form>
         </div>
      </div>
+     <br>
 <!-- 정지 리스트 전체 회원들을 띄우나 밴된 회원이 제일 위로 뜨게 -->
 <!-- 회원 리스트 -->
     <div class="baik_ban_view" >
@@ -73,7 +74,7 @@
 		</li>
 		<li class='item'>
 			<span class='no'>3</span>
-			<span class='id'>dustn318</span>
+			<span class='id'>dustn384</span>
 			<span class='ban_status'>활동 중</span>
 			<span class='ban_active'>
 				<button type="button" class="btn btn-danger btn-sm">정지</button>

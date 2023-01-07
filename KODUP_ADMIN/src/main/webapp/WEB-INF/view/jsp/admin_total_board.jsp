@@ -25,7 +25,7 @@
     <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
         <form class="needs-validation" novalidate="">
-          <div class="row g-3">
+          <div class="row g-3" style="margin-top: -32px;">
 	          <div class="col-md-2" style="font-size:23px;">
 	              게시판
 	           </div>
@@ -47,8 +47,8 @@
 	       <div class="col-md-3" style="margin-left:0px;">
              <input type='date' class="select_date">
 	       </div>
-          <hr class="my-4">
           </div>
+          <hr class="my-4" style="width: 990px;">
           <div class="row g-3">
               <div class="col-md-2" style="font-size:23px;">
 	              검색어
@@ -59,13 +59,14 @@
 			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
-            <hr class="my-4">
           </div>
+          <hr class="my-4" style="width: 990px;">
 		  
         </form>
       </div>
     </div>
     
+    <br>
 <!-- 게시물 리스트 -->
     <div class="baik_board_view" >
     <ul>
@@ -80,16 +81,16 @@
 		</li>
 		
 		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
-		<li class='item'>
+		<li class='item' onclick="admin_qna_view()">
 				<span class='sno'>1</span>
-				<span class='boardType'>자유</span>
+				<span class='boardType'>QnA</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
 				<span class='nickname'>힐따기요</span>
 				<span class='nal'>2023.01.01</span>
 				<span class='viewcount' >14</span>
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
-		<li class='item'>
+		<li class='item' onclick="admin_freetalking_view()">
 				<span class='sno'>2</span>
 				<span class='boardType'>자유</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -98,9 +99,27 @@
 				<span class='viewcount' >14</span>
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
-		<li class='item'>
+		<li class='item' onclick="admin_infoshare_view()">
 				<span class='sno'>3</span>
-				<span class='boardType'>자유</span>
+				<span class='boardType'>정보공유</span>
+				<span class='subject'>언능 취업하고 싶네요</span>
+				<span class='nickname'>힐따기요</span>
+				<span class='nal'>2023.01.01</span>
+				<span class='viewcount' >14</span>
+				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
+		</li>
+		<li class='item' onclick="admin_mansearch_view()">
+				<span class='sno'>4</span>
+				<span class='boardType'>구인</span>
+				<span class='subject'>언능 취업하고 싶네요</span>
+				<span class='nickname'>힐따기요</span>
+				<span class='nal'>2023.01.01</span>
+				<span class='viewcount' >14</span>
+				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
+		</li>
+		<li class='item' onclick="admin_jobsearch_view()">
+				<span class='sno'>5</span>
+				<span class='boardType'>구직</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
 				<span class='nickname'>힐따기요</span>
 				<span class='nal'>2023.01.01</span>
