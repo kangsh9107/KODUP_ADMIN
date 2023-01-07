@@ -34,7 +34,7 @@ function drawChart() {
 		series: {
 	        0: { color: '#2D3644' }
 	  	},
-		legend: { position: 'top' }
+		legend: { position: 'right' }
 	};
 	
 	var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));

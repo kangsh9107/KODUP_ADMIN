@@ -18,7 +18,6 @@
 	position : relative;
 	height: 50px;
 	border-bottom : 1px solid #2D3644;
-	verticla-align : center;
 }
 #admin_chart_pixel #admin_chart_header_left{
 	position : absolute;
@@ -33,7 +32,7 @@
 
 #admin_chart_pixel #admin_chart_main{
 	position : absolute;
-	top : 150px;
+	top : 160px;
 }
 #admin_chart_pixel #curve_chart{
 	width: 700px;

@@ -18,12 +18,12 @@
 	position : relative;
 	height: 50px;
 	border-bottom : 1px solid #2D3644;
-	verticla-align : center;
 }
 #admin_chart_board #admin_chart_header_left{
 	position : absolute;
 	top : 10px;
 	left :10px;
+	line-height : 30px;
 }
 #admin_chart_board #admin_chart_header_right{
 	position : absolute;
@@ -33,7 +33,7 @@
 
 #admin_chart_board #admin_chart_main{
 	position : absolute;
-	top : 150px;
+	top : 160px;
 }
 #admin_chart_board #curve_chart{
 	width: 700px;
@@ -59,6 +59,7 @@
 		<div id="admin_chart_header_right">
 			<span>기간</span>
 			<input type='date'> ~ <input type='date'>
+			<input type='button' value="조회">
 		</div>
 	</div>
 	<div id="admin_chart_main">
