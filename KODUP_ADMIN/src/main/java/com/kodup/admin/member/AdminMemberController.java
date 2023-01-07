@@ -13,6 +13,12 @@ public class AdminMemberController {
 		mv.setViewName("jsp/admin_member_list");
 		return mv;
 	}
+	@RequestMapping("jsp/admin_member_list_update")
+	public ModelAndView admin_member_list_update() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("jsp/admin_member_list_update");
+		return mv;
+	}
 	
 	@RequestMapping("jsp/admin_ban")
 	public ModelAndView admin_ban() {
@@ -20,4 +26,5 @@ public class AdminMemberController {
 		mv.setViewName("jsp/admin_ban");
 		return mv;
 	}
+	
 }
