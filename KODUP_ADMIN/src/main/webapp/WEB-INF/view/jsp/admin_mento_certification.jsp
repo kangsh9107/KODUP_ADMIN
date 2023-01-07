@@ -13,44 +13,46 @@
 </head>
 <body>
 
-<h4 style="padding-left:40px;">멘토 인증</h4><br>
-
 <!-- 검색폼 -->
-<div class="container" style="max-width:1000px; margin-left: 0px; padding-left:40px;">
-	<div class="row g-2">
-	   <div class="col-md-3">
+   <div style="padding-left:40px;">
+	<h3>통합 게시물 관리</h3>
+	    <hr><br>
+   </div>
+
+   <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:40px;">
+	  <div class="row g-2">
+	     <div class="col-md-3">
 	    	<img src="images/광고1.png" alt="..." class="img-thumbnail" style="width:230px; height: 230px;">
-	   </div>
+	      </div>
 	   <div class="col-md-8" style="margin-left: 40px;">
-	     <div class="container">
-	     
-		   <div class="row g-2">
+	      <div class="container">
+	        <div class="row g-2">
 			   <div class="col-md-2" style="font-size:20px;">
 				  아이디
 		       </div>
 			   <div class="col-md-5">
 				  <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
-		   </div>
-		   <br>
-		   <div class="row g-2">
+		    </div>
+		    <br>
+		    <div class="row g-2">
 		        <div class="col-md-2" style="font-size:20px;">
 			       가입일
 			    </div>
 		        <div class="col-md-5">
 			        <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
-		   </div>
-		   <br>
-		   <div class="row g-2">
+		     </div>
+		     <br>
+		     <div class="row g-2">
 		        <div class="col-md-2" style="font-size:20px;">
 			       이메일
 			    </div>
 		        <div class="col-md-5">
 			        <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
-		   </div>
-		   <br>
+		     </div>
+		     <br>
 		       <div class="row g-2" style="margin-left:170px;">
 			        <div class="col-md-2">
 					    <select class="form-select" aria-label="Default select example" size='1' style="width:100px;">
@@ -64,16 +66,15 @@
 		              <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">적용</button>
 		             </div> 
 		        </div>
-		  </div>
+		      </div>
+			</div>
 		</div>
-		      
-	  </div>
 	  <hr class="my-4">
 	</div>
 	
 <!--멘토 신청 리스트 -->
- <div class="baik_mento_view" >
-    <ul>
+ 	<div class="baik_mento_view" >
+   	  <ul>
 		<li class='title'> <!-- 타이틀 -->
 			<span class='no'>No</span>
 			<span class='id'>아이디</span>
@@ -106,26 +107,27 @@
 		</li>
 		<!--</c:forEach>-->
 	  </ul>
-	  <!-- PageButton -->
+	  
+<!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
 		<!--<c:if test="${pageVo.startPage > 1 }"> -->
 		   <div class="btn-group me-2" role="group" aria-label="First group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
-		              style="background-color:#2d3644;"><</button>
+		              style="background-color: #2d3644;"><</button>
 		   </div>
-	    </c:if>   
-		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
+	    <!--</c:if>-->   
+		<!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
-		              style="background-color:#2d3644;">1</button>
+		              style="background-color: #2d3644;">1</button>
 		   </div>
-		   </c:forEach>
-		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
+		 <!--</c:forEach>-->
+		 <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
 		   <div class="btn-group" role="group" aria-label="Third group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
-		              style="background-color:#2d3644;">></button>
+		              style="background-color: #2d3644;">></button>
 		   </div>
-		   </c:if>
+		 <!--</c:if>-->
 		</div>
 	  </div>
 </body>

@@ -24,6 +24,8 @@
 	padding: 3px;
 	position: relative;
 	width: 700px;
+	margin-top : 2px;
+    border : 1px solid #aaa;
 }
 .baik_mento_view li.item:hover{
 	background-color: #ccc;
