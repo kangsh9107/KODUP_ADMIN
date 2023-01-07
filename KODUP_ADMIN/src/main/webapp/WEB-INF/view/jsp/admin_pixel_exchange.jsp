@@ -70,9 +70,8 @@
       <span class='exchange_date'>환전신청일</span>
       <span class='exchange_button'>환전승인</span>
    </div>
-   
    <div class='item'>
-      <span class='exchange_no'>1</span>
+      <span class='exchange_no'></span>
       <span class='exchange_id'>a001</span>
       <span class='exchange_pixel'>10000  pixel</span>
       <span class='exchange_money'>8000  원</span>
