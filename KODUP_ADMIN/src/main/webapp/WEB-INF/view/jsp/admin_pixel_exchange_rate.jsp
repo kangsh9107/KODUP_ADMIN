@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 <title>WEB-INF/view/jsp/admin_pixel_exchange_rate.jsp</title>
 </head>
 <style>
 #exchange_rate .exchange_rate_title{
- background: rgba(33, 37, 41);
+    background-color: #2d3644;
     color:#fff;
     width : 460px;
 }
@@ -39,46 +42,48 @@
 
 </style>
 <body>
-<h4>환전비율 변경</h4>
-<hr/>
-*등급별 환율 변경
-<br/>
-<div id="exchange_rate">
-	<div class="exchange_rate_title">
-		<span class="grade">회원등급</span>
-		<span class="rate">환율</span>
-		<span class="10000pixel">1만픽셀기준</span>
-		<span class="won">환전금액(원)</span>
+    <div style="padding-left:40px;">
+	  <h3>환전 비율 변경</h3>
+		  <hr>
 	</div>
-	
-	<div class="exchange_rate_item">
-		<span class="grade">일반회원</span>
-		<span class="rate"><input type="text" value="60" size="1">%</span>
-		<span class="10000pixel">10,000pixel</span>
-		<span class="won">6,000원</span>
+	<br/>
+	<div style="padding-left:40px;">
+	  <h5>등급별 환율 변경</h5>
+	  <div id="exchange_rate">
+		 <div class="exchange_rate_title">
+			<span class="grade">회원등급</span>
+			<span class="rate">환율</span>
+			<span class="10000pixel">1만픽셀기준</span>
+			<span class="won">환전금액(원)</span>
+		 </div>
+		
+		 <div class="exchange_rate_item">
+			<span class="grade">일반회원</span>
+			<span class="rate"><input type="text" value="60" size="1">%</span>
+			<span class="10000pixel">10,000pixel</span>
+			<span class="won">6,000원</span>
+		 </div>
+		 <div class="exchange_rate_item">
+			<span class="grade">퍼스널회원</span>
+			<span class="rate"><input type="text" value="70" size="1">%</span>
+			<span class="10000pixel">10,000pixel</span>
+			<span class="won">7,000원</span>
+		 </div>
+		 <div class="exchange_rate_item">
+			<span class="grade">플러스회원</span>
+			<span class="rate"><input type="text" value="80" size="1">%</span>
+			<span class="10000pixel">10,000pixel</span>
+			<span class="won">8,000원</span>
+		 </div>
+		 <div class="exchange_rate_item">
+			<span class="grade">파트너회원</span>
+			<span class="rate"><input type="text" value="90" size="1">%</span>
+			<span class="10000pixel">10,000pixel</span>
+			<span class="won">9,000원</span>
+		 </div>
+	  </div>
+	  <hr class="my-4">
+	  <button type="button" class="btn text-white" style="background-color:#2d3644; margin-left:450px;">수정</button>
 	</div>
-	<div class="exchange_rate_item">
-		<span class="grade">퍼스널회원</span>
-		<span class="rate"><input type="text" value="70" size="1">%</span>
-		<span class="10000pixel">10,000pixel</span>
-		<span class="won">7,000원</span>
-	</div>
-	<div class="exchange_rate_item">
-		<span class="grade">플러스회원</span>
-		<span class="rate"><input type="text" value="80" size="1">%</span>
-		<span class="10000pixel">10,000pixel</span>
-		<span class="won">8,000원</span>
-	</div>
-	<div class="exchange_rate_item">
-		<span class="grade">파트너회원</span>
-		<span class="rate"><input type="text" value="90" size="1">%</span>
-		<span class="10000pixel">10,000pixel</span>
-		<span class="won">9,000원</span>
-	</div>
-</div>
-
-<hr/>
-
-<input type="button" value="수정하기">
 </body>
 </html>

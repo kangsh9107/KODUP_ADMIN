@@ -9,15 +9,16 @@
 </head>
 <style>
 #admin_chart_board{
-	border : 1px solid rgba(33, 37, 41);
+	border : 1px solid #c8c9ca;
 	width : 703px;
 	height : 500px;
+	margin-left: 40px;
 }
 
 #admin_chart_board #admin_chart_header{
 	position : relative;
 	height: 50px;
-	border-bottom : 1px solid #2D3644;
+	border-bottom : 1px solid #c8c9ca;
 }
 #admin_chart_board #admin_chart_header_left{
 	position : absolute;
@@ -33,7 +34,7 @@
 
 #admin_chart_board #admin_chart_main{
 	position : absolute;
-	top : 160px;
+	
 }
 #admin_chart_board #curve_chart{
 	width: 700px;
@@ -43,8 +44,12 @@
 
 
 <body>
-<h4>게시판통계</h4>
-<div id="admin_chart_board">
+    <div style="padding-left:40px;">
+	  <h3>게시판 통계</h3>
+		  <hr><br>
+	</div>
+
+<div id="admin_chart_board" >
 	<div id="admin_chart_header">
 		<div id="admin_chart_header_left">
 			<span>게시판</span>

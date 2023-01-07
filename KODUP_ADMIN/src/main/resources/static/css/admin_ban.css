@@ -25,6 +25,8 @@
 	padding: 3px;
 	position: relative;
 	width: 650px;
+	margin-top : 2px;
+    border : 1px solid #aaa;
 }
 .baik_ban_view li.item:hover{
 	background-color: #ccc;
