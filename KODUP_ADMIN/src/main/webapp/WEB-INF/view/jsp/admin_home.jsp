@@ -20,7 +20,7 @@
 		    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
 		  </div>
-		  <div class="carousel-inner" style="width:1300px; height:500px;">
+		  <div class="carousel-inner" style="width:1279px; height:500px;">
 		    <div class="carousel-item active" data-bs-interval="10000">
 		      <img src="images/공지1.jpg" class="d-block w-100" alt="..."style="width:1300px; height:500px;">
 		      <div class="carousel-caption d-none d-md-block">
@@ -45,10 +45,10 @@
 	
 	
 	<!-- Todo list -->
-	<div class="row row-cols-1 row-cols-md-4 g-4" style="margin-left:7px; margin-top:20px; width:1300px;">
-	  <div class="col">
-	    <div class="card" style="width:328px;">
-	      <img src="images/멘토1.png" class="card-img-top" alt="..." style="width:300px; height:150px;">
+	<div class="row" style="margin-left:7px; margin-top:20px; text-align: center;">
+	  <div class="col-md-3">
+	    <div class="card">
+	      <img src="images/멘토1.png" class="card-img-top" alt="..." style="height:150px;">
 	      <div class="card-body">
 	        <h5 class="card-title">멘토 신청</h5>
 	        <hr class="my-2">
@@ -61,9 +61,9 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="col">
-	    <div class="card" style="width:328px;">
-	      <img src="images/은행 창구.png" class="card-img-top" alt="..." style="width:300px; height:150px;">
+	  <div class="col-md-3">
+	    <div class="card">
+	      <img src="images/은행 창구.png" class="card-img-top" alt="..." style="height:150px;">
 	      <div class="card-body">
 	        <h5 class="card-title">환전 신청</h5>
 	        <hr class="my-2">
@@ -76,9 +76,9 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="col">
-	    <div class="card" style="width:328px;">
-	      <img src="images/회사.jpg" class="card-img-top" alt="..." style="width:300px; height:150px;">
+	  <div class="col-md-3">
+	    <div class="card">
+	      <img src="images/회사.jpg" class="card-img-top" alt="..." style="height:150px;">
 	      <div class="card-body">
 	        <h5 class="card-title">기업 신청</h5>
 	        <hr class="my-2">
@@ -91,9 +91,9 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="col">
-	    <div class="card" style="width:328px;">
-	      <img src="images/신고.jpg" class="card-img-top" alt="..." style="width:300px; height:150px;">
+	  <div class="col-md-3">
+	    <div class="card">
+	      <img src="images/신고.jpg" class="card-img-top" alt="..." style="height:150px;">
 	      <div class="card-body">
 	        <h5 class="card-title">대량 신고 감지</h5>
 	        <hr class="my-2">
