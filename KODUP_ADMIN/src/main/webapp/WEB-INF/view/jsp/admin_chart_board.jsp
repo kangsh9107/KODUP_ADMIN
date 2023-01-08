@@ -53,7 +53,7 @@
 	<div id="admin_chart_header">
 		<div id="admin_chart_header_left">
 			<span>게시판</span>
-			<select name='board_select' >
+			<select name='board_select' >	<!-- cf)select태그의 name 속성은 폼(form)이 제출된 후 서버에서 폼 데이터(form data)를 참조하기 위해 사용되거나, 자바스크립트에서 요소를 참조하기 위해 사용됩니다. -->
 			  <option value='qnaboard'>QnA게시판</option>
 			  <option value='freetalking'>자유게시판</option>
 			  <option value='infoshare'>정보공유게시판</option>
