@@ -156,7 +156,8 @@
             </div>
         </div>
         
-        <div class="col py-3 " id="baik_admin_main" style="width:100%">`
+        <div class="col py-3 " id="baik_admin_main" style="width:100%">
+            <div class="center"></div>
         </div>
     </div>
 </div>

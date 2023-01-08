@@ -13,9 +13,9 @@
 <body>
 
 <!-- 회사 공지 -->
-<div style="width:1500px;">
-	<div class="baik_main_center">
-		   <div id="carouselExampleDark" class="carousel carousel-dark slide" style="width:1435px; height:500px;">
+<div style="width:1500px; ">
+	<div class="baik_main_center" style="border: none;">
+		   <div id="carouselExampleDark" class="carousel carousel-dark slide" style="width:1435px; height:500px; ">
 		  <div class="carousel-indicators">
 		    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
