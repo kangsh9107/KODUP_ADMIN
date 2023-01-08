@@ -20,14 +20,14 @@
     </div>
     
    <form class="needs-validation" novalidate="">
-    <div class="row g-2" style="padding-left: 48px;; margin-top:-25px;" >
+    <div class="row g-2" style="padding-left: 48px; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
           <div class="row g-3">
-            <div class="col-md-2" style="font-size:23px;">
+            <div class="col-md-2" style="font-size:23px; width:200px;">
               등급
             </div>
             
-            <div class="col-md-4" style="width:200px; margin-left:-50px;">
+            <div class="col-md-4" style="width:200px; margin-left:-42px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>전체</option>
 				  <option value="1">일반</option>
@@ -93,7 +93,7 @@
 			<span class='join_date'>2023.01.01</span>
 		</li>
 		<li class='item'>
-			<span class='no'>1</span>
+			<span class='no'>3</span>
 			<span class='id'>lgtwins0501</span>
 			<span class='nickname'>힐따기요</span>
 			<span class='email'>lgtwins0501@naver.com</span>

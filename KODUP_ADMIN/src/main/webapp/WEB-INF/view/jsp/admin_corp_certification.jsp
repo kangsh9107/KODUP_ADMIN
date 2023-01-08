@@ -21,7 +21,7 @@
    <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:48px;">
 	  <div class="row g-2">
 	     <div class="col-md-3">
-	    	<img src="images/로고1.png" alt="..." class="img-thumbnail" style="width:230px; height: 230px;">
+	    	<img src="images/사업자등록증.png" alt="..." class="img-thumbnail" style="width:230px; height: 230px;">
 	     </div>
 	     <div class="col-md-8" style="margin-left: 40px;">
 	         <div class="container">
