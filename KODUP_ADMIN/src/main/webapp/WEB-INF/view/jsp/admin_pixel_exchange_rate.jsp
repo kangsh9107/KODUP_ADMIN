@@ -82,7 +82,7 @@
 			<span class="won">9,000원</span>
 		 </div>
 	  </div>
-	  <button type="button" class="btn text-white" style="background-color:#2d3644; margin-left: 458px; margin-top: 23px;">수정</button>
+	  <button type="button" class="btn text-white" style="background-color:#2d3644; margin-top: 10px;">수정</button>
 	  <hr class="my-4">
 	</div>
 </body>
