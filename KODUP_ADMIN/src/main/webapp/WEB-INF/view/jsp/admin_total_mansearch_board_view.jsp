@@ -14,7 +14,12 @@ li {
 </style>
 </head>
 <body>
- <div style="width:1370px;">
+ <div style="padding-left:40px;">
+	    <h3>구인 게시물</h3>
+		   <hr><br>
+ </div>
+ 
+ <div style="width:1370px; padding-left:40px;">
 	<span style="display:inline-block; margin-bottom:10px;">
 		<img src="/images/mansearch_view_corp_logo.png" class="view_corp_logo">
 		<label>캐빈시스템</label>

@@ -24,7 +24,7 @@
  }
  
  
- /*admin_total_mansearch_board_view.jsp */
+ /*목록 버튼 누를시 다시 리스트로 */
  
  $('.btnBackBoardList').on('click',function(){
    $('#baik_admin_main').load('jsp/admin_total_board');
