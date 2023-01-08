@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+
+.sidebar_list{ 
+  text-transform:uppercase; 
+  }
+.sidebar_list:after {
+  display:block;
+  content: '';
+  border-bottom: solid 1px #5f7290;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.sidebar_list:hover:after { transform: scaleX(1); }
+.sidebar_list.fromRight:after{ transform-origin:100% 50%; }
+.sidebar_list.fromLeft:after{  transform-origin:  0% 50%; }

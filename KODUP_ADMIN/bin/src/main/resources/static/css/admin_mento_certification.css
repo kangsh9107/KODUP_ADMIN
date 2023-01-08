@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.baik_mento_view{
+	border: 1px solid #c8c9ca;
+	padding: 20px;
+	width: 800px;
+	margin-left:40px;
+}
+.baik_mento_view>form{
+	text-align: right;
+}
+.baik_mento_view>ul{
+	list-style: none;
+	margin-top: 5px;
+	padding:20px;
+}
+.baik_mento_view li.title{
+	background-color: #2d3644;
+	color: #fff;
+	width:700px;
+}
+.baik_mento_view li.item{
+	display: inline-block;
+	padding: 3px;
+	position: relative;
+	width: 700px;
+}
+.baik_mento_view li.item:hover{
+	background-color: #ccc;
+	cursor: pointer;
+	width: 700px;
+}
+.baik_mento_view li>span{
+	display: inline-block;
+}
+.baik_mento_view li>span.no{
+	width: 50px;
+	text-align: right;
+	margin-right: 20px;
+}
+.baik_mento_view li>span.id{
+	width: 200px;
+}
+.baik_mento_view li>span.grade{
+	width: 80px;
+}
+.baik_mento_view li>span.email{
+	width: 200px;
+}
+
+.baik_mento_view li>span.join_date{
+	width: 100px;
+}
+
