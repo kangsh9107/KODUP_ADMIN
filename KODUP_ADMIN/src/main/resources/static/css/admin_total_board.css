@@ -57,7 +57,7 @@
 	text-align: center;
 	margin-right: 20px;
 }
-.baik_board_view li> span.boardType{
+.baik_board_view li> span.boardtype{
 	width: 100px;
 	text-align: center;
 }
@@ -81,4 +81,11 @@
 	width: 46px;
 	text-align: center;
 
+}
+
+.btnDelete{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
 }

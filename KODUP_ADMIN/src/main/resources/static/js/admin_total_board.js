@@ -3,6 +3,7 @@
  */
  
  /* admin_total_board.jsp*/
+ 
  function admin_qna_view(){
 	  $('#baik_admin_main').load('jsp/admin_total_qna_board_view');
  }
@@ -23,7 +24,21 @@
 	  $('#baik_admin_main').load('jsp/admin_total_jobsearch_board_view');
  }
  
- 
+ $('.btnSearch').on('click', function() {
+	var frm = $('.frm_search')[0];
+	frm.nowPage.value = 1;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board', param);
+});
+
+movePage = function(nowPage) {
+	var frm = $('.frm_search')[0];
+	frm.nowPage.value = nowPage;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board', param);
+}
+
+
  /*목록 버튼 누를시 다시 리스트로 */
  
  $('.btnBackBoardList').on('click',function(){

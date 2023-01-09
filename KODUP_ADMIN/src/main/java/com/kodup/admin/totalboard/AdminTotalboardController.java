@@ -1,5 +1,8 @@
 package com.kodup.admin.totalboard;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -7,9 +10,15 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class AdminTotalboardController {
 
+	@Autowired
+	AdminTotalboardService service;
+	
 	@RequestMapping("jsp/admin_total_board")
-	public ModelAndView admin_total_board() {
+	public ModelAndView admin_total_board() {	
 		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select("1");
+		
+		mv.addObject("list", list);
 		mv.setViewName("jsp/admin_total_board");
 		return mv;
 	}
