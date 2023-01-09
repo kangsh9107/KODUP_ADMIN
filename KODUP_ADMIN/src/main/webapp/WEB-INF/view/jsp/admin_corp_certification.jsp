@@ -9,6 +9,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script defer src="js/admin_corp_certification.js"></script>
+
 <title>admin_corp_certification</title>
 </head>
 <body>
@@ -21,7 +22,11 @@
    <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:48px;">
 	  <div class="row g-2">
 	     <div class="col-md-3">
-	    	<img src="images/사업자등록증.png" alt="..." class="img-thumbnail" style="width:230px; height: 230px;">
+	    	<img src="images/사업자등록증.png" alt="..." class="img-thumbnail img" style="width:230px; height: 230px;">
+	    	<div class="modal">
+				  <span class="close">&times;</span>
+				  <img class="modal_content" id="img01">
+		    </div>
 	     </div>
 	     <div class="col-md-8" style="margin-left: 40px;">
 	         <div class="container">
