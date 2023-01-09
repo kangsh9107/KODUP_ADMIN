@@ -17,7 +17,7 @@
 </head>
 <body>
 <!-- 상단 네비바 -->
-<nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important; min-width:2000px;">
+<nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important; min-width:1700px;">
   <div class="container-fluid text-white">
     <span class="navbar-brand mb-0 h1 text-white"><img src="/images/어드민 로고.png" style="width:40px; height:30px;">ADMIN KODUP</span>
   </div>
@@ -163,7 +163,7 @@
 </div>
 
 <!-- 하단 네비바 -->
-<nav class="navbar bg-body-tertiary" style="background-color:#2d3644 !important; min-width:2000px;">
+<nav class="navbar bg-body-tertiary" style="background-color:#2d3644 !important; min-width:1700px;">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> </span>
   </div>

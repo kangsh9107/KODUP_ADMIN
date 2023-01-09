@@ -71,6 +71,7 @@
     <div class="baik_board_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->
+		    <span class="checkbox"></span>
 			<span class='sno'>No</span>
 			<span class='boardType'>게시판</span>
 			<span class='subject'>제목</span>
@@ -82,6 +83,7 @@
 		
 		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
 		<li class='item' onclick="admin_qna_view()">
+		        <span class="checkbox"><input type="checkbox"></span>
 				<span class='sno'>1</span>
 				<span class='boardType'>QnA</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -91,6 +93,7 @@
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
 		<li class='item' onclick="admin_freetalking_view()">
+		        <span class="checkbox"><input type="checkbox"></span>
 				<span class='sno'>2</span>
 				<span class='boardType'>자유</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -100,6 +103,7 @@
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
 		<li class='item' onclick="admin_infoshare_view()">
+		        <span class="checkbox"><input type="checkbox"></span>
 				<span class='sno'>3</span>
 				<span class='boardType'>정보공유</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -108,7 +112,8 @@
 				<span class='viewcount' >14</span>
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
-		<li class='item' onclick="admin_mansearch_view()">
+		<li class='item'>
+		        <span class="checkbox"><input type="checkbox"></span>
 				<span class='sno'>4</span>
 				<span class='boardType'>구인</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -118,6 +123,7 @@
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
 		<li class='item' onclick="admin_jobsearch_view()">
+		        <span class="checkbox"><input type="checkbox"></span>
 				<span class='sno'>5</span>
 				<span class='boardType'>구직</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
