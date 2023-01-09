@@ -18,7 +18,7 @@
 
 <!-- 검색 폼 -->
 	<div style="padding-left:40px;">
-	  <h3>통합 게시물 관리</h3>
+	  <h3 style="font-weight: bold;">통합 게시물 관리</h3>
 		  <hr><br>
 	</div>
    

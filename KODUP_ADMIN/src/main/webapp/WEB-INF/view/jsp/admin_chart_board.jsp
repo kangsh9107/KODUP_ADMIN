@@ -45,7 +45,7 @@
 
 <body>
     <div style="padding-left:40px;">
-	  <h3>게시판 통계</h3>
+	  <h3 style="font-weight: bold;">게시판 통계</h3>
 		  <hr><br>
 	</div>
 

@@ -83,7 +83,7 @@
 
 <body>
 	<div style="padding-left:40px;">
-	    <h3>회원 통계</h3>
+	    <h3 style="font-weight: bold;">회원 통계</h3>
 		  <hr><br><br>
 	</div>
 	<div id="admin_chart">

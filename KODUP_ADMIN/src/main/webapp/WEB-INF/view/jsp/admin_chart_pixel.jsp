@@ -44,7 +44,7 @@
 
 <body>
 	<div style="padding-left:40px;">
-	  <h3>픽셀 통계</h3>
+	  <h3 style="font-weight: bold;">픽셀 통계</h3>
 		  <hr><br>
 	</div>
 	<div id="admin_chart_pixel">

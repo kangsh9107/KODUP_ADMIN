@@ -15,7 +15,7 @@
 
 <!-- 검색폼 -->
    <div style="padding-left:40px;">
-	<h3>멘토 인증</h3>
+	<h3 style="font-weight: bold;">멘토 인증</h3>
 	    <hr><br>
    </div>
 

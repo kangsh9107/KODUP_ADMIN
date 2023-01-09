@@ -60,7 +60,7 @@
 <form style="margin-left:40px;">
 
 	<div >
-	    <h3>환전 승인</h3>
+	    <h3 style="font-weight: bold;">환전 처리</h3>
 		  <hr><br>
 	</div>
    <div >

@@ -50,7 +50,7 @@
                     <li>   
                         <a href="#" onclick="return false" style="cursor:default;" class="nav-link px-0 align-middle text-white">
                            <ion-icon name="person-circle-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                               <span class="ms-1 d-none d-sm-inline">회원 관리</span> </a>
+                               <span class="ms-1 d-none d-sm-inline">회원</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnMemberList"> 
@@ -70,7 +70,7 @@
                     <li>
                         <a href="#" onclick="return false" style="cursor:default;"  class="nav-link px-0 align-middle text-white">
                             <ion-icon name="checkmark-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                             <span class="ms-1 d-none d-sm-inline">인증 관리</span></a>
+                             <span class="ms-1 d-none d-sm-inline">인증</span></a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnCorpCertification">
@@ -91,12 +91,12 @@
                     <li>
                         <a href="#" onclick="return false" style="cursor:default;"  class="nav-link px-0 align-middle text-white">
                            <ion-icon name="cash-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                             <span class="ms-1 d-none d-sm-inline">픽셀 관리</span></a>
+                             <span class="ms-1 d-none d-sm-inline">픽셀</span></a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnPixelExchange">
                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                   <label class="sidebar_list">환전 승인</label>
+                                   <label class="sidebar_list">환전 관리</label>
                                  </span>
                                 </a>
                             </li>
@@ -114,17 +114,17 @@
                             <ion-icon name="bar-chart-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                              <span class="ms-1 d-none d-sm-inline">통계</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnChartBoard">
-                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">게시판 통계</label>
-                                  </span>
-                                </a>
-                            </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnChartMember">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
                                     <label class="sidebar_list">회원 통계</label>
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 text-white btnChartBoard">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">게시판 통계</label>
                                   </span>
                                 </a>
                             </li>

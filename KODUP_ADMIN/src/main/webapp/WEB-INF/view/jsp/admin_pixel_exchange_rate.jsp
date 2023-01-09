@@ -43,7 +43,7 @@
 </style>
 <body>
     <div style="padding-left:40px;">
-	  <h3>환전 비율 변경</h3>
+	  <h3 style="font-weight: bold;">환전 비율 변경</h3>
 		  <hr>
 	</div>
 	<br/>
@@ -82,7 +82,7 @@
 			<span class="won">9,000원</span>
 		 </div>
 	  </div>
-	  <button type="button" class="btn text-white" style="background-color:#2d3644; margin-top: 10px;">수정</button>
+	  <button type="button" class="btn text-white" style="background-color:#2d3644; margin-top: 15px; margin-left: 402px;">수정</button>
 	  <hr class="my-4">
 	</div>
 </body>

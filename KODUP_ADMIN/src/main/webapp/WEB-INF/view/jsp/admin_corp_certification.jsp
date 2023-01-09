@@ -14,7 +14,7 @@
 <body>
 <!-- 기업 정보 미리보기 칸 -->
    <div style="padding-left:40px;">
-	 <h3>기업 인증</h3>
+	 <h3 style="font-weight: bold;">기업 인증</h3>
 	    <hr><br>
    </div>
    
@@ -50,6 +50,9 @@
 		        <div class="col-md-5">
 			        <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
+		   </div>
+		   <div class="d-grid gap-2 col-md-2 text-white" style="margin-left:297px; margin-top:20px;">
+		       <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">승인</button>
 		   </div>
 		  </div>
 		</div>      

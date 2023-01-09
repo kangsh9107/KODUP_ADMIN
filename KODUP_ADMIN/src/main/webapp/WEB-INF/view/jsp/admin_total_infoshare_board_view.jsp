@@ -19,6 +19,9 @@ padding-left:20px;
 margin-left:40px;
 padding-bottom: 10px;
 }
+#infoshare_view_repl_profile{
+margin-left:10px;
+}
 #infoshare_view_repl{
 border:1px solid #c8c9ca;
 width: 1000px;
@@ -30,7 +33,7 @@ width: 1000px;
 <body>
 
 <div style="padding-left:40px;">
-   <h3>정보공유 게시물</h3>
+   <h3 style="font-weight: bold;">정보공유 게시물</h3>
 	   <hr><br>
 </div>
 
@@ -51,14 +54,14 @@ width: 1000px;
 	   <div id="infoshare_view_subject">
 	      <div class="col" style="height: 45px; text-align:left;">
 	         <div style="font-size:20px; ">
-		         <label>제목 :</label>
+		         <label style="font-weight: bold;">제목 :</label>
 		         <input type="text" style="width:400px;" value="글로벌IT인재개발원 이란 학원 좋나용?">
 	         </div>
 	      </div>
 	   </div>
 <!-- 게시글 정보 -->	  
 	   <div>
-	   <div id="infoshare_view_profile" style="margin-top:-5px; margin-left:10px; font-size:13px;">
+	   <div id="infoshare_view_profile" style="margin-top:-5px; margin-left:10px; font-size:15px;">
 	      <span id="infoshare_view_profile_profileimage" >
 	         <label>글쓴이 :</label>
 	         <img id="infoshare_view_profile_profileimage_file" src="images/index_default.png" style="width:20px; height:20px;">
@@ -83,7 +86,7 @@ width: 1000px;
 	   </div>
 		   <br>
 		   <div id="infoshare_view_doc" style="width:1000px;">  
-		    <h5>내용</h5>
+		    <h5 style="font-weight: bold;">내용</h5>
 		      서울입구역에 위치해서 위치는 정말 좋던데 혹시 수료하셨던분 계실까요? 너무 궁금하네요
 		      증말 국비 지원 들으면 잘 될까요? 모두 열심히 공부하던데 제가 할수 있을지...
 		      블라블라 어쩌구 저쩌구 에헤라디아 졸립당 27살 먹으니까 이제 밤세는것도 힘드네 ㅠㅠ
@@ -95,7 +98,7 @@ width: 1000px;
 	   <!-- 해시태그 -->
 	   <br>
 	   <!-- 댓글 -->
-	   <h5>댓글 목록</h5>
+	   <h5 style="font-weight: bold;">댓글 목록</h5>
 	   <div id="infoshare_view_repl" style="margin-bottom:20px;">
 	      <!-- 작성자프로필사진+닉네임 -->
 	      <div id="infoshare_view_repl_profile">
@@ -138,9 +141,8 @@ width: 1000px;
    </div>
 </form>
 <!-- 버튼 -->
-	<div class="row g-2" style="padding-left:300px; margin-top:10px;">
-	        <div calss="col-6"></div>
-		   <div class="d-grid gap-2 col-2 text-white">
+	<div class="row g-2" style="padding-left:400px; margin-top:10px; width:1000px;">
+	        <div class="d-grid gap-2 col-2 text-white">
 		      <button class=" w-100 btn btnBackBoardList btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
 		    </div>
 		    <div class="d-grid gap-2 col-2 text-white">
