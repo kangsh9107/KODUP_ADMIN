@@ -54,7 +54,7 @@
 		  </div>
 		</div>      
 	  </div>
-	  <hr class="my-4" style="width:850px; margin-left:-6px;">
+	  <hr class="my-4" style="width:800px; ">
 	</div>
     <br>
     
