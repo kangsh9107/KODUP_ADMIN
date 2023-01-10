@@ -1,6 +1,6 @@
 package com.kodup.admin.totalboard;
 
-public class PageVo {
+public class BoardPageVo {
     int totSize; //검색된 결과의 전체 건수
     int totPage;
     int startPage;
@@ -13,8 +13,9 @@ public class PageVo {
     
     int    sno;
     String findStr;
+    String boardtype;
     
-    public PageVo() {}
+    public BoardPageVo() {}
     
     public void pageCompute() {
         // 전체 건수를 사용하여 전체 페이지수 계산
@@ -35,6 +36,8 @@ public class PageVo {
         if(endPage>totPage) endPage = totPage;
        
     }
+    public String getBoardtype() {return boardtype;}
+    public void setBoardtype(String boardtype) {this.boardtype = boardtype;}
     public int getTotSize() {return totSize;    }
     public void setTotSize(int totSize) {
         this.totSize = totSize;

@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AdminTotalboardService {
 
-    PageVo pVo;
+    BoardPageVo pVo;
 	
 	@Autowired
 	AdminTotalboardMapper AdminTotalboardMapper;
@@ -24,11 +24,26 @@ public class AdminTotalboardService {
 	
 	TransactionStatus status;
 	
-	public List<AdminTotalboardVo> select(PageVo pVo) {
+	public List<AdminTotalboardVo> select(BoardPageVo pVo) {
 		int totSize = AdminTotalboardMapper.totList(pVo);
 		pVo.setTotSize(totSize);
 		this.pVo = pVo;
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.select(pVo);
 		return list;
 	}
+	
+	public AdminTotalboardVo view(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		atVo = AdminTotalboardMapper.view(pVo.getSno(), pVo.getBoardtype());
+    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
+//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
+//		bVo.setAttList(attList);
+		
+		return atVo;
+	}
+	
+	
+	
+	
+	
+	public BoardPageVo getpVo() { return pVo; }
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,51 +78,38 @@
 			 <span class='manager_email'>담당자 이메일</span>
 		   </li>
 		
-			<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
+		   <c:forEach var='v' items="${list }" varStatus='status'> 
 			<li class='item'> 
-				<span class='no'>1</span>
-				<span class='corp_name'>브리지텍</span>
-				<span class='manager_name'>백재민</span>
-				<span class='manager_phone'>010-7623-6632</span>
-				<span class='manager_email'>lgtwins0501@naver.com</span>
+				<span class='no'>${v}</span>
+				<span class='corp_name'>${v.corp_name} </span>
+				<span class='manager_name'>${v.manager_name }</span>
+				<span class='manager_phone'>${manager_phone }</span>
+				<span class='manager_email'>${manager_email }</span>
+				<span class="hidden">${corp_license}</span>
 			</li>
-			<li class='item'> 
-				<span class='no'>1</span>
-				<span class='corp_name'>브리지텍</span>
-				<span class='manager_name'>백재민</span>
-				<span class='manager_phone'>010-7623-6632</span>
-				<span class='manager_email'>lgtwins0501@naver.com</span>
-			</li>
-			<li class='item'> 
-				<span class='no'>1</span>
-				<span class='corp_name'>브리지텍</span>
-				<span class='manager_name'>백재민</span>
-				<span class='manager_phone'>010-7623-6632</span>
-				<span class='manager_email'>lgtwins0501@naver.com</span>
-			</li>
-		  <!--</c:forEach>-->
+	      </c:forEach>
 		 </ul>
 		 
 <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
-		<!--<c:if test="${pageVo.startPage > 1 }"> -->
+		 <c:if test="${pageVo.startPage > 1 }">
 		   <div class="btn-group me-2" role="group" aria-label="First group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
 		              style="background-color: #2d3644;"><</button>
 		   </div>
-	    </c:if>   
-		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
+	     </c:if>   
+		 <c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
 		              style="background-color: #2d3644;">1</button>
 		   </div>
-		   </c:forEach>
-		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
+		 </c:forEach>
+		 <c:if test="${pageVo.endPage lt pageVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
 		              style="background-color: #2d3644;">></button>
 		   </div>
-		   </c:if>
+		 </c:if>
 		</div>
 	  </div>
 </body>

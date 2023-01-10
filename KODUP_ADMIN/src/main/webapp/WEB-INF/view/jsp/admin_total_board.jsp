@@ -61,7 +61,8 @@
 	            <button class=" w-100 btn btn-md btnSearch text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div>
 	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
-	          <input type='hidden' name='sno' value='${pVo.nowPage }'/>
+	          <input type='hidden' name='sno' value='${pVo.sno }'/>
+	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
           </div>
           <hr class="my-4" style="width: 990px;">
 		  
@@ -75,24 +76,28 @@
     <ul>
 		<li class='title'> <!-- 타이틀 -->
 		    <span class="checkbox"></span>
-			<span class='sno'>No</span>
-			<span class='boardType'>게시판</span>
-			<span class='subject'>제목</span>
-			<span class='nickname'>작성자</span>
-			<span class='nal'>작성일</span>
-			<span class='viewcount'>조회수</span>
-			<span class='delete_btn'>삭제</span>
+		    <div>
+				<span class='sno'>No</span>
+				<span class='boardtype'>게시판</span>
+				<span class='subject'>제목</span>
+				<span class='nickname'>작성자</span>
+				<span class='nal'>작성일</span>
+				<span class='viewcount'>조회수</span>
+				<span class='delete_btn'>삭제</span>
+			</div>
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 			<li class='item'>
-			    <span class="checkbox"><input type="checkbox"></span>
-				<span class='sno' onclick="admin_qna_view()">${vo.sno }</span>
-				<span class='boardtype' onclick="admin_qna_view()">${vo.boardtype }</span>
-				<span class='subject' onclick="admin_qna_view()">${vo.subject }</span>
-				<span class='nickname' onclick="admin_qna_view()">${vo.nickname }</span>
-				<span class='nal' onclick="admin_qna_view()">${vo.nal }</span>
-				<span class='viewcount' onclick="admin_qna_view()">${vo.viewcount }</span>
+			    <span class="checkbox list"><input type="checkbox"></span>
+			    <div onclick="view(${v.sno },'${v.boardtype}')">
+					<span class='sno'>${v.sno }</span>
+					<span class='boardtype'>${v.boardtype }</span>
+					<span class='subject'>${v.subject }</span>
+					<span class='nickname'>${v.nickname }</span>
+					<span class='nal'>${v.nal }</span>
+					<span class='viewcount'>${v.viewcount }</span>
+				</div>
 				<span class='delete_btn'><button type="button" class="btn btnDelete btn-danger btn-sm">삭제</button></span>
 			</li>
 		</c:forEach>
@@ -105,21 +110,21 @@
 	  </div>
 	  <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
-		<c:if test="${pageVo.startPage > 1 }">
+		<c:if test="${pVo.startPage > 1 }">
 		   <div class="btn-group me-2" role="group" aria-label="First group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pVo.startPage - 1})' 
 		              style="background-color: #2d3644;"><</button>
 		   </div>
 	    </c:if>   
-		<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>
+		<c:forEach var='i' begin='${pVo.startPage }' end='${pVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
 		              style="background-color: #2d3644;">${i }</button>
 		   </div>
-		   </c:forEach>
-		 <c:if test="${pageVo.endPage lt pageVo.totPage }">
+		 </c:forEach>
+		 <c:if test="${pVo.endPage lt pVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pVo.endPage + 1})'
 		              style="background-color: #2d3644;">></button>
 		   </div>
 		   </c:if>

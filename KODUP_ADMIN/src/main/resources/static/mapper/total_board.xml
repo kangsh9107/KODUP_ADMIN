@@ -2,15 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kodup.admin.totalboard.AdminTotalboardMapper">
 
-   <select id="totList" parameterType="com.kodup.admin.totalboard.PageVo" resultType="Integer">
+   <select id="totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
 		select count(sno) totSize from board
-		where subject   like '%${findStr}%'
+		where subject  like '%${findStr}%'
 	</select>
-     <select id="select" parameterType="com.kodup.admin.totalboard.PageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select b.sno, b.boardtype, b,subject, m.nickname, date_format(b.nal, '%y-%m-%d') b.nal, b.viewcount
+	
+    <select id="select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount
         from board b join member m on m.id = b.id
-        WHERE id=#{findStr} OR subject LIKE '%${findStr}%'
-        order by sno desc
+        WHERE b.id=#{findStr} OR b.subject LIKE '%${findStr}%'
+        order by b.sno desc
+        limit ${startNo}, ${listSize}
        
 	</select>
+	
+	<select id='view' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select b.subject, b.doc,m.profile_img, m.nickname, b.hashtag, b.nal, b.viewcount
+        from member m join board b on m.id = b.id
+        where b.sno = ${sno} and b.boardtype= #{boardtype}
+    </select>
 </mapper>

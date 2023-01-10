@@ -56,7 +56,7 @@ width: 1000px;
 	      <div class="col" style="height: 45px; text-align:left;">
 	         <div style="font-size:20px; ">
 		         <label style="font-weight: bold;">제목 :</label>
-		         <input type="text" style="width:400px;" value="글로벌IT인재개발원 이란 학원 좋나용?">
+		         <input type="text" style="width:400px;" value="${atVo.subject}">
 	         </div>
 	      </div>
 	   </div>
@@ -65,33 +65,30 @@ width: 1000px;
 	   <div id="freetalking_view_profile" style="margin-top:-5px; margin-left:10px; font-size:13px;">
 	      <span id="freetalking_view_profile_profileimage" >
 	         <label>글쓴이 :</label>
-	         <img id="freetalking_view_profile_profileimage_file" src="images/index_default.png" style="width:20px; height:20px;">
+	         <img id="freetalking_view_profile_profileimage_file" src="images/${atVo.profile_img}" style="width:20px; height:20px;">
 	      </span>
 	      <span id="index_profile">
-	         <span>딥러닝악마</span>
+	         <span>${atVo.nickname }</span>
 	      </span>
 	   
 	   <!-- 조회수,작성시간 css왼쪽 기준으로 오른쪽에 붙게 빼자 -->
 	       <label>해쉬태그 :</label>
 		   <span id="freetalking_view_hashtag">
-		      #봄바람 #희망 #청춘
+		     <span>${atVo.hashtag}</span> 
 		   </span>
 		   <span id="freetalking_view_info">
 		      <label>올린 시간 :</label>
-		      <span>2023.01.15 16:04:57</span>
+		      <span>${atVo.nal }</span>
 		      <label>조회수 :</label>
-		      <span>131</span>
+		      <span>${atVo.viewcount} </span>
 		      <label>추천수 :</label>
-		      <span>1232</span>
+		      <span> </span>
 		   </span>
 	   </div>
 		   <br>
-		   <div id="freetalking_view_doc" style="width:1000px;">  
 		    <h5 style="font-weight: bold;">내용</h5>
-		      서울입구역에 위치해서 위치는 정말 좋던데 혹시 수료하셨던분 계실까요? 너무 궁금하네요
-		      증말 국비 지원 들으면 잘 될까요? 모두 열심히 공부하던데 제가 할수 있을지...
-		      블라블라 어쩌구 저쩌구 에헤라디아 졸립당 27살 먹으니까 이제 밤세는것도 힘드네 ㅠㅠ
-		      아오 증말 빵야빵야 땅땅땅빵! 홈런~~~~~~~~~~~ 
+		   <div id="freetalking_view_doc" style="width:1000px;">  
+		      ${atVo.doc}  
 		   </div>
 	   </div>
        <br>
@@ -140,7 +137,6 @@ width: 1000px;
 	       </div>
 	   </div>
    </div>
-</form>
 <!-- 버튼 -->
 	<div class="row g-2" style="padding-left:400px; margin-top:10px; width:1000px;">
 	        <div class="d-grid gap-2 col-2 text-white">
@@ -153,5 +149,10 @@ width: 1000px;
 		      <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
+	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
+	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
+    <input type='hidden' name='sno' value='${atVo.sno }'/>
+    <input type='hidden' name='boardtype' value='${atVo.boardtype }'/>
+</form>
 </body>
 </html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kodup.admin.member.AdminMemberMapper">
+
+   <select id="totlist" parameterType="com.kodup.admin.member.MemberPageVo" resultType="Integer">
+		select count(id) totSize from member
+		where email  like '%${findStr}%'
+	</select>
+	
+    <select id="select" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+        select id, nickname, email, join_date from member
+        WHERE id LIKE '%${findStr}%' OR nickname LIKE '%${findStr}%' or email LIKE '%${findStr}%'
+        order by join_date desc
+        limit ${startNo}, ${listSize}
+       
+	</select>
+	
+</mapper>

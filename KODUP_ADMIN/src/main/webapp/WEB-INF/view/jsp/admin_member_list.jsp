@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
     <br>
     </div>
     
-   <form class="needs-validation" novalidate="">
+   <form class="frm_search">
     <div class="row g-2" style="padding-left: 48px; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
           <div class="row g-3">
@@ -52,13 +53,15 @@
 				  <option value="3">가입일</option>
 				</select>
 		   </div>
-          <div class="col-md-4" style="margin-left:-30px;">
-		     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
-		   </div>
-		  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
-            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
-          </div> 
+	          <div class="col-md-4" style="margin-left:-30px;">
+			     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			   </div>
+			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
+	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	          </div> 
 		  </div>
+		 <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
+		 <input type='hidden' name='id' value='${mpVo.id }'/>
         </div>
        <hr class="my-4" style="width:1000px;"> 
     </div>
@@ -77,50 +80,36 @@
 			<span class='join_date'>가입일</span>
 		</li>
 		
-		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
-		<li class='item' onclick="admin_member_view()">
-			<span class='no'>1</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='nickname'>힐따기요</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023.01.01</span>
+		<c:forEach var='v' items="${list }" varStatus='status'>
+		<li class='item' onclick="view(${v.id})">
+			<span class='no'> </span>
+			<span class='id'>${v.id} </span>
+			<span class='nickname'>${v.nickname }</span>
+			<span class='email'>${v.email }</span>
+			<span class='join_date'>${v.join_date }</span>
 		</li>
-		<li class='item'>
-			<span class='no'>2</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='nickname'>힐따기요</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023.01.01</span>
-		</li>
-		<li class='item'>
-			<span class='no'>3</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='nickname'>힐따기요</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023.01.01</span>
-		</li>
-		<!--</c:forEach>-->
+		</c:forEach>
 	  </ul>
 	  <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
-		<!--<c:if test="${pageVo.startPage > 1 }"> -->
+		<c:if test="${mpVo.startPage > 1 }">
 		   <div class="btn-group me-2" role="group" aria-label="First group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${mpVo.startPage - 1})' 
 		              style="background: rgba(33, 37, 41);"><</button>
 		   </div>
 	    </c:if>   
-		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
+		<c:forEach var='n' begin='${mpVo.startPage }' end='${mpVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${n })'
 		              style="background: rgba(33, 37, 41);">1</button>
 		   </div>
-		   </c:forEach>
-		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
+		</c:forEach>
+		<c:if test="${mpVo.endPage lt mpVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${mpVo.endPage + 1})'
 		              style="background: rgba(33, 37, 41);">></button>
 		   </div>
-		   </c:if>
+		 </c:if>
 		</div>
 	  </div>
   </main>
