@@ -32,7 +32,7 @@
 					</select>
 			   </div>
 	          <div class="col-md-4">
-			     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm" name="findStr" value='${mpVo.findStr}' type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-2 text-white">
 	            <button class=" w-100 btn btnSearch btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
@@ -62,7 +62,7 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 			<li class='item'>
-			   <div onclick="view('${v.id }')">
+			   <div>
 					<span class='no'></span>		
 					<span class='id'>${v.id }</span>
 					<span class='nickname'>${v.nickname }</span>
@@ -75,8 +75,10 @@
 					</span>
 			   </div>
 					<span class='ban_active'>
-						<button type="button" class="btn btn-danger btn-sm">정지</button>
-						<button type="button" class="btn btn-success btn-sm">해제</button>
+						<button type="button" class="btn btnBan btn-danger btn-sm"
+						        onclick='make_ban("${v.id }")'>정지</button>
+						<button type="button" class="btn btnActivity btn-success btn-sm"
+						        onclick='make_activity("${v.id}")'>해제</button>
 				    </span>
 			</li>
 		</c:forEach>

@@ -84,7 +84,7 @@
 		
 		   <c:forEach var='v' items="${list }" varStatus='status'> 
 			<li class='item' onclick="view('${v.corp_license }', '${v.manager_name }' , '${v.manager_phone }', '${v.manager_email }')"> 
-				<span class='no'></span>
+				<span class='no'>${status.count }</span>
 				<span class='corp_name'>${v.corp_name} </span>
 				<span class='manager_name'>${v.manager_name }</span>
 				<span class='manager_phone'>${v.manager_phone }</span>

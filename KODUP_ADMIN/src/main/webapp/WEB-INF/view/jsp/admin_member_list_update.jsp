@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
 			<span class="profile_nickname">${amVo.nickname }</span>
 			<span class="profile_grade">${amVo.grade }</span>
 		</div>
-		<div class="profile_phrases">만나서 반갑습니당 주 활동시간 : 월~금 12:00~19:00</div>
+		<div class="profile_phrases">${amVo.introduce}</div>
 		
 	</div>
 	<br>
@@ -131,52 +132,25 @@
 		    <div class="recent_doc">
 				 <h5>최신 게시글</h5>
 				 <ul>
+				 <c:forEach var='v' items="${list }" varStatus='status'>
 				   <li>
-		             <span class="subject">증말 살기 힘드네요</span>
-		             <span class="nal">2023.01.02</span>
+		             <span class="subject">${v.subject }</span>
+		             <span class="nal">${v.nal }</span>
 				   </li>
-				   <li>
-		             <span class="subject">올해는 lg트윈스가 우승할껍니다! 제가 장담함 진짜로 ㅋㅋ 아 진짜 라니까</span>
-		             <span class="nal">2023.01.02</span>
-				   </li>
-				   <li>
-		             <span class="subject">증말 살기 힘드네요</span>
-		             <span class="nal">2023.01.02</span>
-				   </li>
-				   <li>
-		             <span class="subject">증말 살기 힘드네요</span>
-		             <span class="nal">2023.01.02</span>
-				   </li>
-				   <li>
-		             <span class="subject">증말 살기 힘드네요</span>
-		             <span class="nal">2023.01.02</span>
-				   </li>
+				 </c:forEach>
+				  
 				 </ul>
 			 </div>
 			 <br>	
 			 <div class="recent_repl">
 			    <h5>최신 댓글</h5>
 				 <ul>
+				  <c:forEach var='v' items="${list }" varStatus='status'>
 				   <li>
-		             <span class="repl_doc">모두 화이팅 합시다</span>
-		             <span class="repl_nal">2023.01.02</span>
+		             <span class="repl_doc">${v.repl_doc }</span>
+		             <span class="repl_nal">${v.repl_nal }</span>
 				   </li>
-				   <li>
-		             <span class="repl_doc">모두 화이팅 합시다 즐겁고 활기찬 신묘년이 되시길!하는일도 다 잘되고!</span>
-		             <span class="repl_nal">2023.01.02</span>
-				   </li>
-				   <li>
-		             <span class="repl_doc">모두 화이팅 합시다</span>
-		             <span class="repl_nal">2023.01.02</span>
-				   </li>
-				   <li>		
-		             <span class="repl_doc">모두 화이팅 합시다</span>
-		             <span class="repl_nal">2023.01.02</span>
-				   </li>
-				   <li>
-		             <span class="repl_doc">모두 화이팅 합시다</span>
-		             <span class="repl_nal">2023.01.02</span>
-				   </li>
+				  </c:forEach>
 				 </ul>
 			 </div>
 		   </div>

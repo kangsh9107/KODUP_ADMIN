@@ -57,7 +57,7 @@
 			     <input class="form-control form-control-sm" type="search" name="findStr" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
-	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	            <button class=" w-100 btn btnSearch btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
 		  </div>
 		 <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
@@ -82,7 +82,7 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 		<li class='item' onclick="view('${v.id}')">
-			<span class='no'></span>
+			<span class='no'>${status.index }</span>
 			<span class='id'>${v.id} </span>
 			<span class='nickname'>${v.nickname }</span>
 			<span class='email'>${v.email }</span>

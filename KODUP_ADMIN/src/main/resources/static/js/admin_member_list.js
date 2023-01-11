@@ -18,9 +18,9 @@ movePage = function(nowPage) {
 
 view = function(id) {
     var frm = $('.frm_search2')[0];
-    console.log(id);
     
     frm.id.value = id;
     var param = $(frm).serialize();
+    console.log(param);
     $('#baik_admin_main').load('jsp/admin_member_list_update',param);
 };

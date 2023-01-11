@@ -94,7 +94,7 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 		<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }')"> 
-			<span class='no'>1</span>
+			<span class='no'>${status.current }</span>
 			<span class='id'>${v.id }</span>
 			<span class='grade'>
 		      <c:choose>

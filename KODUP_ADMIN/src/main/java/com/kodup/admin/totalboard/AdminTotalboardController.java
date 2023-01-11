@@ -18,7 +18,6 @@ public class AdminTotalboardController {
 		ModelAndView mv = new ModelAndView();
 		List<AdminTotalboardVo> list = service.select(pVo);
 		pVo = service.getpVo();
-		System.out.println(pVo.getNowPage());
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("list", list);

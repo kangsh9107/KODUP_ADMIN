@@ -37,7 +37,7 @@ view = function(sno, boardtype) {
 
  /*목록 버튼 누를시 다시 리스트로 */
 $('.btnBackBoardList').on('click', function() {
-	    $('#baik_admin_main').load('jsp/admin_home');
+	    $('#baik_admin_main').load('jsp/admin_total_board');
 /*	var frm = $('.frm')[0];
 	
 	var param = $(frm).serialize();

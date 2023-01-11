@@ -12,7 +12,8 @@ public class AdminMemberVo {
 	
 	
     String id;
-    String pwd;
+    String introduce;
+	String pwd;
     String email;
     String nickname;
     String gender;
@@ -20,6 +21,7 @@ public class AdminMemberVo {
     String join_date;
     String doc;
     String nal;
+    String subject;
     String repl_doc;
     String repl_nal;
     
@@ -41,6 +43,8 @@ public class AdminMemberVo {
 	public void setCorp_status(int corp_status) {this.corp_status = corp_status;}
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
+	public String getIntroduce() {return introduce;}
+	public void setIntroduce(String introduce) {this.introduce = introduce;}
 	public String getPwd() {return pwd;}
 	public void setPwd(String pwd) {this.pwd = pwd;}
 	public String getEmail() {return email;}
@@ -57,6 +61,8 @@ public class AdminMemberVo {
 	public void setDoc(String doc) {this.doc = doc;}
 	public String getNal() {return nal;}
 	public void setNal(String nal) {this.nal = nal;}
+	public String getSubject() {return subject;}
+	public void setSubject(String subject) {this.subject = subject;}
 	public String getRepl_doc() {return repl_doc;}
 	public void setRepl_doc(String repl_doc) {this.repl_doc = repl_doc;}
 	public String getRepl_nal() {return repl_nal;}
