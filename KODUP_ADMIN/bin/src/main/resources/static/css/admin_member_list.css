@@ -24,6 +24,8 @@
 	padding: 3px;
 	position: relative;
 	width: 900px;
+	margin-top : 2px;
+    border : 1px solid #aaa;
 }
 .baik_member_view li.item:hover{
 	background-color: #ccc;
@@ -35,7 +37,7 @@
 }
 .baik_member_view li>span.no{
 	width: 50px;
-	text-align: right;
+	text-align: center;
 	margin-right: 20px;
 }
 .baik_member_view li>span.id{

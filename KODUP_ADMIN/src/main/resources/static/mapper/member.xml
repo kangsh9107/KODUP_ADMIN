@@ -15,4 +15,17 @@
        
 	</select>
 	
+	<select id='view' parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+        select id, nickname, email,gender,age,profile_img,pixel,grade,join_date
+        from member
+        WHERE id = #{id}
+    </select>
+    
+    <select id="banselect" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+        select id, nickname, email, ban_status from member
+        WHERE id LIKE '%${findStr}%' OR nickname LIKE '%${findStr}%' or email LIKE '%${findStr}%'
+        order by ban_status desc
+        limit ${startNo}, ${listSize}
+       
+	</select>
 </mapper>

@@ -32,3 +32,19 @@ modal.addEventListener('click', ()=>{
 function modalDisplay(text){
   modal.style.display = text;
 }
+
+movePage = function(nowPage) {
+	var frm = $('.frm_search4')[0];
+	frm.nowPage.value = nowPage;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_corp_certification', param);
+};
+
+view = function(corp_license,manager_name,manager_phone,manager_email){
+	var frm = $('.frm_search4')[0];
+	console.log(corp_license);
+	src = "images/"+corp_license;
+	frm.manager_name.value = manager_name;
+	frm.manager_phone.value = manager_phone;
+	frm.manager_email.value = manager_email;
+}

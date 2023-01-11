@@ -35,6 +35,8 @@
 	padding: 3px;
 	position: relative;
 	width: 900px;
+	margin-top:2px;
+	border : 1px solid #aaa;
 }
 .baik_board_view li.item:hover{
 	background-color: #ccc;
@@ -46,25 +48,31 @@
 }
 .baik_board_view li>span.sno{
 	width: 50px;
-	text-align: right;
+	text-align: center;
 	margin-right: 20px;
 }
 .baik_board_view li>span.boardType{
 	width: 100px;
+	text-align: center;
 }
 .baik_board_view li>span.subject{
 	width: 290px;
+	text-align: center;
 }
 .baik_board_view li>span.nickname{
 	width: 100px;
+	text-align: center;
 }
 .baik_board_view li>span.nal{
 	width: 150px;
+	text-align: center;
 }
 .baik_board_view li>span.viewcount{
 	width: 100px;
+	text-align: center;
 }
 .baik_board_view li>span.deletebtn{
 	width: 50px;
+	text-align: center;
 
 }

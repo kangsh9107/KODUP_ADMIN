@@ -20,7 +20,7 @@
     <br>
     </div>
     
-   <form class="frm_search">
+   <form class="frm_search2">
     <div class="row g-2" style="padding-left: 48px; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
           <div class="row g-3">
@@ -54,7 +54,7 @@
 				</select>
 		   </div>
 	          <div class="col-md-4" style="margin-left:-30px;">
-			     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm" type="search" name="findStr" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
@@ -81,8 +81,8 @@
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
-		<li class='item' onclick="view(${v.id})">
-			<span class='no'> </span>
+		<li class='item' onclick="view('${v.id}')">
+			<span class='no'></span>
 			<span class='id'>${v.id} </span>
 			<span class='nickname'>${v.nickname }</span>
 			<span class='email'>${v.email }</span>
@@ -98,10 +98,10 @@
 		              style="background: rgba(33, 37, 41);"><</button>
 		   </div>
 	    </c:if>   
-		<c:forEach var='n' begin='${mpVo.startPage }' end='${mpVo.endPage }'>
+		<c:forEach var='i' begin='${mpVo.startPage }' end='${mpVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${n })'
-		              style="background: rgba(33, 37, 41);">1</button>
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
+		              style="background: rgba(33, 37, 41);">${i }</button>
 		   </div>
 		</c:forEach>
 		<c:if test="${mpVo.endPage lt mpVo.totPage }">

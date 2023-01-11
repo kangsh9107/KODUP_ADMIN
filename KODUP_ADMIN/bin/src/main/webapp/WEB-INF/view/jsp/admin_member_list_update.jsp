@@ -13,7 +13,7 @@
 <body>
 <!-- 회원 자체 프로필 -->
 <div class="profile_wrapper">
-	<div class="profile_main">
+	<div class="profile_main" style="width:1300px; margin-left:12px;">
 		<img src="images/basic_profile.jpg" class="profileImg">
 		<div class="profile_nicknameDiv">
 			<span class="profile_nickname">힐따기요</span>
@@ -28,8 +28,9 @@
 	<div class="container" id="member_info" style="margin-left:20px;">
 	  <div class="row g-2">
 	    
-	    <div class="col-7">
-	       <div class="row g-2">
+	    <div class="col-7" style="margin-left: -17px;">
+	       <div class="row g-2 info_col">
+	          <h5 style="margin-top: -30px;">회원 정보</h5>
 			   <div class="col-2">
 				  아이디
 		       </div>
@@ -45,7 +46,7 @@
 			   </div>
 		   </div>
 		   <br>
-		   <div class="row g-2">
+		   <div class="row g-2 info_col">
 			   <div class="col-2">
 				  이메일
 		       </div>
@@ -61,7 +62,7 @@
 			   </div>
 		   </div>
 		   <br>
-		   <div class="row g-2">
+		   <div class="row g-2 info_col">
 			   <div class="col-2">
 				  성별
 		       </div>
@@ -77,7 +78,7 @@
 			   </div>
 		   </div>
 		   <br>
-		   <div class="row g-2">
+		   <div class="row g-2 info_col">
 			   <div class="col-2">
 				  계정유형
 		       </div>
@@ -93,7 +94,7 @@
 			   </div>
 		   </div>
 		   <br>
-		   <div class="row g-2">
+		   <div class="row g-2 info_col">
 			   <div class="col-2">
 				  보유 픽셀
 		       </div>
@@ -109,7 +110,7 @@
 			   </div>
 		   </div>
 		   <br>
-		   <div class="row g-2">
+		   <div class="row g-2 info_col">
 			   <div class="col-2">
 				  이메일 인증
 		       </div>
@@ -180,10 +181,10 @@
 		   </div>
 		</div>
 		   <br><br>
-			   <div class="row g-2" style="padding-left:70px;">
-			      <div class="col-6"></div>
+			   <div class="row g-2" style="padding-left:385px;">
+			      <div class="col-5"></div>
 			      <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
+		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
 		            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
    
     <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
        <div class="col-sm-6 col-md-10 col-lg-10">
-          <form class="needs-validation" novalidate="">
+          <form class="frm_search3">
             <div class="row g-2">
 	           <div class="col-md-4" style="width:200px;">
 				    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
@@ -37,6 +38,8 @@
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
 		    </div>
+		      <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
+	          <input type='hidden' name='id' value='${mpVo.id }'/>
 		   <hr class="my-4" style="width:750px; margin-left:-6px;"> 
           </form>
         </div>
@@ -47,59 +50,49 @@
     <div class="baik_ban_view" >
       <ul>
 		<li class='title'> <!-- 타이틀 -->
+		  <div>
 			<span class='no'>No</span>
 			<span class='id'>아이디</span>
+			<span class='nickname'>닉네임</span>
+			<span class='email'>이메일</span>
 			<span class='ban_status'>상태</span>
+		  </div>	
 			<span class='ban_active'>실행</span>
 		</li>
 		
-		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
-		<li class='item'>
-			<span class='no'>1</span>		
-			<span class='id'>lgtwins0501</span>
-			<span class='ban_status'>정지</span>
-			<span class='ban_active'>
-				<button type="button" class="btn btn-danger btn-sm">정지</button>
-				<button type="button" class="btn btn-success btn-sm">해제</button>
-		    </span>
-		</li>
-		<li class='item'>
-			<span class='no'>2</span>		
-			<span class='id'>lgtwins0501</span>
-			<span class='ban_status'>정지</span>
-			<span class='ban_active'>
-				<button type="button" class="btn btn-danger btn-sm">정지</button>
-				<button type="button" class="btn btn-success btn-sm">해제</button>
-		    </span>
-		</li>
-		<li class='item'>
-			<span class='no'>3</span>
-			<span class='id'>dustn384</span>
-			<span class='ban_status'>활동 중</span>
-			<span class='ban_active'>
-				<button type="button" class="btn btn-danger btn-sm">정지</button>
-				<button type="button" class="btn btn-success btn-sm">해제</button>
-		    </span>
-		</li>
-		<!--</c:forEach>-->
+		<c:forEach var='v' items="${list }" varStatus='status'>
+			<li class='item'>
+			   <div onclick="view('${v.id }')">
+					<span class='no'></span>		
+					<span class='id'>${v.id }</span>
+					<span class='nickname'>${v.nickname }</span>
+					<span class='email'>${v.email }</span>
+					<span class='ban_status'>${v.ban_status }</span>
+			   </div>
+					<span class='ban_active'>
+						<button type="button" class="btn btn-danger btn-sm">정지</button>
+						<button type="button" class="btn btn-success btn-sm">해제</button>
+				    </span>
+			</li>
+		</c:forEach>
 	  </ul>
 	  <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
-		<!--<c:if test="${pageVo.startPage > 1 }"> -->
+		<c:if test="${mpVo.startPage > 1 }">
 		   <div class="btn-group me-2" role="group" aria-label="First group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${mpVo.startPage - 1})' 
 		              style="background-color: #2d3644;"><</button>
 		   </div>
 	    </c:if>   
-		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
+		   <c:forEach var='i' begin='${mpVo.startPage }' end='${mpVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
-		              style="background-color: #2d3644;">1</button>
+		              style="background-color: #2d3644;">${i }</button>
 		   </div>
 		   </c:forEach>
-		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
+		   <c:if test="${mpVo.endPage lt mpVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${mpVo.endPage + 1})'
 		              style="background-color: #2d3644;">></button>
 		   </div>
 		   </c:if>

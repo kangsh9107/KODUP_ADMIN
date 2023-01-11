@@ -12,12 +12,13 @@
 </head>
 <body>
 <!-- 회원 자체 프로필 -->
+<form>
 <div class="profile_wrapper">
 	<div class="profile_main" style="width:1300px; margin-left:12px;">
-		<img src="images/basic_profile.jpg" class="profileImg">
+		<img src="images/${amVo.profile_img}" class="profileImg">
 		<div class="profile_nicknameDiv">
-			<span class="profile_nickname">힐따기요</span>
-			<span class="profile_grade">멘토</span>
+			<span class="profile_nickname">${amVo.nickname }</span>
+			<span class="profile_grade">${amVo.grade }</span>
 		</div>
 		<div class="profile_phrases">만나서 반갑습니당 주 활동시간 : 월~금 12:00~19:00</div>
 		
@@ -35,14 +36,14 @@
 				  아이디
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.id }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
 				  비밀번호
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.pwd }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -51,14 +52,14 @@
 				  이메일
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.email }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
 				  닉네임
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.nickname }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -67,14 +68,14 @@
 				  성별
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.gender }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
 				  나이
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.age }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -83,14 +84,14 @@
 				  계정유형
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" readOnly type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly value="${amVo.account_type }" type="text" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			 
 			   <div class="col-2">
 				  활동 상태
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.ban_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -99,14 +100,14 @@
 				  보유 픽셀
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.pixel }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">
 				  회원등급
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.grade }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -115,14 +116,14 @@
 				  이메일 인증
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">
 				  멘토 인증
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.mento_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		     </div>
 		   </div>
@@ -194,7 +195,10 @@
 		          </div>
 		       </div>
 	    </div>
-	   
+	   <input type='hidden' name='findStr' value='${mpVo.findStr }'/>
+		<input type='hidden' name='nowPage' value='${mpVo.nowPage }'/>
+	    <input type='hidden' name='id' value='${amVo.id }'/>
 </div>
+</form>
 </body>
 </html>

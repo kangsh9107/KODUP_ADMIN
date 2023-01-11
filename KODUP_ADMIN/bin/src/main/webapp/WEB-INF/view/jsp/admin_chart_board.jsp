@@ -9,15 +9,16 @@
 </head>
 <style>
 #admin_chart_board{
-	border : 1px solid rgba(33, 37, 41);
+	border : 1px solid #c8c9ca;
 	width : 703px;
 	height : 500px;
+	margin-left: 40px;
 }
 
 #admin_chart_board #admin_chart_header{
 	position : relative;
 	height: 50px;
-	border-bottom : 1px solid #2D3644;
+	border-bottom : 1px solid #c8c9ca;
 }
 #admin_chart_board #admin_chart_header_left{
 	position : absolute;
@@ -33,7 +34,7 @@
 
 #admin_chart_board #admin_chart_main{
 	position : absolute;
-	top : 160px;
+	
 }
 #admin_chart_board #curve_chart{
 	width: 700px;
@@ -43,12 +44,16 @@
 
 
 <body>
-<h4>게시판통계</h4>
-<div id="admin_chart_board">
+    <div style="padding-left:40px;">
+	  <h3 style="font-weight: bold;">게시판 통계</h3>
+		  <hr><br>
+	</div>
+
+<div id="admin_chart_board" >
 	<div id="admin_chart_header">
 		<div id="admin_chart_header_left">
 			<span>게시판</span>
-			<select name='board_select' >
+			<select name='board_select' >	<!-- cf)select태그의 name 속성은 폼(form)이 제출된 후 서버에서 폼 데이터(form data)를 참조하기 위해 사용되거나, 자바스크립트에서 요소를 참조하기 위해 사용됩니다. -->
 			  <option value='qnaboard'>QnA게시판</option>
 			  <option value='freetalking'>자유게시판</option>
 			  <option value='infoshare'>정보공유게시판</option>

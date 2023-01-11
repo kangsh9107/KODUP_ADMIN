@@ -33,6 +33,18 @@ public class AdminMemberService {
 		return list;
 	}
 	
+	public AdminMemberVo view(MemberPageVo mpVo, AdminMemberVo amVo) {
+		amVo = AdminMemberMapper.view(mpVo.getId());
+		return amVo;
+	}
+	
+	public List<AdminMemberVo> banselect(MemberPageVo mpVo) {
+		int totsize = AdminMemberMapper.totlist(mpVo);
+		mpVo.setTotSize(totsize);
+		this.mpVo = mpVo;
+		List<AdminMemberVo> list = AdminMemberMapper.banselect(mpVo);
+		return list;
+	}
 	
 	
 	public MemberPageVo getmpVo() { return mpVo; }

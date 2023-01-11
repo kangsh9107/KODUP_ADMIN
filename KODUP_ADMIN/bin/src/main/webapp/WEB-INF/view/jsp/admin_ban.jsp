@@ -13,12 +13,16 @@
 <body>
 <main>
 <!-- 검색 폼 -->
-	<h4 style="padding-left:40px;">정지 관리</h4> <br>
-    <div class="row g-2" style="padding-left:40px; max-width:1000px;" >
-     <div class="col-sm-6 col-md-10 col-lg-10">
-       <form class="needs-validation" novalidate="">
+	<div style="padding-left:40px;">
+	    <h3 style="font-weight: bold;">정지 관리</h3>
+		   <hr><br>
+	</div>
+   
+    <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
+       <div class="col-sm-6 col-md-10 col-lg-10">
+          <form class="needs-validation" novalidate="">
             <div class="row g-2">
-	            <div class="col-md-4" style="width:200px;">
+	           <div class="col-md-4" style="width:200px;">
 				    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 					  <option selected>아이디</option>
 					  <option value="1">이메일</option>
@@ -32,15 +36,16 @@
 			  <div class="d-grid gap-2 col-2 text-white">
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
-		  <hr class="my-4"> 
-		  </div>
-        </form>
-      </div>
+		    </div>
+		   <hr class="my-4" style="width:750px; margin-left:-6px;"> 
+          </form>
+        </div>
      </div>
+     <br>
 <!-- 정지 리스트 전체 회원들을 띄우나 밴된 회원이 제일 위로 뜨게 -->
 <!-- 회원 리스트 -->
     <div class="baik_ban_view" >
-    <ul>
+      <ul>
 		<li class='title'> <!-- 타이틀 -->
 			<span class='no'>No</span>
 			<span class='id'>아이디</span>
@@ -69,7 +74,7 @@
 		</li>
 		<li class='item'>
 			<span class='no'>3</span>
-			<span class='id'>dustn318</span>
+			<span class='id'>dustn384</span>
 			<span class='ban_status'>활동 중</span>
 			<span class='ban_active'>
 				<button type="button" class="btn btn-danger btn-sm">정지</button>
@@ -83,19 +88,19 @@
 		<!--<c:if test="${pageVo.startPage > 1 }"> -->
 		   <div class="btn-group me-2" role="group" aria-label="First group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
-		              style="background-color:#2d3644;"><</button>
+		              style="background-color: #2d3644;"><</button>
 		   </div>
 	    </c:if>   
 		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
-		              style="background-color:#2d3644;">1</button>
+		              style="background-color: #2d3644;">1</button>
 		   </div>
 		   </c:forEach>
 		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
 		   <div class="btn-group" role="group" aria-label="Third group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
-		              style="background-color:#2d3644;">></button>
+		              style="background-color: #2d3644;">></button>
 		   </div>
 		   </c:if>
 		</div>

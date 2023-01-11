@@ -17,12 +17,12 @@
 </head>
 <body>
 <!-- 상단 네비바 -->
-<nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important">
+<nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important; min-width:2000px;">
   <div class="container-fluid text-white">
     <span class="navbar-brand mb-0 h1 text-white"><img src="/images/어드민 로고.png" style="width:40px; height:30px;">ADMIN KODUP</span>
   </div>
 </nav>
-
+ 
 <!-- 사이드바 -->
 <!-- a태그 class에 data-bs-toggle="collapse"속성 추가하면 펼쳐지고 닫힘기능 추가 ul class 명에 show 추가하면 첫 페이지에 펼쳐져있음 -->
 <div class="container-fluid">
@@ -42,63 +42,105 @@
                      <li>
                      <a href="#" class="nav-link align-middle px-0 text-white btnTotalBoard">
                         <ion-icon name="documents-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                           <span class="ms-1 d-none d-sm-inline">통합 게시물 관리</span></a>
+                           <span class="ms-1 d-none d-sm-inline">
+                             <label class="sidebar_list">통합 게시물 관리</label>
+                           </span>
+                        </a>
                     </li>
                     <li>   
-                        <a href="#submenu1"  class="nav-link px-0 align-middle text-white">
+                        <a href="#" onclick="return false" style="cursor:default;" class="nav-link px-0 align-middle text-white">
                            <ion-icon name="person-circle-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                               <span class="ms-1 d-none d-sm-inline">회원 관리</span> </a>
+                               <span class="ms-1 d-none d-sm-inline">회원</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnMemberList"> <span class="d-none d-sm-inline" style="margin-left:30px;"> <span class="sidebar_list">회원 리스트</span></span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMemberList"> 
+                                <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                   <label class="sidebar_list">회원 리스트</label>
+                                 </span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnMemberBan"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 회원 정지 관리</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMemberBan">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">회원 정지 관리</label>
+                                   </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#submenu2"  class="nav-link px-0 align-middle text-white">
+                        <a href="#" onclick="return false" style="cursor:default;"  class="nav-link px-0 align-middle text-white">
                             <ion-icon name="checkmark-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                             <span class="ms-1 d-none d-sm-inline">인증 관리</span></a>
+                             <span class="ms-1 d-none d-sm-inline">인증</span></a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnCorpCertification"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 기업 인증</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnCorpCertification">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">기업 인증</label>
+                                  </span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnMentoCertification"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 멘토 인증</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnMentoCertification">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                     <label class="sidebar_list">멘토 인증</label>
+                                  </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#submenu3"  class="nav-link px-0 align-middle text-white">
+                        <a href="#" onclick="return false" style="cursor:default;"  class="nav-link px-0 align-middle text-white">
                            <ion-icon name="cash-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                             <span class="ms-1 d-none d-sm-inline">픽셀 관리</span></a>
+                             <span class="ms-1 d-none d-sm-inline">픽셀</span></a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnPixelExchange"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 환전 승인</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnPixelExchange">
+                                 <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                   <label class="sidebar_list">환전 관리</label>
+                                 </span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnExchangeRate"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 환전 비율</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnExchangeRate">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">환전 비율</label>
+                                  </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
                      <li>
-                        <a href="#submenu4"  class="nav-link px-0 align-middle text-white">
+                        <a href="#" onclick="return false" style="cursor:default;"  class="nav-link px-0 align-middle text-white">
                             <ion-icon name="bar-chart-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                              <span class="ms-1 d-none d-sm-inline">통계</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li>
+                                <a href="#" class="nav-link px-0 text-white btnChartMember">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">회원 통계</label>
+                                  </span>
+                                </a>
+                            </li>
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0 text-white btnChartBoard"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 게시판 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartBoard">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">게시판 통계</label>
+                                  </span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnChartMember"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 회원 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartUse">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list">이용 통계</label>
+                                  </span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnChartUse"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 이용 통계</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0 text-white btnChartPixel"> <span class="d-none d-sm-inline" style="padding-left:15px;">- 픽셀 통계</span></a>
+                                <a href="#" class="nav-link px-0 text-white btnChartPixel">
+                                 <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                   <label class="sidebar_list">픽셀 통계</label>
+                                 </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -114,14 +156,14 @@
             </div>
         </div>
         
-        <div class="col py-3 " id="baik_admin_main">
+        <div class="col py-3 " id="baik_admin_main" style="width:100%">
             <div class="center"></div>
         </div>
     </div>
 </div>
 
 <!-- 하단 네비바 -->
-<nav class="navbar bg-body-tertiary" style="background-color:#2d3644 !important">
+<nav class="navbar bg-body-tertiary" style="background-color:#2d3644 !important; min-width:2000px;">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> </span>
   </div>

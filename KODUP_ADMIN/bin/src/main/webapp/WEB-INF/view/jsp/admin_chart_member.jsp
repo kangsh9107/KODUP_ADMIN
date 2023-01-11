@@ -13,13 +13,19 @@
 	position : relative;
 }
 
+#admin_chart{
+   padding-left:55px;
+}
 #admin_chart #admin_chart_main1{
 	position : absolute;
 	top : 5px;
+	margin-top:80px;
 }
 #admin_chart #admin_chart_main2{
 	position : absolute;
 	top: 450px;
+	margin-top:40px;
+	padding-left:10px;
 }
 
 #admin_chart #admin_chart_main1_section {
@@ -76,10 +82,13 @@
 </style>
 
 <body>
+	<div style="padding-left:40px;">
+	    <h3 style="font-weight: bold;">회원 통계</h3>
+		  <hr><br><br>
+	</div>
 	<div id="admin_chart">
 		<div id="admin_chart_main1">
-			<h4>회원통계</h4>
-			<h6>*성별 유저 현황</h6>
+			<h5>성별 유저 현황</h5>
 			<div id="admin_chart_main1_section">
 				<div id="member_piechart_div">
 					<div id="piechart" style="width: 400px; height: 370px;"></div>
@@ -91,7 +100,7 @@
 		</div>
 	
 		<div id="admin_chart_main2">
-			<h6>*회원등급별 유저 현황</h6>
+			<h5>회원등급별 유저 현황</h5>
 			<div id="admin_chart_main2_section">
 				<div id="member_barchart_div">
 					<div id="barchart_values" style="width: 400px; height: 250px;"></div>

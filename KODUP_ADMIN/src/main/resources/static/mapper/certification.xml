@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kodup.admin.certification.AdminCertificationMapper">
+
+   <select id="totlist" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="Integer">
+		select count(id) totSize from member
+		where corp_status= 1 or corp_status= 2
+	</select>
+	
+    <select id="corp_select" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="com.kodup.admin.certification.AdminCertificationVo">
+        select m.id, c.corp_name, c.corp_license, c.manager_name, c.manager_phone, c.manager_email 
+        from member m join corperation c on m.id = c.id
+        where m.corp_status = 1 or m.corp_status = 2 
+        order by m.corp_status asc
+        limit ${startNo}, ${listSize}
+       
+	</select>
+	
+</mapper>

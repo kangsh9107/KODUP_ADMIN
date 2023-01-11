@@ -15,15 +15,21 @@
 </head>
 <body>
 <main>
+
 <!-- 검색 폼 -->
-    <h4 style="padding-left:40px;">통합 게시물 관리</h4> <br>
-    <div class="row g-2" style="padding-left:40px; max-width:1000px;" >
+	<div style="padding-left:40px;">
+	  <h3 style="font-weight: bold;">통합 게시물 관리</h3>
+		  <hr><br>
+	</div>
+   
+    <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
         <form class="needs-validation" novalidate="">
-          <div class="row g-3">
+          <div class="row g-3" style="margin-top: -32px;">
 	          <div class="col-md-2" style="font-size:23px;">
 	              게시판
 	           </div>
+	          
             <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
 				  <option selected>전체</option>
@@ -42,7 +48,7 @@
              <input type='date' class="select_date">
 	       </div>
           </div>
-          <hr class="my-2">
+          <hr class="my-4" style="width: 990px;">
           <div class="row g-3">
               <div class="col-md-2" style="font-size:23px;">
 	              검색어
@@ -53,13 +59,14 @@
 			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
 	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
-    <hr class="my-4">
           </div>
+          <hr class="my-4" style="width: 990px;">
 		  
         </form>
       </div>
     </div>
     
+    <br>
 <!-- 게시물 리스트 -->
     <div class="baik_board_view" >
     <ul>
@@ -74,16 +81,16 @@
 		</li>
 		
 		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
-		<li class='item'>
+		<li class='item' onclick="admin_qna_view()">
 				<span class='sno'>1</span>
-				<span class='boardType'>자유</span>
+				<span class='boardType'>QnA</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
 				<span class='nickname'>힐따기요</span>
 				<span class='nal'>2023.01.01</span>
 				<span class='viewcount' >14</span>
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
-		<li class='item'>
+		<li class='item' onclick="admin_freetalking_view()">
 				<span class='sno'>2</span>
 				<span class='boardType'>자유</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
@@ -92,9 +99,27 @@
 				<span class='viewcount' >14</span>
 				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
 		</li>
-		<li class='item'>
+		<li class='item' onclick="admin_infoshare_view()">
 				<span class='sno'>3</span>
-				<span class='boardType'>자유</span>
+				<span class='boardType'>정보공유</span>
+				<span class='subject'>언능 취업하고 싶네요</span>
+				<span class='nickname'>힐따기요</span>
+				<span class='nal'>2023.01.01</span>
+				<span class='viewcount' >14</span>
+				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
+		</li>
+		<li class='item' onclick="admin_mansearch_view()">
+				<span class='sno'>4</span>
+				<span class='boardType'>구인</span>
+				<span class='subject'>언능 취업하고 싶네요</span>
+				<span class='nickname'>힐따기요</span>
+				<span class='nal'>2023.01.01</span>
+				<span class='viewcount' >14</span>
+				<span class='delete_btn'><button type="button" class="btn btn-danger btn-sm">삭제</button></span>
+		</li>
+		<li class='item' onclick="admin_jobsearch_view()">
+				<span class='sno'>5</span>
+				<span class='boardType'>구직</span>
 				<span class='subject'>언능 취업하고 싶네요</span>
 				<span class='nickname'>힐따기요</span>
 				<span class='nal'>2023.01.01</span>
@@ -108,19 +133,19 @@
 		<!--<c:if test="${pageVo.startPage > 1 }"> -->
 		   <div class="btn-group me-2" role="group" aria-label="First group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
-		              style="background-color:#2d3644;"><</button>
+		              style="background-color: #2d3644;"><</button>
 		   </div>
 	    </c:if>   
 		   <!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
-		              style="background-color:#2d3644;">1</button>
+		              style="background-color: #2d3644;">1</button>
 		   </div>
 		   </c:forEach>
 		   <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
 		   <div class="btn-group" role="group" aria-label="Third group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
-		              style="background-color:#2d3644;">></button>
+		              style="background-color: #2d3644;">></button>
 		   </div>
 		   </c:if>
 		</div>

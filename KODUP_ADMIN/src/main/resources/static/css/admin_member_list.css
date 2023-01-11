@@ -4,7 +4,7 @@
 	border: 1px solid #c8c9ca;
 	margin-left : 40px;
 	padding: 20px;
-	width: 1000px;
+	width: 1020px;
 }
 .baik_member_view>form{
 	text-align: right;
@@ -17,20 +17,20 @@
 .baik_member_view li.title{
 	background-color: #2d3644;
 	color: #fff;
-	width:900px;
+	width:920px;
 }
 .baik_member_view li.item{
 	display: inline-block;
 	padding: 3px;
 	position: relative;
-	width: 900px;
+	width: 920px;
 	margin-top : 2px;
     border : 1px solid #aaa;
 }
 .baik_member_view li.item:hover{
 	background-color: #ccc;
 	cursor: pointer;
-	width: 900px;
+	width: 920px;
 }
 .baik_member_view li>span{
 	display: inline-block;
@@ -42,13 +42,17 @@
 }
 .baik_member_view li>span.id{
 	width: 250px;
+	text-align: center;
 }
 .baik_member_view li>span.nickname{
 	width: 150px;
+	text-align: center;
 }
 .baik_member_view li>span.email{
 	width: 250px;
+	text-align: center;
 }
-.baik_member_view li>spanjoin_date{
+.baik_member_view li>span.join_date{
 	width: 150px;
+	text-align: center;
 }

@@ -9,7 +9,10 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface AdminMemberMapper {
 
-	public List<AdminMemberVo> select(MemberPageVo mpVo);
 	public int totlist(MemberPageVo mpVo);
+	public List<AdminMemberVo> select(MemberPageVo mpVo);
 	
+	public AdminMemberVo view(String id);
+	
+	public List<AdminMemberVo> banselect(MemberPageVo mpVo);
 }
