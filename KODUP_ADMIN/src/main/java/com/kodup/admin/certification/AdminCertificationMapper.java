@@ -11,4 +11,8 @@ public interface AdminCertificationMapper {
 
 	public int totlist(CertificationPageVo cpVo);
 	public List<AdminCertificationVo> corp_select(CertificationPageVo cpVo);
+	
+	
+	public int mento_totlist(CertificationPageVo cpVo);
+	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo);
 }

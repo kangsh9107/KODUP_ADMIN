@@ -15,5 +15,20 @@
         limit ${startNo}, ${listSize}
        
 	</select>
+
+	<select id="mento_totlist" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="Integer">
+		select count(id) totSize from member
+		where mento_status= 1 or mento_status= 2
+	</select>
+	
+	<select id="mento_select" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="com.kodup.admin.certification.AdminCertificationVo">
+        select m.id, m.join_date, m.email, m.grade, c.career_certificate
+        from member m join career_certification c on m.id = c.id
+        where m.mento_status = 1 or m.mento_status = 2 
+        order by m.mento_status asc
+        limit ${startNo}, ${listSize}
+       
+	</select>
+	
 	
 </mapper>

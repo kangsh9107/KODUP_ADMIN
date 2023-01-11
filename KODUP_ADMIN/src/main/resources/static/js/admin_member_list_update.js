@@ -3,5 +3,7 @@
  */
  
 $('.btnBackMemberList').on('click',function(){
-   $('#baik_admin_main').load('jsp/admin_member_list');
+	var frm = $('.frm')[0];
+	var param = $(frm).serialize();
+   $('#baik_admin_main').load('jsp/admin_member_list',param);
 });

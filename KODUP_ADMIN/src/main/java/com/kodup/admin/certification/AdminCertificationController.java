@@ -25,9 +25,15 @@ public class AdminCertificationController {
 	}
 	
 	@RequestMapping("jsp/admin_mento_certification")
-	public ModelAndView admin_ban() {
+	public ModelAndView mento_select(CertificationPageVo cpVo) {
 		ModelAndView mv = new ModelAndView();
+		List<AdminCertificationVo> list = service.mento_select(cpVo);
+		cpVo = service.getcpVo();
+		mv.addObject("cpVo",cpVo);
+		mv.addObject("list",list);
 		mv.setViewName("jsp/admin_mento_certification");
 		return mv;
 	}
+	
+	
 }

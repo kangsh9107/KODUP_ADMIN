@@ -37,7 +37,7 @@ width: 1000px;
 	   <hr><br>
 </div>
 
-<form id="qna_view" style="width:1000px;">
+<form class="frm" id="qna_view" style="width:1000px;">
   <div class="qna_view">
 	   <!-- boardtype + / + horsehead -->
 	   <div id="qna_view_horsehead" style="padding-top:20px; width:1000px;">

@@ -32,3 +32,18 @@ modal.addEventListener('click', ()=>{
 function modalDisplay(text){
   modal.style.display = text;
 }
+
+movePage = function(nowPage) {
+	var frm = $('.frm_search5')[0];
+	frm.nowPage.value = nowPage;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_mento_certification', param);
+};
+
+view = function(career_certification,id,join_date,email){
+	var frm = $('.frm_search5')[0];
+	img.src = "images/"+career_certification;
+	frm.id.value = id;
+	frm.join_date.value = join_date;
+	frm.email.value = email;
+}

@@ -43,7 +43,7 @@
                      <a href="#" class="nav-link align-middle px-0 text-white btnTotalBoard">
                         <ion-icon name="documents-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                            <span class="ms-1 d-none d-sm-inline">
-                             <label class="sidebar_list">통합 게시물 관리</label>
+                             <label class="sidebar_list" style="cursor: pointer;">통합 게시물 관리</label>
                            </span>
                         </a>
                     </li>
@@ -55,13 +55,13 @@
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnMemberList"> 
                                 <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                   <label class="sidebar_list">회원 리스트</label>
+                                   <label class="sidebar_list" style="cursor: pointer;">회원 리스트</label>
                                  </span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnMemberBan">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">회원 정지 관리</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">회원 정지 관리</label>
                                    </span>
                                 </a>
                             </li>
@@ -75,14 +75,14 @@
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnCorpCertification">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">기업 인증</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">기업 인증</label>
                                   </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnMentoCertification">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                     <label class="sidebar_list">멘토 인증</label>
+                                     <label class="sidebar_list" style="cursor: pointer;">멘토 인증</label>
                                   </span>
                                 </a>
                             </li>
@@ -96,14 +96,14 @@
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnPixelExchange">
                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                   <label class="sidebar_list">환전 관리</label>
+                                   <label class="sidebar_list" style="cursor: pointer;">환전 관리</label>
                                  </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnExchangeRate">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">환전 비율</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">환전 비율</label>
                                   </span>
                                 </a>
                             </li>
@@ -117,28 +117,28 @@
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnChartMember">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">회원 통계</label>
+                                    <label class="sidebar_list" style="cursor: pointer;"c>회원 통계</label>
                                   </span>
                                 </a>
                             </li>
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnChartBoard">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">게시판 통계</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">게시판 통계</label>
                                   </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnChartUse">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list">이용 통계</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">이용 통계</label>
                                   </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnChartPixel">
                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                   <label class="sidebar_list">픽셀 통계</label>
+                                   <label class="sidebar_list" style="cursor: pointer;">픽셀 통계</label>
                                  </span>
                                 </a>
                             </li>

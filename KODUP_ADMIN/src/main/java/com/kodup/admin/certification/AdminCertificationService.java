@@ -31,6 +31,14 @@ public class AdminCertificationService {
 		List<AdminCertificationVo> list = AdminCertificationMapper.corp_select(cpVo);
 		return list;
 	}
+	
+	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo) {
+		int totsize = AdminCertificationMapper.mento_totlist(cpVo);
+		cpVo.setTotSize(totsize);
+		this.cpVo = cpVo;
+		List<AdminCertificationVo> list = AdminCertificationMapper.mento_select(cpVo);
+		return list;
+	}
 
 	public CertificationPageVo getcpVo() {return cpVo;}
 }

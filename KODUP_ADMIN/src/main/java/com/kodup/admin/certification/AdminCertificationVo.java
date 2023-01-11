@@ -3,6 +3,12 @@ package com.kodup.admin.certification;
 public class AdminCertificationVo {
 
 	String id;
+	
+	String career_certificate;
+	String join_date;
+	String email;
+	String grade;
+	
 	String corp_license;
 	String corp_logo;
 	String corp_name;
@@ -15,6 +21,17 @@ public class AdminCertificationVo {
 	
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
+	
+
+	public String getCareer_certificate() {return career_certificate;}
+	public void setCareer_certificate(String career_certificate) {this.career_certificate = career_certificate;}
+	public String getJoin_date() {return join_date;}
+	public void setJoin_date(String join_date) {this.join_date = join_date;}
+	public String getEmail() {return email;}
+	public void setEmail(String email) {this.email = email;}
+	public String getGrade() {return grade;}
+	public void setGrade(String grade) {this.grade = grade;}
+	
 	public String getCorp_license() {return corp_license;}
 	public void setCorp_license(String corp_license) {this.corp_license = corp_license;}
 	public String getCorp_logo() {return corp_logo;}

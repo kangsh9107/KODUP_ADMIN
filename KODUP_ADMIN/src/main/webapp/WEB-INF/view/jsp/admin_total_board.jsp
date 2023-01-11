@@ -89,10 +89,18 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 			<li class='item'>
-			    <span class="checkbox list"><input type="checkbox"></span>
+			    <span class="checkbox list"><input type="checkbox" name="box"></span>
 			    <div onclick="view(${v.sno },'${v.boardtype}')">
 					<span class='sno'>${v.sno }</span>
-					<span class='boardtype'>${v.boardtype }</span>
+					<span class='boardtype'>
+					   <c:choose>
+					 	   <c:when test="${v.boardtype eq 'freetalking'}">자유</c:when>
+					 	   <c:when test="${v.boardtype eq 'mansearch'}">구인</c:when>
+					 	   <c:when test="${v.boardtype eq 'jobsearch'}">구직</c:when>
+					 	   <c:when test="${v.boardtype eq 'qna'}">Q&A</c:when>
+					 	   <c:when test="${v.boardtype eq 'infoshare'}">정보공유</c:when>
+				         </c:choose>
+					</span>
 					<span class='subject'>${v.subject }</span>
 					<span class='nickname'>${v.nickname }</span>
 					<span class='nal'>${v.nal }</span>
@@ -104,8 +112,8 @@
 		
 	  </ul>
 	  <div style="margin-left:20px;">
-	  <button type="button" class="btn btn-sm text-white" style="background-color:#2d3644">전체</button>
-	  <button type="button" class="btn btn-sm text-white" style="background-color:#2d3644">해제</button>
+	  <button type="button" class="btn btn-sm btnSelectAll text-white" style="background-color:#2d3644">전체</button>
+	  <button type="button" class="btn btn-sm btnCancelALl text-white" style="background-color:#2d3644">해제</button>
 	  <button type="button" class="btn btn-danger btn-sm">삭제</button>
 	  </div>
 	  <!-- PageButton -->

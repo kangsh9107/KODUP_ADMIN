@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- 회원 자체 프로필 -->
-<form>
+<form class="frm">
 <div class="profile_wrapper">
 	<div class="profile_main" style="width:1300px; margin-left:12px;">
 		<img src="images/${amVo.profile_img}" class="profileImg">

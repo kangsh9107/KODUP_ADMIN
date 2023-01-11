@@ -59,7 +59,7 @@
 			    </div>
 		   </div>
 		   <div class="d-grid gap-2 col-md-2 text-white" style="margin-left:297px; margin-top:20px;">
-		       <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">승인</button>
+		       <button class=" w-100 btn btnConfirm btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">승인</button>
 		   </div>
 		  </div>
 		</div>      

@@ -38,7 +38,7 @@ width: 1000px;
 	   <hr><br>
 </div>
 
-<form id="freetalking_view" style="width:1000px;">
+<form class="frm" id="freetalking_view" style="width:1000px;">
   <div class="freetalking_view">
 	   <!-- boardtype + / + horsehead -->
 	   <div id="freetalking_view_horsehead" style="padding-top:20px; width:1000px;">
@@ -149,10 +149,11 @@ width: 1000px;
 		      <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
-	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
-	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
-    <input type='hidden' name='sno' value='${atVo.sno }'/>
-    <input type='hidden' name='boardtype' value='${atVo.boardtype }'/>
+	
+	<input type='text' name='findStr' value='${pVo.findStr }'/>
+	<input type='text' name='nowPage' value='${pVo.nowPage }'/>
+    <input type='text' name='sno' value='${pVo.sno }'/>
+    <input type='text' name='boardtype' value='${pVo.boardtype }'/>
 </form>
 </body>
 </html>

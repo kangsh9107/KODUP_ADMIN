@@ -35,7 +35,7 @@
 			     <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-2 text-white">
-	            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	            <button class=" w-100 btn btnSearch btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
 		    </div>
 		      <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
@@ -67,7 +67,12 @@
 					<span class='id'>${v.id }</span>
 					<span class='nickname'>${v.nickname }</span>
 					<span class='email'>${v.email }</span>
-					<span class='ban_status'>${v.ban_status }</span>
+					<span class='ban_status'>
+					   <c:choose>
+					     <c:when test="${v.ban_status eq '0'}">활동</c:when>
+					     <c:when test="${v.ban_status eq '1'}">정지</c:when>
+					   </c:choose>
+					</span>
 			   </div>
 					<span class='ban_active'>
 						<button type="button" class="btn btn-danger btn-sm">정지</button>

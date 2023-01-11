@@ -18,7 +18,8 @@ li {
 	    <h3 style="font-weight: bold;">구인 게시물</h3>
 		   <hr><br>
  </div>
-
+ 
+<form class="frm">
 <div style="margin-left:40px; width:1370px; background-color: #eee;">
  <span style="display:inline-block; margin-bottom:10px;">
 	<img src="/images/mansearch_view_corp_logo.png" class="view_corp_logo">
@@ -273,5 +274,10 @@ BC카드 시스템 유지보수 (API연계)
 		      <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
+	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
+	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
+    <input type='hidden' name='sno' value='${atVo.sno }'/>
+    <input type='hidden' name='boardtype' value='${atVo.boardtype }'/>
+</form>
 </body>
 </html>

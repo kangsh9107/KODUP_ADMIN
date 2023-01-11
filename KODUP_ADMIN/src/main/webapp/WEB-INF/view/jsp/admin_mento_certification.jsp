@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 	<h3 style="font-weight: bold;">멘토 인증</h3>
 	    <hr><br>
    </div>
-
+<form class="frm_search5">
    <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:40px;">
 	  <div class="row g-2">
 	     <div class="col-md-3">
@@ -35,7 +36,7 @@
 				  아이디
 		       </div>
 			   <div class="col-md-5">
-				  <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="id" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		    </div>
 		    <br>
@@ -44,7 +45,7 @@
 			       가입일
 			    </div>
 		        <div class="col-md-5">
-			        <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
+			        <input class="form-control form-control-sm" type="text" name="join_date" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
 		     </div>
 		     <br>
@@ -53,7 +54,7 @@
 			       이메일
 			    </div>
 		        <div class="col-md-5">
-			        <input class="form-control form-control-sm" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
+			        <input class="form-control form-control-sm" type="text" name="email" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
 		     </div>
 		     <br>
@@ -73,8 +74,11 @@
 		      </div>
 			</div>
 		</div>
+		<input type='hidden' name='nowPage' value='${cpVo.nowPage }'/> 
+		
 	  <hr class="my-4"  style="width:800px; ">
 	</div>
+</form>
 	<br>
 	
 <!--멘토 신청 리스트 -->
@@ -88,51 +92,46 @@
 			<span class='join_date'>가입일</span>
 		</li>
 		
-		<!--<c:forEach var='v' items="${list }" varStatus='status'> -->
-		<li class='item'> 
+		<c:forEach var='v' items="${list }" varStatus='status'>
+		<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }')"> 
 			<span class='no'>1</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='grade'>파트너</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023-01-01</span>
+			<span class='id'>${v.id }</span>
+			<span class='grade'>
+		      <c:choose>
+				<c:when test="${v.grade eq '0'}">일반</c:when>
+				<c:when test="${v.grade eq '1'}">퍼스널</c:when>
+				<c:when test="${v.grade eq '2'}">플러스</c:when>
+				<c:when test="${v.grade eq '3'}">파트너</c:when>
+               </c:choose>
+            </span>
+			<span class='email'>${v.email }</span>
+			<span class='join_date'>${v.join_date }</span>
+			<input type="hidden" value="${v.career_certificate }">
 		</li>
-		<li class='item'> 
-			<span class='no'>1</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='grade'>파트너</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023-01-01</span>
-		</li>
-		<li class='item'> 
-			<span class='no'>1</span>
-			<span class='id'>lgtwins0501</span>
-			<span class='grade'>파트너</span>
-			<span class='email'>lgtwins0501@naver.com</span>
-			<span class='join_date'>2023-01-01</span>
-		</li>
-		<!--</c:forEach>-->
+		
+		</c:forEach>
 	  </ul>
 	  
 <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
-		<!--<c:if test="${pageVo.startPage > 1 }"> -->
+		<c:if test="${cpVo.startPage > 1 }">
 		   <div class="btn-group me-2" role="group" aria-label="First group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${pageVo.startPage - 1})' 
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick= 'movePage(${cpVo.startPage - 1})' 
 		              style="background-color: #2d3644;"><</button>
 		   </div>
-	    <!--</c:if>-->   
-		<!--<c:forEach var='i' begin='${pageVo.startPage }' end='${pageVo.endPage }'>-->
+	    </c:if>
+		<c:forEach var='i' begin='${cpVo.startPage }' end='${cpVo.endPage }'>
 		   <div class="btn-group me-2" role="group" aria-label="Second group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${i })'
-		              style="background-color: #2d3644;">1</button>
+		              style="background-color: #2d3644;">${i}</button>
 		   </div>
-		 <!--</c:forEach>-->
-		 <!--<c:if test="${pageVo.endPage lt pageVo.totPage }">-->
+		</c:forEach>
+		<c:if test="${cpVo.endPage lt pageVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
-		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${pageVo.endPage + 1})'
+		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${cpVo.endPage + 1})'
 		              style="background-color: #2d3644;">></button>
 		   </div>
-		 <!--</c:if>-->
+	    </c:if>
 		</div>
 	  </div>
 </body>

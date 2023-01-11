@@ -37,7 +37,7 @@ width: 1000px;
 	   <hr><br>
 </div>
 
-<form id="infoshare_view" style="width:1000px;">
+<form class="frm" id="infoshare_view" style="width:1000px;">
   <div class="infoshare_view">
 	   <!-- boardtype + / + horsehead -->
 	   <div id="infoshare_view_horsehead" style="padding-top:20px; width:1000px;">
