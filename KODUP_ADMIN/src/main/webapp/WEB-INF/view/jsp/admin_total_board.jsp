@@ -58,7 +58,7 @@
 			     <input class="form-control form-control-sm" type="search" name="findStr" value='${pVo.findStr}' aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
-	            <button class=" w-100 btn btn-md btnSearch text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	            <button class=" w-100 btn btn-md btnSearch text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div>
 	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
 	          <input type='hidden' name='sno' value='${pVo.sno }'/>
@@ -83,8 +83,8 @@
 				<span class='nickname'>작성자</span>
 				<span class='nal'>작성일</span>
 				<span class='viewcount'>조회수</span>
-				<span class='delete_btn'>삭제</span>
 			</div>
+				<span class='delete_btn'>삭제</span>
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
@@ -106,7 +106,10 @@
 					<span class='nal'>${v.nal }</span>
 					<span class='viewcount'>${v.viewcount }</span>
 				</div>
-				<span class='delete_btn'><button type="button" class="btn btnDelete btn-danger btn-sm">삭제</button></span>
+				<span class='delete_btn'>
+				   <button type="button" class="btn btnDelete btn-danger btn-sm"
+				           onclick="list_board_delete(${v.sno})">삭제</button>
+				 </span>
 			</li>
 		</c:forEach>
 		

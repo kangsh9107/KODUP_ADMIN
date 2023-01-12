@@ -9,7 +9,7 @@ public class AdminMemberVo {
 	int email_status;
 	int mento_status;
 	int corp_status;
-	
+	int ban_number;
 	
     String id;
     String introduce;
@@ -24,6 +24,7 @@ public class AdminMemberVo {
     String subject;
     String repl_doc;
     String repl_nal;
+    String ban_date;
     
 	public int getAge() {return age;}
 	public void setAge(int age) {this.age = age;}
@@ -41,6 +42,9 @@ public class AdminMemberVo {
 	public void setMento_status(int mento_status) {this.mento_status = mento_status;}
 	public int getCorp_status() {return corp_status;}
 	public void setCorp_status(int corp_status) {this.corp_status = corp_status;}
+	public int getBan_number() {return ban_number;}
+	public void setBan_number(int ban_number) {this.ban_number = ban_number;}
+	
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
 	public String getIntroduce() {return introduce;}
@@ -67,4 +71,6 @@ public class AdminMemberVo {
 	public void setRepl_doc(String repl_doc) {this.repl_doc = repl_doc;}
 	public String getRepl_nal() {return repl_nal;}
 	public void setRepl_nal(String repl_nal) {this.repl_nal = repl_nal;}
+	public String getBan_date() {return ban_date;}
+	public void setBan_date(String ban_date) {this.ban_date = ban_date;}
 }

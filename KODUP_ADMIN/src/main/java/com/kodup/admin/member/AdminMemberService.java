@@ -35,8 +35,18 @@ public class AdminMemberService {
 		return list;
 	}
 	
-	public List<AdminMemberVo> view(MemberPageVo mpVo, AdminMemberVo amVo) {
-		List<AdminMemberVo> list = AdminMemberMapper.view(mpVo.getId());
+	public AdminMemberVo view(MemberPageVo mpVo, AdminMemberVo amVo) {
+		amVo = AdminMemberMapper.view(mpVo.getId());
+		return amVo;
+	}
+	
+	public List<AdminMemberVo> doc_list5(AdminMemberVo amVo) {
+		List<AdminMemberVo> list = AdminMemberMapper.doc_list5(amVo);
+		return list;
+	}
+	
+	public List<AdminMemberVo> repl_list5(AdminMemberVo amVo) {
+		List<AdminMemberVo> list = AdminMemberMapper.repl_list5(amVo);
 		return list;
 	}
 	
@@ -55,10 +65,14 @@ public class AdminMemberService {
 		status = manager.getTransaction(new DefaultTransactionDefinition());
 		savePoint = status.createSavepoint();
 		
-		int cnt = AdminMemberMapper.make_ban(amVo);
+		int cnt1 = AdminMemberMapper.make_ban(amVo);
+		int cnt2 = AdminMemberMapper.ban_number(amVo);
+		int cnt3 = AdminMemberMapper.ban_history(amVo);
+		
+		int cnt = cnt1 + cnt2 + cnt3;
 		
 		System.out.println(cnt);
-		if(cnt<1) {
+		if(cnt<3) {
 			status.rollbackToSavepoint(savePoint);
 			flag = false;
 		}else {

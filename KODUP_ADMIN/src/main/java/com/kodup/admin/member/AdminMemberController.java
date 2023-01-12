@@ -20,6 +20,7 @@ public class AdminMemberController {
 		ModelAndView mv = new ModelAndView();
 		List<AdminMemberVo> list = service.select(mpVo);
 		mpVo = service.getmpVo();
+		
 		mv.addObject("mpVo",mpVo);
 		mv.addObject("list",list);
 		mv.setViewName("jsp/admin_member_list");
@@ -28,9 +29,14 @@ public class AdminMemberController {
 	@RequestMapping("jsp/admin_member_list_update")
 	public ModelAndView admin_member_list_update(MemberPageVo mpVo, AdminMemberVo amVo) {
 		ModelAndView mv = new ModelAndView();
-		List<AdminMemberVo> list = service.view(mpVo,amVo);
+		amVo = service.view(mpVo,amVo);
+		
+		List<AdminMemberVo> doc_list  = service.doc_list5(amVo);
+		List<AdminMemberVo> repl_list = service.repl_list5(amVo);
 		mv.addObject("mpVo",mpVo);
-		mv.addObject("list",list);
+		mv.addObject("amVo",amVo);
+		mv.addObject("doc_list",doc_list);
+		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_member_list_update");
 		return mv;
 	}

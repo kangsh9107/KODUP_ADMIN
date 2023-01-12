@@ -3,22 +3,66 @@
 <mapper namespace="com.kodup.admin.totalboard.AdminTotalboardMapper">
 
    <select id="totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
-		select count(sno) totSize from board
-		where subject  like '%${findStr}%'
+		select count(b.sno) totSize 
+		from board b join member m on b.id = m.id
+		where b.subject  like '%${findStr}%'
+		or m.nickname like '%${findStr}%'
+		or b.nal like '%${findStr}%'
 	</select>
 	
     <select id="select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
         select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount
         from board b join member m on m.id = b.id
-        WHERE b.id=#{findStr} OR b.subject LIKE '%${findStr}%'
+        WHERE b.id = #{findStr} 
+        OR b.subject LIKE '%${findStr}%'
+        or m.nickname like '%${findStr}%'
+        or b.boardtype like '%${findStr}%'
+		or b.nal like '%${findStr}%'
         order by b.sno desc
         limit ${startNo}, ${listSize}
        
 	</select>
 	
 	<select id='view' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select b.subject, b.doc,m.profile_img, m.nickname, b.hashtag, b.nal, b.viewcount
+        select m.profile_img, m.nickname, 
+               b.hashtag, b.nal, b.viewcount, b.subject, b.doc,
         from member m join board b on m.id = b.id
         where b.sno = ${sno} and b.boardtype= #{boardtype}
     </select>
+    
+    <update id="freetalking_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       update board
+       set subject=#{subject}
+       where sno=#{sno}
+    </update>
+    
+    <update id="infoshare_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       update board
+       set subject=#{subject}
+       where sno=#{sno}
+    </update>
+    
+    <update id="jobsearch_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       update board
+       set subject=#{subject}
+       where sno=#{sno}
+    </update>
+    
+    <update id="mansearch_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       update board
+       set subject=#{subject}
+       where sno=#{sno}
+    </update>
+    
+    <update id="qna_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       update board
+       set subject=#{subject}
+       where sno=#{sno}
+    </update>
+    
+    <delete id="board_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     delete from board
+     where sno = #{sno}
+     
+    </delete>
 </mapper>

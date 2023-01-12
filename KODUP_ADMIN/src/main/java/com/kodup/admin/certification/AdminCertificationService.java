@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
 @Transactional
@@ -23,7 +24,8 @@ public class AdminCertificationService {
     PlatformTransactionManager manager;
 	
 	TransactionStatus status;
-	
+
+/*--------------------------corp-----------------------------------------------------------*/
 	public List<AdminCertificationVo> corp_select(CertificationPageVo cpVo) {
 		int totsize = AdminCertificationMapper.totlist(cpVo);
 		cpVo.setTotSize(totsize);
@@ -32,6 +34,25 @@ public class AdminCertificationService {
 		return list;
 	}
 	
+	public boolean corp_approve(AdminCertificationVo acVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminCertificationMapper.corp_approve(acVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+		
+	}
+/*-------------------------mento-----------------------------------------------------------*/	
 	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo) {
 		int totsize = AdminCertificationMapper.mento_totlist(cpVo);
 		cpVo.setTotSize(totsize);

@@ -19,7 +19,14 @@
 		<img src="images/${amVo.profile_img}" class="profileImg">
 		<div class="profile_nicknameDiv">
 			<span class="profile_nickname">${amVo.nickname }</span>
-			<span class="profile_grade">${amVo.grade }</span>
+			<span class="profile_grade" style="font-size:15px;">
+			   <c:choose>
+				<c:when test="${amVo.grade eq '0'}"><label style="color:#8f8e8a">일반</label></c:when>
+				<c:when test="${amVo.grade eq '1'}"><label style="color:#ffd700">퍼스널</label></c:when>
+				<c:when test="${amVo.grade eq '2'}"><label style="color:#587fe0">플러스</label></c:when>
+				<c:when test="${amVo.grade eq '3'}"><label style="color:#b65fc2">파트너</label></c:when>
+               </c:choose>
+			</span>
 		</div>
 		<div class="profile_phrases">${amVo.introduce}</div>
 		
@@ -114,17 +121,17 @@
 		   <br>
 		   <div class="row g-2 info_col">
 			   <div class="col-2">
-				  이메일 인증
+				  이메일인증
 		       </div>
 			   <div class="col-4">
 				  <input class="form-control form-control-sm" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">
-				  멘토 인증
+				  정지 회수
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.mento_status }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" value="${amVo.ban_number }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		     </div>
 		   </div>
@@ -132,7 +139,7 @@
 		    <div class="recent_doc">
 				 <h5>최신 게시글</h5>
 				 <ul>
-				 <c:forEach var='v' items="${list }" varStatus='status'>
+				 <c:forEach var='v' items="${doc_list }" varStatus='status'>
 				   <li>
 		             <span class="subject">${v.subject }</span>
 		             <span class="nal">${v.nal }</span>
@@ -145,7 +152,7 @@
 			 <div class="recent_repl">
 			    <h5>최신 댓글</h5>
 				 <ul>
-				  <c:forEach var='v' items="${list }" varStatus='status'>
+				  <c:forEach var='v' items="${repl_list }" varStatus='status'>
 				   <li>
 		             <span class="repl_doc">${v.repl_doc }</span>
 		             <span class="repl_nal">${v.repl_nal }</span>
@@ -159,19 +166,19 @@
 			   <div class="row g-2" style="padding-left:385px;">
 			      <div class="col-5"></div>
 			      <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
+		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
+		            <button class=" w-100 btn btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
+		            <button class=" w-100 btn btn-md text-white btn-danger" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
 		          </div>
 		       </div>
 	    </div>
-	   <input type='hidden' name='findStr' value='${mpVo.findStr }'/>
+	    <input type='hidden' name='findStr' value='${mpVo.findStr }'/>
 		<input type='hidden' name='nowPage' value='${mpVo.nowPage }'/>
-	    <input type='hidden' name='id' value='${amVo.id }'/>
+	    <input type='hidden' name='id' value='${mpVo.id }'/>
 </div>
 </form>
 </body>

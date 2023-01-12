@@ -8,13 +8,18 @@
 	</select>
 	
     <select id="corp_select" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="com.kodup.admin.certification.AdminCertificationVo">
-        select m.id, c.corp_name, c.corp_license, c.manager_name, c.manager_phone, c.manager_email 
+        select m.id, m.corp_status, c.corp_name, c.corp_license, c.manager_name, c.manager_phone, c.manager_email 
         from member m join corperation c on m.id = c.id
         where m.corp_status = 1 or m.corp_status = 2 
         order by m.corp_status asc
         limit ${startNo}, ${listSize}
        
 	</select>
+	
+	<update id="corp_approve" parameterType="com.kodup.admin.certification.AdminCertificationVo">
+	   update member set corp_status = 2
+	   where id = #{id}
+	</update>
 
 	<select id="mento_totlist" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="Integer">
 		select count(id) totSize from member
@@ -22,7 +27,7 @@
 	</select>
 	
 	<select id="mento_select" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="com.kodup.admin.certification.AdminCertificationVo">
-        select m.id, m.join_date, m.email, m.grade, c.career_certificate
+        select m.id, m.mento_status, m.join_date, m.email, m.grade, c.career_certificate
         from member m join career_certification c on m.id = c.id
         where m.mento_status = 1 or m.mento_status = 2 
         order by m.mento_status asc

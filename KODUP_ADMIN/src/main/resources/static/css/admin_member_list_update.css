@@ -104,6 +104,7 @@
 	border-radius:8px;
 	padding-left: 23px;
 	width:500px;
+    min-height: 145px;
 
 }
 
@@ -135,6 +136,9 @@
 }
 .member_activity li>span.nal{
 	width: 100px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .member_activity li>span.repl_doc{
 	width: 360px;
@@ -144,4 +148,7 @@
 }
 .member_activity li>span.repl_nal{
 	width: 100px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }

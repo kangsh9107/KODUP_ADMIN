@@ -40,10 +40,24 @@ movePage = function(nowPage) {
 	$('#baik_admin_main').load('jsp/admin_mento_certification', param);
 };
 
-view = function(career_certification,id,join_date,email){
+view = function(career_certification,id,join_date,email,grade){
 	var frm = $('.frm_search5')[0];
 	img.src = "images/"+career_certification;
 	frm.id.value = id;
 	frm.join_date.value = join_date;
 	frm.email.value = email;
+	frm.grade.value = grade;
+}
+
+select_grade= function() {
+	$('.btnGradeChange').on('click', function() {
+		
+		
+	})
+};
+
+
+
+change_grade() = function() {
+	
 }

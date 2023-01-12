@@ -31,7 +31,7 @@ li {
 	<div class="row justify-content-md-center">
 		<div class="col mansearch_view_subject">
 			<span style="font-size:1.8rem;">
-				<label><strong>★중급★ 카드사 시스템 유지보수 (API연계)</strong></label>
+				<label name="subject" style="width:400px;">${atVo.subject}</label>
 			</span><br/>
 			<span class="deadline">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
@@ -265,19 +265,21 @@ BC카드 시스템 유지보수 (API연계)
  </div>
 	<div class="row g-2" style="padding-left:500px; margin-top:20px; width:1370px;">
 		   <div class="d-grid gap-2 col-2 text-white">
-		      <button class=" w-100 btn btnBackBoardList btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
+		      <button class=" w-100 btn btnBackBoardList btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
 		    </div>
 		    <div class="d-grid gap-2 col-2 text-white">
-		      <button class=" w-100 btn btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
+		      <button class=" w-100 btn btn-md btnBackBoardList text-white" type="button" _msthash="1634243" _msttexthash="35733126" 
+		              onclick="mansearch_board_modify(${pVo.sno})"style="direction: ltr; background-color:#2d3644">수정</button>
 		    </div>
 		    <div class="d-grid gap-2 col-2 text-white">
-		      <button class=" w-100 btn btn-md text-white btn-danger" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">삭제</button>
+		      <button class=" w-100 btn btn-md text-white btn-danger" type="button" _msthash="1634243" _msttexthash="35733126" 
+		              onclick="board_delete(${pVo.sno})" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
 	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
 	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
-    <input type='hidden' name='sno' value='${atVo.sno }'/>
-    <input type='hidden' name='boardtype' value='${atVo.boardtype }'/>
+    <input type='hidden' name='sno' value='${pVo.sno }'/>
+    <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
 </form>
 </body>
 </html>

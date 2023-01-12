@@ -3,7 +3,8 @@ package com.kodup.admin.certification;
 public class AdminCertificationVo {
 
 	String id;
-	
+	String corp_status;
+	String mento_status;
 	String career_certificate;
 	String join_date;
 	String email;
@@ -21,8 +22,11 @@ public class AdminCertificationVo {
 	
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
+	public String getCorp_status() {return corp_status;}
+	public void setCorp_status(String corp_status) {this.corp_status = corp_status;}
+	public String getMento_status() {return mento_status;}
+	public void setMento_status(String mento_status) {this.mento_status = mento_status;}
 	
-
 	public String getCareer_certificate() {return career_certificate;}
 	public void setCareer_certificate(String career_certificate) {this.career_certificate = career_certificate;}
 	public String getJoin_date() {return join_date;}

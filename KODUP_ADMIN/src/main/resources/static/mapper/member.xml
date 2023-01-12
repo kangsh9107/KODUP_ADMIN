@@ -12,7 +12,10 @@
 	
     <select id="select" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
         select id, nickname, email, join_date from member
-        WHERE id LIKE '%${findStr}%' OR nickname LIKE '%${findStr}%' or email LIKE '%${findStr}%'
+        WHERE id = #{findStr} 
+        OR nickname LIKE '%${findStr}%' 
+        or email LIKE '%${findStr}%'
+        or join_date like '%${findStr}%' 
         order by join_date desc
         limit ${startNo}, ${listSize}
        
@@ -21,13 +24,28 @@
 	<select id='view' parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
        SELECT m.profile_img, m.id, m.pwd, m.email, m.nickname, m.gender, m.age, m.account_type, m.ban_status, m.pixel, m.grade, m.join_date, m.email_status, m.mento_status, 
        mi.introduce,
-       r.repl_doc, date_format(r.repl_nal,'%Y-%m-%d'),
-       b.subject, date_format(b.nal,'%Y-%m-%d')
+       bh.ban_number
        FROM member m LEFT JOIN member_introduce mi ON m.id = mi.id
-                     LEFT JOIN repl r              ON m.id = r.id
-                     LEFT JOIN board b             ON m.id = b.id
-       WHERE m.id=#{id}   
-       limit 1,5
+                     LEFT JOIN ban_history bh ON m.id = bh.id
+       WHERE m.id=#{id}  
+       order by bh.ban_number DESC
+       limit 1;
+    </select>
+    
+    <select id="doc_list5" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+       select subject, date_format(nal, '%Y-%m-%d') nal
+       from board
+       where id= #{id}
+       order by nal desc
+       limit 1, 5
+    </select>
+    
+    <select id="repl_list5" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+       select repl_doc, date_format(repl_nal, '%Y-%m-%d') repl_nal
+       from repl
+       where id= #{id}
+       order by repl_nal desc
+       limit 1, 5
     </select>
     
     <select id="banselect" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
@@ -40,6 +58,16 @@
 	
 	<update id="make_ban" parameterType="com.kodup.admin.member.AdminMemberVo">
 	   update member set ban_status = 1
+	   where id = #{id};
+	</update>
+	<insert id="ban_number" parameterType="com.kodup.admin.member.AdminMemberVo">
+	   insert into ban_history(id)
+       values(#{id})
+	</insert>
+	<update id="ban_history" parameterType="com.kodup.admin.member.AdminMemberVo">
+	   update ban_history 
+	   set ban_number = ban_number + 1,
+	       ban_date = now()
 	   where id = #{id}
 	</update>
 	

@@ -13,4 +13,12 @@ public interface AdminTotalboardMapper {
 	public int totList(BoardPageVo pVo);
 	
 	public AdminTotalboardVo view(int sno, String boardtype);
+	
+	public int freetalking_board_modify(AdminTotalboardVo atVo);
+	public int infoshare_board_modify(AdminTotalboardVo atVo);
+	public int jobsearch_board_modify(AdminTotalboardVo atVo);
+	public int mansearch_board_modify(AdminTotalboardVo atVo);
+	public int qna_board_modify(AdminTotalboardVo atVo);
+	
+	public int board_delete(AdminTotalboardVo atVo);
 }

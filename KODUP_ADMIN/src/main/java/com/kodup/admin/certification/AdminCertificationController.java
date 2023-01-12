@@ -24,6 +24,19 @@ public class AdminCertificationController {
 		return mv;
 	}
 	
+	@RequestMapping("jsp/admin_corp_approve")
+	public ModelAndView admin_corp_approve(CertificationPageVo cpVo,AdminCertificationVo acVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.corp_approve(acVo);
+		System.out.println(b);
+		
+		List<AdminCertificationVo> list = service.corp_select(cpVo);
+		mv.addObject("cpVo",cpVo);
+		mv.addObject("list",list);
+		mv.setViewName("jsp/admin_corp_certification");
+		return mv;
+	}
+	
 	@RequestMapping("jsp/admin_mento_certification")
 	public ModelAndView mento_select(CertificationPageVo cpVo) {
 		ModelAndView mv = new ModelAndView();

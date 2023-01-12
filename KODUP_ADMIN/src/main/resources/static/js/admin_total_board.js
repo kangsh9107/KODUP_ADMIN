@@ -19,28 +19,133 @@ movePage = function(nowPage) {
 }
 
 view = function(sno, boardtype) {
-    var frm = $('.frm_search')[0];
+    var str = 'jsp/admin_total_' + boardtype + '_board_view';
    
+    var frm = $('.frm_search')[0];
+    
     console.log(sno);
     console.log(boardtype);
     
     frm.sno.value = sno; 
     frm.boardtype.value = boardtype;
-    console.log(sno);
-    console.log(boardtype)
-    
-    var str = 'jsp/admin_total_' + boardtype + '_board_view';
 	var param = $(frm).serialize();
+	console.log(param);
 	$('#baik_admin_main').load(str,param);
 };
 
 
  /*목록 버튼 누를시 다시 리스트로 */
 $('.btnBackBoardList').on('click', function() {
-	    $('#baik_admin_main').load('jsp/admin_total_board');
-/*	var frm = $('.frm')[0];
-	
+	var frm = $('.frm')[0];
 	var param = $(frm).serialize();
 
-	$('#baik_admin_main').load('jsp/admin_total_board', param);*/
+	$('#baik_admin_main').load('jsp/admin_total_board', param);
 });
+
+
+/*-------------------------modify--------------------------------------------*/
+freetalking_board_modify = function(sno) {
+	var frm = $('.frm')[0];
+	var param = new FormData(frm);
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_freetalking_board_modify',
+		contentType: false,
+		processData: false,
+		data: param,
+		dataType: 'html',
+		success: function(data) {
+			$('#baik_admin_main').html(data);
+		}
+	});
+}
+
+infoshare_board_modify = function(sno) {
+	var frm = $('.frm')[0];
+	var param = new FormData(frm);
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_infoshare_board_modify',
+		contentType: false,
+		processData: false,
+		data: param,
+		dataType: 'html',
+		success: function(data) {
+			$('#baik_admin_main').html(data);
+		}
+	});
+}
+
+jobsearch_board_modify = function(sno) {
+	var frm = $('.frm')[0];
+	var param = new FormData(frm);
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_jobsearch_board_modify',
+		contentType: false,
+		processData: false,
+		data: param,
+		dataType: 'html',
+		success: function(data) {
+			$('#baik_admin_main').html(data);
+		}
+	});
+}
+
+mansearch_board_modify = function(sno) {
+	var frm = $('.frm')[0];
+	var param = new FormData(frm);
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_mansearch_board_modify',
+		contentType: false,
+		processData: false,
+		data: param,
+		dataType: 'html',
+		success: function(data) {
+			$('#baik_admin_main').html(data);
+		}
+	});
+}
+
+qna_board_modify = function(sno) {
+	var frm = $('.frm')[0];
+	var param = new FormData(frm);
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_qna_board_modify',
+		contentType: false,
+		processData: false,
+		data: param,
+		dataType: 'html',
+		success: function(data) {
+			$('#baik_admin_main').html(data);
+		}
+	});
+}
+
+/*-----------------------------delete-------------------------------------*/
+board_delete = function(sno) {
+	var yn = confirm('자료를 삭제하시겠습니까?');
+	if( !yn ) return;
+	
+	var frm = $('.frm')[0];
+	var param = $(frm).serialize();
+	console.log(param);
+	$('#baik_admin_main').load('jsp/admin_total_board_delete', param);
+}
+
+list_board_delete = function(sno){
+	var yn = confirm('자료를 삭제하시겠습니까?');
+	if( !yn ) return;
+	
+	var frm = $('.frm_search')[0];
+	frm.sno.value=sno;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board_delete', param);
+}

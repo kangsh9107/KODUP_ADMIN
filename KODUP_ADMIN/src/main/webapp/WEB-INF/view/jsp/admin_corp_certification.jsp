@@ -34,7 +34,7 @@
 	         <div class="container">
 	            <div class="row g-2">
 			       <div class="col-md-3" style="font-size:20px;">
-				          담당자
+				       담당자
 		           </div>
 			    <div class="col-md-5">
 				    <input class="form-control form-control-sm" name="manager_name" type="text" readOnly aria-label=".form-control-sm example" style="height:38px;">
@@ -59,7 +59,8 @@
 			    </div>
 		   </div>
 		   <div class="d-grid gap-2 col-md-2 text-white" style="margin-left:297px; margin-top:20px;">
-		       <button class=" w-100 btn btnConfirm btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">승인</button>
+		       <button class=" w-100 btn btnConfirm btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" 
+		               onclick="corp_approve('${cpVo.id}')" style="direction: ltr; background-color:#2d3644">승인</button>
 		   </div>
 		  </div>
 		</div>      
@@ -80,15 +81,22 @@
 			 <span class='manager_name'>담당자</span>
 			 <span class='manager_phone'>담당자 연락처</span>
 			 <span class='manager_email'>담당자 이메일</span>
+			 <span class="corp_status">신청 상황</span>
 		   </li>
 		
 		   <c:forEach var='v' items="${list }" varStatus='status'> 
-			<li class='item' onclick="view('${v.corp_license }', '${v.manager_name }' , '${v.manager_phone }', '${v.manager_email }')"> 
+			<li class='item' onclick="view('${v.corp_license }', '${v.manager_name }' , '${v.manager_phone }', '${v.manager_email }', '${v.id}')"> 
 				<span class='no'>${status.count }</span>
 				<span class='corp_name'>${v.corp_name} </span>
 				<span class='manager_name'>${v.manager_name }</span>
 				<span class='manager_phone'>${v.manager_phone }</span>
 				<span class='manager_email'>${v.manager_email }</span>
+				<span class='corp_status'>
+				   <c:choose>
+					 <c:when test="${v.corp_status eq 1}">신청</c:when>
+					 <c:when test="${v.corp_status eq 2}">신청 완료</c:when>
+				   </c:choose>
+				</span>
 				<input type="hidden" value="${v.id }">
 				<input type="hidden" value="${v.corp_license}">
 			</li>

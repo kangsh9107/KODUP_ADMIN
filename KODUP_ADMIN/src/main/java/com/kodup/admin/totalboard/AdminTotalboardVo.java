@@ -6,6 +6,7 @@ public class AdminTotalboardVo {
    int thumbup;
    int thumbdown;
    
+   String horsehead;
    String boardtype;
    String subject;
    String nickname;
@@ -15,24 +16,12 @@ public class AdminTotalboardVo {
    String hashtag;
    
 
-public int getThumbup() {
-	return thumbup;
-}
-public void setThumbup(int thumbup) {
-	this.thumbup = thumbup;
-}
-public int getThumbdown() {
-	return thumbdown;
-}
-public void setThumbdown(int thumbdown) {
-	this.thumbdown = thumbdown;
-}
-public String getHashtag() {
-	return hashtag;
-}
-public void setHashtag(String hashtag) {
-	this.hashtag = hashtag;
-}
+public int getThumbup() {return thumbup;}
+public void setThumbup(int thumbup) {this.thumbup = thumbup;}
+public int getThumbdown() {return thumbdown;}
+public void setThumbdown(int thumbdown) {this.thumbdown = thumbdown;}
+public String getHashtag() {return hashtag;}
+public void setHashtag(String hashtag) {this.hashtag = hashtag;}
 public String getProfile_img() {return profile_img;}
 public void setProfile_img(String profile_img) {this.profile_img = profile_img;}
 public int getSno() {return sno;}
@@ -49,6 +38,8 @@ public String getNal() {return nal;}
 public void setNal(String nal) {this.nal = nal;}
 public String getDoc() {return doc;}
 public void setDoc(String doc) {this.doc = doc;}
+public String getHorsehead() {return horsehead;}
+public void setHorsehead(String horsehead) {this.horsehead = horsehead;}
    
    
 }

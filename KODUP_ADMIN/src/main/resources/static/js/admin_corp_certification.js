@@ -40,11 +40,21 @@ movePage = function(nowPage) {
 	$('#baik_admin_main').load('jsp/admin_corp_certification', param);
 };
 
-view = function(corp_license,manager_name,manager_phone,manager_email){
+view = function(corp_license,manager_name,manager_phone,manager_email,id){
 	var frm = $('.frm_search4')[0];
 	console.log(corp_license);
 	img.src = "images/"+corp_license;
 	frm.manager_name.value = manager_name;
 	frm.manager_phone.value = manager_phone;
 	frm.manager_email.value = manager_email;
+	frm.id.value = id;
+}
+
+corp_approve = function(id) {
+	var frm = $('.frm_search4')[0];
+	id =frm.id.value;
+	console.log(id);
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_corp_approve', param);
+	
 }

@@ -54,14 +54,15 @@
 				</select>
 		   </div>
 	          <div class="col-md-4" style="margin-left:-30px;">
-			     <input class="form-control form-control-sm" type="search" name="findStr" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm" type="search" name="findStr" value="${mpVo.findStr}" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
-	            <button class=" w-100 btn btnSearch btn-md text-white" type="submit" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+	            <button class=" w-100 btn btnSearch btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div> 
 		  </div>
 		 <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
 		 <input type='hidden' name='id' value='${mpVo.id }'/>
+		 
         </div>
        <hr class="my-4" style="width:1000px;"> 
     </div>
@@ -82,7 +83,7 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 		<li class='item' onclick="view('${v.id}')">
-			<span class='no'>${status.index }</span>
+			<span class='no'>${status.count }</span>
 			<span class='id'>${v.id} </span>
 			<span class='nickname'>${v.nickname }</span>
 			<span class='email'>${v.email }</span>
