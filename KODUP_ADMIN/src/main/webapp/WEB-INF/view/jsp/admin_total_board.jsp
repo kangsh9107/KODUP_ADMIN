@@ -61,9 +61,9 @@
 			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
 	            <button class=" w-100 btn btn-md btnSearch text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div>
-	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
-	          <input type='hidden' name='sno' value='${pVo.sno }'/>
-	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
+	          <input type='text' name='nowPage' value='${pVo.nowPage }'/> 
+	          <input type='text' name='sno' value='${pVo.sno }'/>
+	          <input type='text' name='boardtype' value='${pVo.boardtype }'/>
 	          <input type="text" name="selectBox" value="${pVo.selectBox }">
           </div>
           <hr class="my-4" style="width: 990px;">

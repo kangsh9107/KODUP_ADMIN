@@ -159,6 +159,7 @@ margin-left:5px;
 	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
     <input type='hidden' name='sno' value='${pVo.sno }'/>
     <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
+    <input type='text' name="selectBox" value="${pVo.selectBox }">
 </form>
 </body>
 </html>
