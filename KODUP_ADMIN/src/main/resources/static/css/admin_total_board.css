@@ -15,7 +15,7 @@
 	border: 1px solid #c8c9ca;
 	margin-left : 40px;
 	padding: 20px;
-	width: 1250px;
+	width: 1350px;
 }
 .baik_board_view>form{
 	text-align: right;
@@ -28,20 +28,20 @@
 .baik_board_view li.title{
 	background-color: #2d3644;
 	color: #fff;
-	width:1150px;
+	width:1250px;
 }
 .baik_board_view li.item{
 	display: inline-block;
 	padding: 3px;
 	position: relative;
-	width: 1150px;
+	width: 1250px;
 	margin-top:2px;
 	border : 1px solid #aaa;
 }
 .baik_board_view li.item:hover{
 	background-color: #ccc;
 	cursor: pointer;
-	width: 1150px;
+	width: 1250px;
 }
 .baik_board_view li>span{
 	display: inline-block;
@@ -59,7 +59,7 @@
     padding-top: 5px;
 }
 .baik_board_view li>div>span.sno{
-	width: 50px;
+	width: 100px;
 	text-align: center;
 	margin-right: 20px;
 }
@@ -89,9 +89,45 @@
 
 }
 
+.baik_board_view li>span.restore_btn{
+	width: 46px;
+	text-align: center;
+
+}
+
 .btnDelete{
 	width:46px !important;
 	height:31px !important;
 	font-size: 13px;
+	
+}
+
+.btnRestore{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
+}
+
+#board_view_repl_profile>span{
+	display :inline-block;
+}
+
+
+span#board_view_repl_profile_profileimage{
+	width:30px;
+	height:30px;
+}
+span#board_view_profile_nickname{
+   width:800px;
+}
+
+span#board_repl_doc{
+	width:1000px;
+	
+}
+
+span#board_repl_nal{
+	width:170px;
 	
 }

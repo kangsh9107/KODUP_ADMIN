@@ -9,7 +9,6 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.kodup.admin.member.AdminMemberVo;
 
 @Service
 @Transactional
@@ -35,6 +34,14 @@ public class AdminTotalboardService {
 		return list;
 	}
 	
+	public List<AdminTotalboardVo> qna_select(BoardPageVo pVo) {
+		int totSize = AdminTotalboardMapper.qna_totList(pVo);
+		pVo.setTotSize(totSize);
+		this.pVo = pVo;
+		List<AdminTotalboardVo> list = AdminTotalboardMapper.qna_select(pVo);
+		return list;
+	}
+/*-------------------------------------view----------------------------------------------------*/	
 	public AdminTotalboardVo view(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		atVo = AdminTotalboardMapper.view(pVo.getSno(), pVo.getBoardtype());
     //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
@@ -44,6 +51,39 @@ public class AdminTotalboardService {
 		return atVo;
 	}
 	
+	public AdminTotalboardVo mansearch_view(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		atVo = AdminTotalboardMapper.mansearch_view(pVo.getSno(), pVo.getBoardtype());
+    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
+//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
+//		bVo.setAttList(attList);
+		
+		return atVo;
+	}
+	
+	public AdminTotalboardVo mansearch_view_info(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		atVo = AdminTotalboardMapper.mansearch_view_info(pVo.getSno(), pVo.getBoardtype());
+		return atVo;
+	}
+	
+	public List<AdminTotalboardVo> premium_review(BoardPageVo pVo, AdminTotalboardVo atVo){
+		List<AdminTotalboardVo> list = AdminTotalboardMapper.premium_review(pVo.getSno());
+		return list;
+	}
+	
+	public AdminTotalboardVo qna_view(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		atVo = AdminTotalboardMapper.qna_view(pVo.getSno(), pVo.getBoardtype());
+    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
+//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
+//		bVo.setAttList(attList);
+		
+		return atVo;
+	}
+	
+	public List<AdminTotalboardVo> repl_list(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		List<AdminTotalboardVo> list = AdminTotalboardMapper.repl_list(pVo.getSno());
+		return list;
+		
+	}
 /*---------------modify-----------------------------------------------------------------*/
 	public boolean freetalking_board_modify(AdminTotalboardVo atVo) {
 		boolean flag = true;
@@ -144,6 +184,24 @@ public class AdminTotalboardService {
 		savePoint = status.createSavepoint();
 		
 		int cnt = AdminTotalboardMapper.board_delete(atVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+	}
+	
+	public boolean board_restore(AdminTotalboardVo atVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminTotalboardMapper.board_restore(atVo);
 		
 		System.out.println(cnt);
 		if(cnt<1) {

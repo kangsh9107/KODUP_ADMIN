@@ -39,13 +39,25 @@
                             <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                     <li>
-                     <a href="#" class="nav-link align-middle px-0 text-white btnTotalBoard">
-                        <ion-icon name="documents-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                           <span class="ms-1 d-none d-sm-inline">
-                             <label class="sidebar_list" style="cursor: pointer;">통합 게시물 관리</label>
-                           </span>
-                        </a>
+                    <li>   
+                        <a href="#" onclick="return false" style="cursor:default;" class="nav-link px-0 align-middle text-white">
+                           <ion-icon name="documents-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                               <span class="ms-1 d-none d-sm-inline">게시물</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 text-white btnTotalBoard"> 
+                                <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                   <label class="sidebar_list" style="cursor: pointer;">게시물 관리</label>
+                                 </span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 text-white btnMemberBan">
+                                  <span class="d-none d-sm-inline" style="margin-left:30px;">
+                                    <label class="sidebar_list" style="cursor: pointer;">댓글 관리</label>
+                                   </span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>   
                         <a href="#" onclick="return false" style="cursor:default;" class="nav-link px-0 align-middle text-white">

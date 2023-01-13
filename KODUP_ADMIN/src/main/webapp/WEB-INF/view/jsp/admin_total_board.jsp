@@ -32,13 +32,14 @@
 	           </div>
 	          
             <div class="col-md-4" style="width:200px; margin-left:-50px;">
-			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option selected>전체</option>
-				  <option value="1">QnA</option>
-				  <option value="2">자유</option>
-				  <option value="3">정보공유</option>
-				  <option value="4">구인</option>
-				  <option value="5">구직</option>
+			    <select class="form-select" aria-label="Default select example" id="selectBox"
+			            size='1' style="width:150px;" onchange="select_search(this.value)">
+				  <option value="All">전체</option>
+				  <option value="Qna">QnA</option>
+				  <option value="Freetalking">자유</option>
+				  <option value="Infoshare">정보공유</option>
+				  <option value="Mansearch">구인</option>
+				  <option value="Jobsearch">구직</option>
 				</select>
 		   </div>
 		   <div class="col-md-3" style="margin-left:-20px;">
@@ -63,6 +64,7 @@
 	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
 	          <input type='hidden' name='sno' value='${pVo.sno }'/>
 	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
+	          <input type="text" name="selectBox" value="${pVo.selectBox }">
           </div>
           <hr class="my-4" style="width: 990px;">
 		  
@@ -77,7 +79,7 @@
 		<li class='title'> <!-- 타이틀 -->
 		    <span class="checkbox"></span>
 		    <div>
-				<span class='sno'>No</span>
+				<span class='sno'>게시글 번호</span>
 				<span class='boardtype'>게시판</span>
 				<span class='subject'>제목</span>
 				<span class='nickname'>작성자</span>
@@ -85,6 +87,7 @@
 				<span class='viewcount'>조회수</span>
 			</div>
 				<span class='delete_btn'>삭제</span>
+				<span class='restore_btn'>복구</span>
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
@@ -101,14 +104,28 @@
 					 	   <c:when test="${v.boardtype eq 'infoshare'}">정보공유</c:when>
 				         </c:choose>
 					</span>
-					<span class='subject'>${v.subject }</span>
+					<span class='subject'>
+					   <c:choose>
+					     <c:when test="${v.board_delete eq 0}"> ${v.subject }</c:when>
+					     <c:when test="${v.board_delete eq 1}"> 
+					        <label style="color:red;">
+					           ${v.subject }(삭제처리)
+					        </label>
+					     </c:when>
+					   </c:choose>
+					</span>
 					<span class='nickname'>${v.nickname }</span>
 					<span class='nal'>${v.nal }</span>
 					<span class='viewcount'>${v.viewcount }</span>
+					<input type='hidden' value="${v.board_delete }">
 				</div>
-				<span class='delete_btn'>
+				 <span class='delete_btn'>
 				   <button type="button" class="btn btnDelete btn-danger btn-sm"
 				           onclick="list_board_delete(${v.sno})">삭제</button>
+				 </span>
+				 <span class='restore_btn'>
+				   <button type="button" class="btn btnRestore btn-success btn-sm"
+				           onclick="list_board_restore(${v.sno})">복구</button>
 				 </span>
 			</li>
 		</c:forEach>

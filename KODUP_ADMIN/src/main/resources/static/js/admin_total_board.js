@@ -11,6 +11,24 @@
 	$('#baik_admin_main').load('jsp/admin_total_board', param);
 });
 
+
+select_search = function() {
+	var selectValue = document.getElementById('selectBox').value;
+	var frm = $('.frm_search')[0];
+	frm.nowPage.value = 1;
+    frm.selectBox.value=selectValue;
+	str = "jsp/admin_total_board_select"+selectValue;
+	console.log(selectValue);
+	
+	if(selectValue="All"){
+	   var param = $(frm).serialize();
+	   $('#baik_admin_main').load('jsp/admin_total_board_selectAll', param);
+	}else{
+	   var param = $(frm).serialize();
+	   $('#baik_admin_main').load(str, param);	
+	}
+}
+
 movePage = function(nowPage) {
 	var frm = $('.frm_search')[0];
 	frm.nowPage.value = nowPage;
@@ -131,7 +149,7 @@ qna_board_modify = function(sno) {
 
 /*-----------------------------delete-------------------------------------*/
 board_delete = function(sno) {
-	var yn = confirm('자료를 삭제하시겠습니까?');
+	var yn = confirm('게시글을 삭제하시겠습니까?');
 	if( !yn ) return;
 	
 	var frm = $('.frm')[0];
@@ -140,12 +158,32 @@ board_delete = function(sno) {
 	$('#baik_admin_main').load('jsp/admin_total_board_delete', param);
 }
 
+board_restore = function(sno) {
+	var yn = confirm('게시글을 복구하시겠습니까?');
+	if( !yn ) return;
+	
+	var frm = $('.frm')[0];
+	var param = $(frm).serialize();
+	console.log(param);
+	$('#baik_admin_main').load('jsp/admin_total_board_restore', param);
+}
+
 list_board_delete = function(sno){
-	var yn = confirm('자료를 삭제하시겠습니까?');
+	var yn = confirm('게시글을 삭제하시겠습니까?');
 	if( !yn ) return;
 	
 	var frm = $('.frm_search')[0];
 	frm.sno.value=sno;
 	var param = $(frm).serialize();
 	$('#baik_admin_main').load('jsp/admin_total_board_delete', param);
+}
+
+list_board_restore = function(sno){
+	var yn = confirm('게시글을 복구 하겠습니까?');
+	if( !yn ) return;
+	
+	var frm = $('.frm_search')[0];
+	frm.sno.value=sno;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board_restore', param);
 }

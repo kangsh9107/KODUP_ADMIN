@@ -308,34 +308,11 @@ img#premium_review_writer_icon{
 	position:relative;
 } 
 
-.premium_review_doc_wrap>.doc_blind_wrap{
-	position:absolute;
-	top:40%;
-	left:33%;
-	z-index:500;
-}
-@media ( max-width :993px) {
-	.premium_review_doc_wrap>.doc_blind_wrap{
-	top:40%;
-	left:23%;
-	}
-}
-@media ( max-width :395px) {
-	.premium_review_doc_wrap>.doc_blind_wrap{
-	top:40%;
-	left:12%;
-	}
-}
-button.premium_review_payment{
-	width:auto;
-	height:38px;
-	padding:5px;
-	background-color:#bb2642;
-	color:white;
-	border:2px solid #bb2642;
-	border-radius:5px;
-	font:14px;
-}
-button.premium_review_payment:hover{
-	background-color:#871b30;
+.premium_review_doc{
+ min-height: 30px;
+ background: #e5e5e5;
+ width:1300px; 
+ padding:10px; 
+ margin-left:10px;
+ margin-top:5px;
 }

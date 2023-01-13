@@ -10,8 +10,17 @@
 		or b.nal like '%${findStr}%'
 	</select>
 	
+	<select id="qna_totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
+		select count(qb.qna_sno) totSize 
+		from qna_board qb left join board b on  qb.sno = b.sno
+		                  left join member m on b.id = m.id
+		where b.subject  like '%${findStr}%'
+		or m.nickname like '%${findStr}%'
+		or b.nal like '%${findStr}%'
+	</select>
+	
     <select id="select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount
+        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
         from board b join member m on m.id = b.id
         WHERE b.id = #{findStr} 
         OR b.subject LIKE '%${findStr}%'
@@ -23,11 +32,66 @@
        
 	</select>
 	
+	<select id="qna_select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
+        from board b join member m on m.id = b.id
+        WHERE or b.boardtype like "qna"
+        or b.id = #{findStr} 
+        OR b.subject LIKE '%${findStr}%'
+        or m.nickname like '%${findStr}%'
+		or b.nal like '%${findStr}%'
+        order by b.sno desc
+        limit ${startNo}, ${listSize}
+       
+	</select>
+	
 	<select id='view' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
         select m.profile_img, m.nickname, 
-               b.hashtag, b.nal, b.viewcount, b.subject, b.doc,
-        from member m join board b on m.id = b.id
+               b.hashtag, b.nal, b.viewcount, b.subject, b.doc,(b.thumbup-b.thumbdown) thumbup, b.board_delete,
+               hs.${boardtype}_horsehead horsehead
+        from member m left join board b on m.id = b.id
+                      left join ${boardtype}_board hs on b.sno = hs.sno
         where b.sno = ${sno} and b.boardtype= #{boardtype}
+    </select>
+    
+    <select id='mansearch_view' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select m.id, c.corp_logo,c.corp_name,c.manager_name,c.manager_phone,c.manager_email, b.board_delete,
+               b.subject, b.doc, b.viewcount,b.nal,b.hashtag, b.board_delete
+        from member m left join corperation c on m.id = c.id
+                      left join board b on m.id = b.id                    
+        where b.sno = ${sno} and b.boardtype= #{boardtype}
+    </select>
+    <select id='mansearch_view_info' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       select b.sno, mb.work_start, mb.pay, mb.corp_location, mb.position, mb.job_type, mb.required_career,
+              mb.education_level, mb.work_type, mb.pay_date, mb.required_skill, mb.deadline, 
+              mb.main_task, mb.sub_task
+       from board b left join mansearch_board mb on b.sno = mb.sno
+       where b.sno= ${sno}
+    </select>
+    <select id="premium_review" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       select mb.mansearch_sno, pr.review
+       from  mansearch_board mb join premium_review pr on mb.mansearch_sno = pr.mansearch_sno
+       where mb.sno = ${sno}
+    </select>
+    
+    <select id='qna_view' parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select m.profile_img, m.nickname, 
+               b.hashtag, b.nal, b.viewcount, b.subject, b.doc,(b.thumbup-b.thumbdown) thumbup, b.board_delete,
+               hs.${boardtype}_horsehead horsehead,
+               qb.qna_pixel_reward
+        from member m left join board b               on m.id = b.id
+                      left join ${boardtype}_board hs on b.sno = hs.sno
+                      left join qna_board qb          on b.sno = qb.sno 
+        where b.sno = ${sno} and b.boardtype= #{boardtype}
+    </select>
+    
+    <select id="repl_list" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       select b.sno, m.profile_img, m.nickname, r.repl_sno, r.repl_doc, r.repl_nal
+              from repl r left join board b  on r.sno = b.sno
+                          left join member m on r.id = m.id
+       where r.sno = #{sno}
+       order by r.repl_sno asc
+               
     </select>
     
     <update id="freetalking_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
@@ -60,9 +124,17 @@
        where sno=#{sno}
     </update>
     
-    <delete id="board_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-     delete from board
+    <update id="board_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update board
+     set board_delete = 1
      where sno = #{sno}
      
-    </delete>
+    </update>
+    
+    <update id="board_restore" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update board
+     set board_delete = 0
+     where sno = #{sno}
+     
+    </update>
 </mapper>

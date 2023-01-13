@@ -12,10 +12,12 @@ public class BoardPageVo {
     int endNo;
     
     int    sno;
+    int    mansearch_sno;
     String findStr;
     String boardtype;
-    
-    public BoardPageVo() {}
+    String selectBox;
+
+	public BoardPageVo() {}
     
     public void pageCompute() {
         // 전체 건수를 사용하여 전체 페이지수 계산
@@ -63,5 +65,9 @@ public class BoardPageVo {
     public void setFindStr(String findStr) {this.findStr = findStr;    }
     public int getSno() {return sno;    }
     public void setSno(int sno) {this.sno = sno;    }
+    public int getMansearch_sno() {return mansearch_sno;}
+	public void setMansearch_sno(int mansearch_sno) {this.mansearch_sno = mansearch_sno;}
+	public String getSelectBox() {return selectBox;}
+    public void setSelectBox(String selectBox) {this.selectBox = selectBox;}
     
 }

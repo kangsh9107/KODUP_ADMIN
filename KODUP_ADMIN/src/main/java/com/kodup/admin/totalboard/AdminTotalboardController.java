@@ -29,12 +29,83 @@ public class AdminTotalboardController {
 		return mv;
 	}
 	
+	@RequestMapping("jsp/admin_total_board_selectAll")
+	public ModelAndView selectAll(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
 	
+	@RequestMapping("jsp/admin_total_board_selectQna")
+	public ModelAndView selectQna(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.qna_select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_selectFreetalking")
+	public ModelAndView selectFreetalking(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_selectInfoshare")
+	public ModelAndView selectInfoshare(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_selectMansearch")
+	public ModelAndView selectMansearch(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_selectJobsearch")
+	public ModelAndView selectJobsearch(BoardPageVo pVo) {	
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+/*--------------------------------view---------------------------------------------------*/	
 	@RequestMapping("jsp/admin_total_freetalking_board_view")
 	public ModelAndView freetalkingview(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
-		List<AdminTotalboardVo> repl_list = service.repl_list(atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
@@ -47,18 +118,25 @@ public class AdminTotalboardController {
 	public ModelAndView infoshareview(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_total_infoshare_board_view");
 		return mv;
 	}
 	
 	@RequestMapping("jsp/admin_total_mansearch_board_view")
-	public ModelAndView mansearchview(BoardPageVo pVo, AdminTotalboardVo atVo) {
+	public ModelAndView mansearchview(BoardPageVo pVo, AdminTotalboardVo atVo, AdminTotalboardVo atVo1) {
 		ModelAndView mv = new ModelAndView();
-		atVo = service.view(pVo, atVo);
+		atVo = service.mansearch_view(pVo, atVo);
+		atVo1 = service.mansearch_view_info(pVo,atVo);
+		List<AdminTotalboardVo> list = service.premium_review(pVo,atVo);
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
+		mv.addObject("atVo1", atVo1);
+		mv.addObject("list", list);
 		mv.setViewName("jsp/admin_total_mansearch_board_view");
 		return mv;
 	}
@@ -67,8 +145,11 @@ public class AdminTotalboardController {
 	public ModelAndView jobsearchview(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_total_jobsearch_board_view");
 		return mv;
 	}
@@ -76,9 +157,12 @@ public class AdminTotalboardController {
 	@RequestMapping("jsp/admin_total_qna_board_view")
 	public ModelAndView qnaview(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
-		atVo = service.view(pVo, atVo);
+		atVo = service.qna_view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_total_qna_board_view");
 		return mv;
 	}
@@ -161,9 +245,28 @@ public class AdminTotalboardController {
 
 /*------------------------------delete---------------------------------------------*/
 	@RequestMapping("jsp/admin_total_board_delete")
-	public ModelAndView admin_freetalking_board_delete(BoardPageVo pVo, AdminTotalboardVo atVo) {
+	public ModelAndView admin_total_board_delete(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = service.board_delete(atVo);
+		
+//		if( !b ) {
+//			PrintWriter out = resp.getWriter();
+//			out.print("<script>alert('fail')</script>");
+//		}
+
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_restore")
+	public ModelAndView admin_total_board_restore(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.board_restore(atVo);
 		
 //		if( !b ) {
 //			PrintWriter out = resp.getWriter();
