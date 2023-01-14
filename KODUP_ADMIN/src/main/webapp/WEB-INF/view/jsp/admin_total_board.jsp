@@ -108,6 +108,11 @@
 					   <c:choose>
 					     <c:when test="${v.board_delete eq 0}"> ${v.subject }</c:when>
 					     <c:when test="${v.board_delete eq 1}"> 
+					        <style>
+					          li.item{
+					            background-color:red !important;
+					          }
+					        </style>
 					        <label style="color:red;">
 					           ${v.subject }(삭제처리)
 					        </label>
