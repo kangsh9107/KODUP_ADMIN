@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id='view' parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
-       SELECT m.profile_img, m.id, m.pwd, m.email, m.nickname, m.gender, m.age, m.account_type, m.ban_status, m.pixel, m.grade, m.join_date, m.email_status, m.mento_status, 
+       SELECT m.profile_img, m.id, m.pwd, m.email, m.nickname, m.gender, Round(TO_DAYS(NOW()) - (TO_DAYS(m.age))) / 365) age, m.account_type, m.ban_status, m.pixel, m.grade, m.join_date, m.email_status, m.mento_status, 
        mi.introduce,
        bh.ban_number
        FROM member m LEFT JOIN member_introduce mi ON m.id = mi.id
