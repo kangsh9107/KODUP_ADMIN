@@ -12,6 +12,32 @@
 <title>admin_member_list_update</title>
 </head>
 <body>
+<script>
+var frm = $('.frm')[0];
+
+if(frm.gender.value == 'm')   frm.gender.value= "남성";
+if(frm.gender.value == 'f')   frm.gender.value= "여성";
+
+
+
+if(frm.account_type.value == 0)  frm.account_type.value="일반 회원";
+if(frm.account_type.value == 1)  frm.account_type.value="카카오 회원";
+if(frm.account_type.value == 2)  frm.account_type.value="네이버 회원";
+
+if(frm.ban_status.value == 0)  frm.ban_status.value="활동 중"
+if(frm.ban_status.value == 1)  frm.ban_status.value="정지 중"
+
+if(frm.grade.value == 0)  frm.grade.value="일반 회원";
+if(frm.grade.value == 1)  frm.grade.value="퍼스널 회원";
+if(frm.grade.value == 2)  frm.grade.value="플러스 회원";
+if(frm.grade.value == 3)  frm.grade.value="파트너 회원";
+
+if(frm.email_status.value == 0)  frm.email_status.value = "비인증";
+if(frm.email_status.value == 1)  frm.email_status.value = "인증 신청";
+if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
+
+
+</script>
 <!-- 회원 자체 프로필 -->
 <form class="frm">
 <div class="profile_wrapper">
@@ -76,7 +102,7 @@
 				  성별
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.gender }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" name="gender" type="text" value="${amVo.gender }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
@@ -92,14 +118,14 @@
 				  계정유형
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" readOnly value="${amVo.account_type }" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" name="account_type" readOnly value="${amVo.account_type }" type="text" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			 
 			   <div class="col-2">
 				  활동 상태
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.ban_status }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" name="ban_status" type="text" value="${amVo.ban_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -115,7 +141,7 @@
 				  회원등급
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.grade }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" name="grade" type="text" value="${amVo.grade }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -124,7 +150,7 @@
 				  이메일인증
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" name="email_status" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">

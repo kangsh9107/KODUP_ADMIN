@@ -7,3 +7,4 @@ $('.btnBackMemberList').on('click',function(){
 	var param = $(frm).serialize();
    $('#baik_admin_main').load('jsp/admin_member_list',param);
 });
+
