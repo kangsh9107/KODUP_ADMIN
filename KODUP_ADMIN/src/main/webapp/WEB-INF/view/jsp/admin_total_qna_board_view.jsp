@@ -98,6 +98,26 @@
 	   <!-- 댓글 -->
 	   <h5 style="font-weight: bold;">댓글 목록</h5>
 	   
+	   <div id="board_view_repl" class="item" style="margin-bottom:20px;">
+		      <!-- 채택된 댓글 -->
+		      <div class="row g-3" id="board_view_repl_profile" style="margin-left:5px; ">
+		         <span id="board_view_repl_profile_profileimage">
+		            <img id="board_view_repl_profile_profileimage_file" src="images/${atVo2.profile_img }" style="width:20px; height:20px;">
+		         </span>
+		         <span id="board_view_profile_nickname" style="color: #686a6d; width:800px;">
+		            <span style="width:10px;">|</span>
+		            <span>${atVo2.nickname }</span>
+		            <span style="width:10px;">|</span>
+		            <span style="width:10px;">(채택된 댓글)</span>
+		         </span>
+		         <span style="width:180px; color: #686a6d;">
+		            <span id="" style=" padding-right:10px;">${atVo2.repl_nal }</span>
+		         </span>
+		         <span id="board_view_repl_doc" style="width:980px;">
+		              ${atVo2.repl_doc}
+		         </span>
+		     </div>
+	   </div>
 	   <c:forEach var='v' items="${repl_list }" varStatus='status'>
 	      <c:choose>
 	        <c:when test="${v.deep eq 0}">
@@ -169,7 +189,7 @@
 	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
     <input type='hidden' name='sno' value='${pVo.sno }'/>
     <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
-    <input type='hidden' name="selectBox" value="${pVo.selectBox }">
+    
 </form>
 </body>
 </html>

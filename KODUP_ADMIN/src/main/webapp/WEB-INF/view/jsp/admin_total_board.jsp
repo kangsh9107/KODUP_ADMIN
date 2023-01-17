@@ -35,11 +35,11 @@
 			    <select class="form-select" aria-label="Default select example" id="selectBox"
 			            size='1' style="width:150px;" onchange="select_search(this.value)">
 				  <option value="All">전체</option>
-				  <option value="Qna">QnA</option>
-				  <option value="Freetalking">자유</option>
-				  <option value="Infoshare">정보공유</option>
-				  <option value="Mansearch">구인</option>
-				  <option value="Jobsearch">구직</option>
+				  <option value="qna">QnA</option>
+				  <option value="freetalking">자유</option>
+				  <option value="infoshare">정보공유</option>
+				  <option value="mansearch">구인</option>
+				  <option value="jobsearch">구직</option>
 				</select>
 		   </div>
 		   <div class="col-md-3" style="margin-left:-20px;">
@@ -64,7 +64,7 @@
 	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
 	          <input type='hidden' name='sno' value='${pVo.sno }'/>
 	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
-	          <input type="hidden" name="selectBox" value="${pVo.selectBox }">
+	       
           </div>
           <hr class="my-4" style="width: 990px;">
 		  

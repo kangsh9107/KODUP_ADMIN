@@ -35,5 +35,10 @@
        
 	</select>
 	
+	<update id="change_grade" parameterType="com.kodup.admin.certification.AdminCertificationVo">
+	   update member 
+	   set grade = #{grade}
+	   where id = #{id}
+	</update>
 	
 </mapper>

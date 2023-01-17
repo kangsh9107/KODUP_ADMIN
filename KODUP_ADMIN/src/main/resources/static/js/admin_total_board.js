@@ -16,16 +16,14 @@ select_search = function() {
 	var selectValue = document.getElementById('selectBox').value;
 	var frm = $('.frm_search')[0];
 	frm.nowPage.value = 1;
-    frm.selectBox.value=selectValue;
-	str = "jsp/admin_total_board_select"+selectValue;
 	console.log(selectValue);
 	
-	if(selectValue="All"){
+	if(selectValue=="All"){
 	   var param = $(frm).serialize();
-	   $('#baik_admin_main').load('jsp/admin_total_board_selectAll', param);
+	   $('#baik_admin_main').load('jsp/admin_total_board', param);
 	}else{
 	   var param = $(frm).serialize();
-	   $('#baik_admin_main').load(str, param);	
+	   $('#baik_admin_main').load("jsp/admin_total_board_find", param);	
 	}
 }
 

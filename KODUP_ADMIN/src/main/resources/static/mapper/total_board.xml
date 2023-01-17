@@ -10,15 +10,6 @@
 		or b.nal like '%${findStr}%'
 	</select>
 	
-	<select id="qna_totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
-		select count(qb.qna_sno) totSize 
-		from qna_board qb left join board b on  qb.sno = b.sno
-		                  left join member m on b.id = m.id
-		where b.subject  like '%${findStr}%'
-		or m.nickname like '%${findStr}%'
-		or b.nal like '%${findStr}%'
-	</select>
-	
     <select id="select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
         select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
         from board b join member m on m.id = b.id
@@ -26,19 +17,6 @@
         OR b.subject LIKE '%${findStr}%'
         or m.nickname like '%${findStr}%'
         or b.boardtype like '%${findStr}%'
-		or b.nal like '%${findStr}%'
-        order by b.sno desc
-        limit ${startNo}, ${listSize}
-       
-	</select>
-	
-	<select id="qna_select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
-        from board b join member m on m.id = b.id
-        WHERE or b.boardtype like "qna"
-        or b.id = #{findStr} 
-        OR b.subject LIKE '%${findStr}%'
-        or m.nickname like '%${findStr}%'
 		or b.nal like '%${findStr}%'
         order by b.sno desc
         limit ${startNo}, ${listSize}
@@ -94,6 +72,13 @@
                
     </select>
     
+    <select id="repl_selected" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       select m.profile_img, m.nickname, r.repl_doc, r.repl_nal, rs.repl_status
+              from repl r left join member m         on r.id = m.id
+                          left join repl_selected rs on r.repl_sno = rs.repl_sno
+       where r.sno = #{sno}
+       and   rs.repl_status = 1
+    </select>
     <update id="freetalking_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
        update board
        set subject=#{subject}
@@ -156,4 +141,18 @@
         limit ${startNo}, ${listSize}
        
 	</select>
+	
+	<update id="repl_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update repl
+     set repl_delete = 2
+     where repl_sno = #{repl_sno}
+     
+    </update>
+    
+    <update id="repl_restore" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update repl
+     set repl_delete = 0
+     where repl_sno = #{repl_sno}
+     
+    </update>
 </mapper>

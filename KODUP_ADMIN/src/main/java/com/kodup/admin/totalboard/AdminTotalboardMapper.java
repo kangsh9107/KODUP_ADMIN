@@ -10,11 +10,8 @@ import org.springframework.stereotype.Repository;
 public interface AdminTotalboardMapper {
 
 	public int totList(BoardPageVo pVo);
-	public int qna_totList(BoardPageVo pVo);
 	
 	public List<AdminTotalboardVo> select(BoardPageVo pVo);
-	public List<AdminTotalboardVo> qna_select(BoardPageVo pVo);
-
 /*-----------------------------------view--------------------------------------*/
 	public AdminTotalboardVo view(int sno, String boardtype);
 	public AdminTotalboardVo mansearch_view(int sno, String boardtype);
@@ -23,6 +20,7 @@ public interface AdminTotalboardMapper {
 	public AdminTotalboardVo qna_view(int sno, String boardtype);
 
 	public List<AdminTotalboardVo> repl_list(int sno);
+	public AdminTotalboardVo repl_selected(int sno);
 
 /*---------------------------modify--------------------------------------------*/
 	public int freetalking_board_modify(AdminTotalboardVo atVo);
@@ -38,4 +36,6 @@ public interface AdminTotalboardMapper {
 /*--------------------------total_repl------------------------------------------*/
 	public int repl_totList(BoardPageVo pVo);
 	public List<AdminTotalboardVo> repl_select(BoardPageVo pVo);
+    public int repl_delete(AdminTotalboardVo atVo);
+    public int repl_restore(AdminTotalboardVo atVo);
 }

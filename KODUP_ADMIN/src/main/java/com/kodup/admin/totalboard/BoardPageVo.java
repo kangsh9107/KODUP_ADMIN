@@ -16,7 +16,6 @@ public class BoardPageVo {
     int    repl_sno;
     String findStr;
     String boardtype;
-    String selectBox;
 
 	public BoardPageVo() {}
     
@@ -68,8 +67,7 @@ public class BoardPageVo {
     public void setSno(int sno) {this.sno = sno;    }
     public int getMansearch_sno() {return mansearch_sno;}
 	public void setMansearch_sno(int mansearch_sno) {this.mansearch_sno = mansearch_sno;}
-	public String getSelectBox() {return selectBox;}
-    public void setSelectBox(String selectBox) {this.selectBox = selectBox;}
+
     public int getRepl_sno() {return repl_sno;}
 	public void setRepl_sno(int repl_sno) {this.repl_sno = repl_sno;}
     

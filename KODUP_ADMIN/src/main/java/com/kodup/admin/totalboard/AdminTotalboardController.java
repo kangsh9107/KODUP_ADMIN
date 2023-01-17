@@ -29,77 +29,6 @@ public class AdminTotalboardController {
 		return mv;
 	}
 	
-	@RequestMapping("jsp/admin_total_board_selectAll")
-	public ModelAndView selectAll(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
-	
-	@RequestMapping("jsp/admin_total_board_selectQna")
-	public ModelAndView selectQna(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.qna_select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
-	
-	@RequestMapping("jsp/admin_total_board_selectFreetalking")
-	public ModelAndView selectFreetalking(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
-	
-	@RequestMapping("jsp/admin_total_board_selectInfoshare")
-	public ModelAndView selectInfoshare(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
-	
-	@RequestMapping("jsp/admin_total_board_selectMansearch")
-	public ModelAndView selectMansearch(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
-	
-	@RequestMapping("jsp/admin_total_board_selectJobsearch")
-	public ModelAndView selectJobsearch(BoardPageVo pVo) {	
-		ModelAndView mv = new ModelAndView();
-		List<AdminTotalboardVo> list = service.select(pVo);
-		pVo = service.getpVo();
-		
-		mv.addObject("pVo", pVo);
-		mv.addObject("list", list);
-		mv.setViewName("jsp/admin_total_board");
-		return mv;
-	}
 
 /*--------------------------------view---------------------------------------------------*/	
 	@RequestMapping("jsp/admin_total_freetalking_board_view")
@@ -156,13 +85,15 @@ public class AdminTotalboardController {
 	}
     
 	@RequestMapping("jsp/admin_total_qna_board_view")
-	public ModelAndView qnaview(BoardPageVo pVo, AdminTotalboardVo atVo) {
+	public ModelAndView qnaview(BoardPageVo pVo, AdminTotalboardVo atVo, AdminTotalboardVo atVo2) {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.qna_view(pVo, atVo);
+		atVo2 = service.repl_selected(pVo,atVo);
 		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
+		mv.addObject("atVo2", atVo2);
 		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_total_qna_board_view");
 		return mv;
@@ -287,6 +218,44 @@ public class AdminTotalboardController {
 	@RequestMapping("jsp/admin_total_repl")
 	public ModelAndView repl_select(BoardPageVo pVo) {
 		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.repl_select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_repl");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_repl_delete")
+	public ModelAndView admin_total_repl_delete(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.repl_delete(atVo);
+		
+//		if( !b ) {
+//			PrintWriter out = resp.getWriter();
+//			out.print("<script>alert('fail')</script>");
+//		}
+
+		List<AdminTotalboardVo> list = service.repl_select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_repl");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_repl_restore")
+	public ModelAndView admin_total_repl_restore(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.repl_restore(atVo);
+		
+//		if( !b ) {
+//			PrintWriter out = resp.getWriter();
+//			out.print("<script>alert('fail')</script>");
+//		}
+
 		List<AdminTotalboardVo> list = service.repl_select(pVo);
 		pVo = service.getpVo();
 		

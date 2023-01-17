@@ -13,7 +13,8 @@ public interface AdminCertificationMapper {
 	public List<AdminCertificationVo> corp_select(CertificationPageVo cpVo);
 	public int corp_approve(AdminCertificationVo acVo);
 	
-	
+/*----------------------------mento--------------------------------------------------------*/	
 	public int mento_totlist(CertificationPageVo cpVo);
 	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo);
+	public int change_grade(AdminCertificationVo acVo);
 }

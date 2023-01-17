@@ -43,21 +43,17 @@ movePage = function(nowPage) {
 view = function(career_certification,id,join_date,email,grade){
 	var frm = $('.frm_search5')[0];
 	img.src = "images/"+career_certification;
-	frm.ID.value = id;
+	frm.id.value = id;
 	frm.join_date.value = join_date;
 	frm.email.value = email;
-	frm.grade.value = grade;
+	frm.GRADE.value = grade;	
 }
 
-select_grade= function() {
-	$('.btnGradeChange').on('click', function() {
-		
-		
-	})
-};
+$("select[name=grade]").change(function(){
+    console.log($(this).val()); //value값 가져오기
+    var frm = $('.frm_search5')[0];
+    frm.GRADE.value = $(this).val();
+    var param = $(frm).serialize();
+    $('#baik_admin_main').load('jsp/admin_mento_change_grade', param);
+});
 
-
-
-change_grade() = function() {
-	
-}

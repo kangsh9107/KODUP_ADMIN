@@ -28,19 +28,13 @@ public class AdminTotalboardService {
 	
 	public List<AdminTotalboardVo> select(BoardPageVo pVo) {
 		int totSize = AdminTotalboardMapper.totList(pVo);
+		
 		pVo.setTotSize(totSize);
 		this.pVo = pVo;
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.select(pVo);
 		return list;
 	}
 	
-	public List<AdminTotalboardVo> qna_select(BoardPageVo pVo) {
-		int totSize = AdminTotalboardMapper.qna_totList(pVo);
-		pVo.setTotSize(totSize);
-		this.pVo = pVo;
-		List<AdminTotalboardVo> list = AdminTotalboardMapper.qna_select(pVo);
-		return list;
-	}
 
 /*-------------------------------------view----------------------------------------------------*/	
 	public AdminTotalboardVo view(BoardPageVo pVo, AdminTotalboardVo atVo) {
@@ -84,6 +78,12 @@ public class AdminTotalboardService {
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.repl_list(pVo.getSno());
 		return list;
 		
+	}
+	
+	public AdminTotalboardVo repl_selected(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		atVo = AdminTotalboardMapper.repl_selected(pVo.getSno());
+		
+		return atVo;
 	}
 /*---------------modify-----------------------------------------------------------------*/
 	public boolean freetalking_board_modify(AdminTotalboardVo atVo) {
@@ -221,6 +221,42 @@ public class AdminTotalboardService {
 		this.pVo = pVo;
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.repl_select(pVo);
 		return list;
+	}
+	
+	public boolean repl_delete(AdminTotalboardVo atVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminTotalboardMapper.repl_delete(atVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+	}
+	
+	public boolean repl_restore(AdminTotalboardVo atVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminTotalboardMapper.repl_restore(atVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
 	}
 	
 	

@@ -62,29 +62,47 @@
 	width: 100px;
 	text-align: center;
 	margin-right: 20px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.repl_doc{
 	width: 700px;
 	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.nickname{
 	width: 100px;
 	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.repl_nal{
 	width: 150px;
 	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 
 .baik_board_view li>span.delete_btn{
 	width: 46px;
 	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 
 }
 
 .baik_board_view li>span.restore_btn{
 	width: 46px;
 	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 
 }
 
