@@ -51,7 +51,7 @@
                                  </span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 text-white btnMemberBan">
+                                <a href="#" class="nav-link px-0 text-white btnTotalRepl">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
                                     <label class="sidebar_list" style="cursor: pointer;">댓글 관리</label>
                                    </span>

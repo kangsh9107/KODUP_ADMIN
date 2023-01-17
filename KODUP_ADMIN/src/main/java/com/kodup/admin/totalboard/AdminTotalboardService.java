@@ -41,6 +41,7 @@ public class AdminTotalboardService {
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.qna_select(pVo);
 		return list;
 	}
+
 /*-------------------------------------view----------------------------------------------------*/	
 	public AdminTotalboardVo view(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		atVo = AdminTotalboardMapper.view(pVo.getSno(), pVo.getBoardtype());
@@ -212,6 +213,16 @@ public class AdminTotalboardService {
 		}
 		return flag;
 	}
+	
+/*----------------------------total_repl------------------------------------------------------*/	
+	public List<AdminTotalboardVo> repl_select(BoardPageVo pVo) {
+		int totSize = AdminTotalboardMapper.repl_totList(pVo);
+		pVo.setTotSize(totSize);
+		this.pVo = pVo;
+		List<AdminTotalboardVo> list = AdminTotalboardMapper.repl_select(pVo);
+		return list;
+	}
+	
 	
 	public BoardPageVo getpVo() { return pVo; }
 }

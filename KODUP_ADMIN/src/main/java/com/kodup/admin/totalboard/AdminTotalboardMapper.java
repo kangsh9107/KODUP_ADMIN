@@ -34,4 +34,8 @@ public interface AdminTotalboardMapper {
 /*--------------------------delete--------------------------------------------*/
 	public int board_delete(AdminTotalboardVo atVo);
 	public int board_restore(AdminTotalboardVo atVo);
+	
+/*--------------------------total_repl------------------------------------------*/
+	public int repl_totList(BoardPageVo pVo);
+	public List<AdminTotalboardVo> repl_select(BoardPageVo pVo);
 }
