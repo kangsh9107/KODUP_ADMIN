@@ -48,6 +48,11 @@ margin-left:5px;
 	   <c:when test="${atVo.board_delete eq 0}"></c:when>
 	   <c:when test="${atVo.board_delete eq 1}">
 	       <label style="font-size:30px; font-weight:bold; margin-left:40px; color: red;">
+	          !작성자가 삭제한 게시물 입니다.
+	       </label>
+	   </c:when>
+	   <c:when test="${atVo.board_delete eq 2}">
+	       <label style="font-size:30px; font-weight:bold; margin-left:40px; color: red;">
 	          !삭제 처리 된 게시물 입니다.
 	       </label>
 	   </c:when>
