@@ -61,10 +61,10 @@
 			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
 	            <button class=" w-100 btn btn-md btnSearch text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div>
-	          <input type='text' name='nowPage' value='${pVo.nowPage }'/> 
-	          <input type='text' name='sno' value='${pVo.sno }'/>
-	          <input type='text' name='boardtype' value='${pVo.boardtype }'/>
-	          <input type="text" name="selectBox" value="${pVo.selectBox }">
+	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
+	          <input type='hidden' name='sno' value='${pVo.sno }'/>
+	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
+	          <input type="hidden" name="selectBox" value="${pVo.selectBox }">
           </div>
           <hr class="my-4" style="width: 990px;">
 		  
@@ -107,12 +107,12 @@
 					<span class='subject'>
 					   <c:choose>
 					     <c:when test="${v.board_delete eq 0}"> ${v.subject }</c:when>
-					     <c:when test="${v.board_delete eq 1}"> 
-					        <style>
-					          li.item{
-					            background-color:red !important;
-					          }
-					        </style>
+					     <c:when test="${v.board_delete eq 1}">
+					        <label style="color:red;">
+					           ${v.subject }(작성자 삭제)
+					        </label>
+					     </c:when>
+					     <c:when test="${v.board_delete eq 2}">
 					        <label style="color:red;">
 					           ${v.subject }(삭제처리)
 					        </label>

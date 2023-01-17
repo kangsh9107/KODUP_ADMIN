@@ -126,7 +126,7 @@
     
     <update id="board_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
      update board
-     set board_delete = 1
+     set board_delete = 2
      where sno = #{sno}
      
     </update>

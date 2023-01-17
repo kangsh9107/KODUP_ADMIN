@@ -24,7 +24,7 @@
    <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:48px;">
 	  <div class="row g-2">
 	     <div class="col-md-3">
-	    	<img src="images/사업자등록증.jpg"  name="corp_license" alt="..." class="img-thumbnail img" style="width:230px; height: 230px;">
+	    	<img src="images/default image.png"  name="corp_license" alt="..." class="img-thumbnail img" style="width:230px; height: 230px;">
 	    	<div class="modal">
 				  <span class="close">&times;</span>
 				  <img class="modal_content" id="img01">

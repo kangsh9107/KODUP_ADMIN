@@ -26,6 +26,7 @@ public class AdminMemberController {
 		mv.setViewName("jsp/admin_member_list");
 		return mv;
 	}
+	
 	@RequestMapping("jsp/admin_member_list_update")
 	public ModelAndView admin_member_list_update(MemberPageVo mpVo, AdminMemberVo amVo) {
 		ModelAndView mv = new ModelAndView();
@@ -41,6 +42,19 @@ public class AdminMemberController {
 		return mv;
 	}
 	
+	@RequestMapping("jsp/admin_member_delete")
+	public ModelAndView delete(MemberPageVo mpVo,AdminMemberVo amVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.member_delete(amVo);
+		
+		List<AdminMemberVo> list = service.select(mpVo);
+		mpVo = service.getmpVo();
+		
+		mv.addObject("mpVo",mpVo);
+		mv.addObject("list",list);
+		mv.setViewName("jsp/admin_member_list");
+		return mv;
+	}
 	
 	
 	/*admin_ban.jsp*/

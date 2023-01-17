@@ -9,6 +9,8 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.kodup.admin.totalboard.AdminTotalboardVo;
+
 
 @Service
 @Transactional
@@ -48,6 +50,24 @@ public class AdminMemberService {
 	public List<AdminMemberVo> repl_list5(AdminMemberVo amVo) {
 		List<AdminMemberVo> list = AdminMemberMapper.repl_list5(amVo);
 		return list;
+	}
+	
+	public boolean member_delete(AdminMemberVo amVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminMemberMapper.member_delete(amVo.getId());
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
 	}
 	
 /*-------------------admin_ban.jsp----------------*/

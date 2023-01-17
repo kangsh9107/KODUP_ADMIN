@@ -88,6 +88,7 @@
 			<span class='nickname'>${v.nickname }</span>
 			<span class='email'>${v.email }</span>
 			<span class='join_date'>${v.join_date }</span>
+			<input type="hidden" value="${v.ban_status }" class="ban_status">
 		</li>
 		</c:forEach>
 	  </ul>

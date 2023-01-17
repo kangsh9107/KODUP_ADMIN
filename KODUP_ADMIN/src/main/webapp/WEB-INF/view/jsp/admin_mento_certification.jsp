@@ -23,7 +23,7 @@
    <div class="container" style="max-width:1000px; margin-left: 0px; padding-left:40px;">
 	  <div class="row g-2">
 	     <div class="col-md-3">
-	    	<img src="images/경력증명서.png" alt="..." class="img-thumbnail img" style="width:230px; height: 230px;">
+	    	<img src="images/default image.png" alt="..." class="img-thumbnail img" style="width:230px; height: 230px;">
 	    	<div class="modal">
 				  <span class="close">&times;</span>
 				  <img class="modal_content" id="img01">
@@ -36,7 +36,7 @@
 				  아이디
 		       </div>
 			   <div class="col-md-5">
-				  <input class="form-control form-control-sm" type="text" name="id" readOnly aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="ID" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		    </div>
 		    <br>
@@ -63,7 +63,7 @@
 			       현재 등급
 			    </div>
 		        <div class="col-md-5">
-			        <input class="form-control form-control-sm" type="text" name="grade" value="${v.grade }"readOnly aria-label=".form-control-sm example" style="height:38px;">
+			        <input class="form-control form-control-sm" type="text" name="grade" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
 		     </div>
 		     <br>

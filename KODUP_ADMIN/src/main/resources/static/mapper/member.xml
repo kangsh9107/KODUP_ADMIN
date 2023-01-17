@@ -11,7 +11,7 @@
 	</select>
 	
     <select id="select" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
-        select id, nickname, email, join_date from member
+        select id, nickname, email, join_date, ban_status from member
         WHERE id = #{findStr} 
         OR nickname LIKE '%${findStr}%' 
         or email LIKE '%${findStr}%'
@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id='view' parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
-       SELECT m.profile_img, m.id, m.pwd, m.email, m.nickname, m.gender, Round(TO_DAYS(NOW()) - (TO_DAYS(m.age))) / 365) age, m.account_type, m.ban_status, m.pixel, m.grade, m.join_date, m.email_status, m.mento_status, 
+       SELECT m.profile_img, m.id, m.pwd, m.email, m.nickname, m.gender, ROUND((TO_DAYS(NOW()) - (TO_DAYS(m.age))) / 365) as age, m.account_type, m.ban_status, m.pixel, m.grade, m.join_date, m.email_status, m.mento_status, 
        mi.introduce,
        bh.ban_number
        FROM member m LEFT JOIN member_introduce mi ON m.id = mi.id
@@ -47,6 +47,12 @@
        order by repl_nal desc
        limit 1, 5
     </select>
+    
+    <update id="member_delete" parameterType="com.kodup.admin.member.AdminMemberVo">
+       update member
+       set ban_status = 2
+       where id = #{id}
+    </update>
     
     <select id="banselect" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
         select id, nickname, email, ban_status from member

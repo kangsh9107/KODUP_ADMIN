@@ -26,6 +26,7 @@ if(frm.account_type.value == 2)  frm.account_type.value="네이버 회원";
 
 if(frm.ban_status.value == 0)  frm.ban_status.value="활동 중"
 if(frm.ban_status.value == 1)  frm.ban_status.value="정지 중"
+if(frm.ban_status.value == 2)  frm.ban_status.value="탈퇴"
 
 if(frm.grade.value == 0)  frm.grade.value="일반 회원";
 if(frm.grade.value == 1)  frm.grade.value="퍼스널 회원";
@@ -70,7 +71,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  아이디
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.id }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" value="${amVo.id }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
@@ -86,7 +87,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  이메일
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.email }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" value="${amVo.email }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
@@ -102,14 +103,14 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  성별
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" name="gender" type="text" value="${amVo.gender }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly name="gender" type="text" value="${amVo.gender }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
-				  나이
+				  나이(만)
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.age }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" value="${amVo.age }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -118,14 +119,14 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  계정유형
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" name="account_type" readOnly value="${amVo.account_type }" type="text" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly name="account_type" readOnly value="${amVo.account_type }" type="text" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			 
 			   <div class="col-2">
 				  활동 상태
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" name="ban_status" type="text" value="${amVo.ban_status }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly name="ban_status" type="text" value="${amVo.ban_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -141,7 +142,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  회원등급
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" name="grade" type="text" value="${amVo.grade }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly name="grade" type="text" value="${amVo.grade }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -150,14 +151,14 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  이메일인증
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" name="email_status" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly name="email_status" type="text" value="${amVo.email_status }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">
 				  정지 회수
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.ban_number }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm"  type="text" value="${amVo.ban_number }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		     </div>
 		   </div>
@@ -195,10 +196,11 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
+		            <button class=" w-100 btn btnMemberModify btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white btn-danger" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
+		            <button class=" w-100 btn btn-md text-white btn-danger" type="button" _
+		                    onclick="member_delete(${v.id})" msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
 		          </div>
 		       </div>
 	    </div>
