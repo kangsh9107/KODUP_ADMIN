@@ -11,29 +11,6 @@
 <script src="js/admin_total_board.js"></script>
 <title>freetalking/freetalking_view.jsp</title>
 </head>
-<style>
-.freetalking_view {
-min-height: 300px;
-background: #eee;
-width:1050px; 
-padding-left:20px; 
-margin-left:40px;
-padding-bottom: 10px;
-}
-
-#board_view_repl_profile{
-margin-left:5px;
-}
-
-#board_view_repl_doc{
- min-height: 30px;
- background: #e5e5e5;
- width:980px; 
- padding:10px; 
- margin-left:10px;
- margin-top:5px;
-}
-</style>
 <body>
 
 <div style="padding-left:40px;">
@@ -55,7 +32,7 @@ margin-left:5px;
 	       </label>
 	   </c:when>
    </c:choose>
-  <div class="freetalking_view">
+  <div class="board_view">
 	   <!-- boardtype + / + horsehead -->
 	   <div id="freetalking_view_horsehead" style="padding-top:20px; width:1000px;">
 	      <label style="font-weight: bold;">말머리 :</label>
@@ -111,23 +88,50 @@ margin-left:5px;
 	   <h5 style="font-weight: bold;">댓글 목록</h5>
 	   
 	   <c:forEach var='v' items="${repl_list }" varStatus='status'>
-		   <div id="board_view_repl" class="item" style="margin-bottom:20px;">
+	      <c:choose>
+	        <c:when test="${v.deep eq 0}">
+	        <div id="board_view_repl" class="item" style="margin-bottom:20px;">
 		      <!-- 작성자프로필사진+닉네임 -->
-		      <div class="row g-3" id="board_view_repl_profile">
+		      <div class="row g-3" id="board_view_repl_profile" style="margin-left:5px;">
 		         <span id="board_view_repl_profile_profileimage">
 		            <img id="board_view_repl_profile_profileimage_file" src="images/${v.profile_img }" style="width:20px; height:20px;">
-	    	     </span>
-		         <span id="board_view_profile_nickname" style="color: #686a6d;">
+		         </span>
+		         <span id="board_view_profile_nickname" style="color: #686a6d; width:800px;">
 		            <span style="width:10px;">|</span>
-		               <span>${v.nickname }</span>
+		            <span>${v.nickname }</span>
 		            <span style="width:10px;">|</span>
 		         </span>
 		         <span style="width:180px; color: #686a6d;">
-		            <span id=""style="float:right; padding-right:10px;">${v.repl_nal }</span>
+		            <span id="" style="float:right; padding-right:10px;">${v.repl_nal }</span>
 		         </span>
-		         <span id="board_view_repl_doc">${v.repl_doc }</span>
+		         <span id="board_view_repl_doc" style="width:980px;">
+		              ${v.repl_doc}
+		         </span>
+		       </div>
+		    </div>
+		   </c:when>
+	       <c:when test="${v.deep eq 1}">
+		   <div id="board_view_repl" class="item" style="margin-bottom:20px; margin-left:50px;">
+		      <!-- 작성자프로필사진+닉네임 -->
+		      <div class="row g-3" id="board_view_repl_profile" style="margin-left:5px;">
+		         <span id="board_view_repl_profile_profileimage">
+		            <img id="board_view_repl_profile_profileimage_file" src="images/${v.profile_img }" style="width:20px; height:20px;">
+		         </span>
+		         <span id="board_view_profile_nickname" style="color: #686a6d; width:750px;">
+		            <span style="width:10px;">|</span>
+		            <span>${v.nickname }</span>
+		            <span style="width:10px;">|</span>
+		         </span>
+		         <span style="width:180px; color: #686a6d;">
+		            <span id="" style=" padding-right:10px;">${v.repl_nal }</span>
+		         </span>
+		         <span id="board_view_repl_doc" style="width:930px;">
+		              ${v.repl_doc}
+		         </span>
 		       </div>
 		   </div>
+		  </c:when>
+          </c:choose>
 	   </c:forEach>
    </div>
 <!-- 버튼 -->

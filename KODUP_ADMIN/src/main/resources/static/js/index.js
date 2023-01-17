@@ -45,6 +45,11 @@ $('.btnExchangeRate').on('click',function(){
     $('#baik_admin_main').load('jsp/admin_total_board');
  });
 
+ $('.btnTotalRepl').on('click',function(){
+  console.log("연결");
+    $('#baik_admin_main').load('jsp/admin_total_repl');
+ });
+ 
 $('.btnMemberList').on('click',function(){
   console.log("연결");
     $('#baik_admin_main').load('jsp/admin_member_list');

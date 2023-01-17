@@ -100,6 +100,7 @@ public class AdminTotalboardController {
 		mv.setViewName("jsp/admin_total_board");
 		return mv;
 	}
+
 /*--------------------------------view---------------------------------------------------*/	
 	@RequestMapping("jsp/admin_total_freetalking_board_view")
 	public ModelAndView freetalkingview(BoardPageVo pVo, AdminTotalboardVo atVo) {
@@ -279,6 +280,19 @@ public class AdminTotalboardController {
 		mv.addObject("pVo", pVo);
 		mv.addObject("list", list);
 		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+/*----------------------------------------total_repl-----------------------------------------*/	
+	@RequestMapping("jsp/admin_total_repl")
+	public ModelAndView repl_select(BoardPageVo pVo) {
+		ModelAndView mv = new ModelAndView();
+		List<AdminTotalboardVo> list = service.repl_select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_repl");
 		return mv;
 	}
 }

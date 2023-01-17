@@ -86,7 +86,7 @@
     </select>
     
     <select id="repl_list" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       select b.sno, m.profile_img, m.nickname, r.repl_sno, r.repl_doc, r.repl_nal
+       select b.sno, m.profile_img, m.nickname, r.repl_sno, r.repl_doc, r.repl_nal, r.deep
               from repl r left join board b  on r.sno = b.sno
                           left join member m on r.id = m.id
        where r.sno = #{sno}
@@ -137,4 +137,23 @@
      where sno = #{sno}
      
     </update>
+    
+    <select id="repl_totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
+		select count(r.repl_sno) totSize 
+		from repl r join member m on r.id = m.id
+		where m.nickname like '%${findStr}%'
+		or r.repl_nal like '%${findStr}%'
+	</select>
+	
+	<select id="repl_select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+        select r.repl_sno, r.repl_doc, m.nickname, date_format(r.repl_nal, '%Y-%m-%d') repl_nal, r.repl_delete
+        from repl r join member m on r.id = m.id
+        WHERE r.id = #{findStr} 
+        OR r.repl_doc LIKE '%${findStr}%'
+        or m.nickname like '%${findStr}%'
+		or r.repl_nal like '%${findStr}%'
+        order by r.repl_sno desc
+        limit ${startNo}, ${listSize}
+       
+	</select>
 </mapper>

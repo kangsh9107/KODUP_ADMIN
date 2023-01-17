@@ -58,31 +58,24 @@
 	padding-left: 10px;
     padding-top: 5px;
 }
-.baik_board_view li>div>span.sno{
+.baik_board_view li>div>span.repl_sno{
 	width: 100px;
 	text-align: center;
 	margin-right: 20px;
 }
-.baik_board_view li>div>span.boardtype{
-	width: 100px;
-	text-align: center;
-}
-.baik_board_view li>div>span.subject{
-	width: 500px;
+.baik_board_view li>div>span.repl_doc{
+	width: 700px;
 	text-align: center;
 }
 .baik_board_view li>div>span.nickname{
 	width: 100px;
 	text-align: center;
 }
-.baik_board_view li>div>span.nal{
+.baik_board_view li>div>span.repl_nal{
 	width: 150px;
 	text-align: center;
 }
-.baik_board_view li>div>span.viewcount{
-	width: 100px;
-	text-align: center;
-}
+
 .baik_board_view li>span.delete_btn{
 	width: 46px;
 	text-align: center;
@@ -107,49 +100,4 @@
 	height:31px !important;
 	font-size: 13px;
 	
-}
-
-#board_view_repl_profile>span{
-	display :inline-block;
-}
-
-
-span#board_view_repl_profile_profileimage{
-	width:30px;
-	height:30px;
-}
-span#board_view_profile_nickname{
-   width:800px;
-}
-
-span#board_repl_doc{
-	width:1000px;
-	
-}
-
-span#board_repl_nal{
-	width:170px;
-	
-}
-
-.board_view {
-	min-height: 300px;
-	background: #eee;
-	width:1050px; 
-	padding-left:20px; 
-	margin-left:40px;
-	padding-bottom: 10px;
-}
-
-#board_view_repl_profile{
-    margin-left:5px;
-}
-
-#board_view_repl_doc{
-	 min-height: 30px;
-	 background: #e5e5e5;
-	 
-	 padding:10px; 
-	 margin-left:10px;
-	 margin-top:5px;
 }
