@@ -40,20 +40,7 @@ public class AdminStatisticsController {
 	}
 	
 	
-	@RequestMapping("jsp/admin_exchange_rate")
-	public ModelAndView select_exchange_rate() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("jsp/admin_pixel_exchange_rate");  
-		return mv;
-	}
-	
-	
-	@RequestMapping("jsp/admin_exchange")
-	public ModelAndView select_cexchange() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("jsp/admin_pixel_exchange");  
-		return mv;
-	}
+
 	
 	
 }

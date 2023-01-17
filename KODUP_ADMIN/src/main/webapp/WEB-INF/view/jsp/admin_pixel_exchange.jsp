@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,12 +62,13 @@
 
 	<div >
 	    <h3 style="font-weight: bold;">환전 처리</h3>
-		  <hr><br>
+		 <hr><br>
 	</div>
-   <div >
-		<span style="font-size:20px;">지급준비금 현황 : </span><input type="text" readOnly style="width:250px; height:35px;">
+    <div>
+		<span style="font-size:20px;">코덥 예산 현황 : <input type="text" value="492,137,000 " readOnly style="width:200px; height:35px;"></span>
 		<br/><br/>
-		<span style="font-size:15px;">지급준비금 ()% 기준으로 000,000 원 입니다.</span>
+		<span style="font-size:15px;">지급준비금(7%) : <fmt:formatNumber value="${totpixel*0.75*0.07}"  maxFractionDigits="2"/> 원 입니다. (픽셀평균환율75%)</span>
+		  
 		<hr>
 	</div>
 	<br>

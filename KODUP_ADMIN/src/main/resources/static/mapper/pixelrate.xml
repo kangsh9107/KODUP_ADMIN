@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kodup.admin.pixel.AdminPixelMapper">
+	<select id="select_pixelrate" resultType="com.kodup.admin.pixel.AdminPixelVo">
+		select * from pixel_exchange_rate
+	</select>
+	
+	<update id="update_rate" parameterType="com.kodup.admin.pixel.AdminPixelVo">
+		update pixel_exchange_rate set normal=${normal}, personal=${personal}, plus=${plus}, partner=${partner}
+	</update>
+	
+	<select id="select_totPixel" resultType="Integer">
+		select sum(pixel) as totpixel from member;
+	</select>
+</mapper>
