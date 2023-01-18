@@ -25,7 +25,7 @@
    
     <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
-        <form class="frm_search" method="post">
+        <form class="frm_search" onsubmit="return false;">
           <div class="row g-3" style="margin-top: -32px;">
 	          <div class="col-md-2" style="font-size:23px;">
 	              게시판
@@ -33,8 +33,7 @@
 	          
             <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" id="selectBox"
-			            size='1' style="width:150px;" onchange="select_search(this.value)">
-				  <option value="All">전체</option>
+			            size='1' style="width:150px;" onchange="selectBoxValue(this.value)">
 				  <option value="qna">QnA</option>
 				  <option value="freetalking">자유</option>
 				  <option value="infoshare">정보공유</option>
@@ -43,11 +42,13 @@
 				</select>
 		   </div>
 		   <div class="col-md-3" style="margin-left:-20px;">
-             <input type='date' class="select_date">
+             <input type='date' class="select_date" name="start_day" value='${pVo.start_day }'>
 	       </div>
+	       
 	       <span class="col-md-1" style="font-size:23px; width:25px; margin-left:-40px;">~</span>
+	       
 	       <div class="col-md-3" style="margin-left:0px;">
-             <input type='date' class="select_date">
+             <input type='date' class="select_date" name="end_day" value='${pVo.end_day }'>
 	       </div>
           </div>
           <hr class="my-4" style="width: 990px;">
@@ -56,15 +57,14 @@
 	              검색어
 	           </div>
 	          <div class="col-sm-6 col-lg-6" style="margin-left:-50px;">
-			     <input class="form-control form-control-sm" type="search" name="findStr" value='${pVo.findStr}' aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm findStr" type="text" name="findStr" value='${pVo.findStr}' aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
-			  <div class="d-grid gap-2 col-lg-2 text-white btnFindstr" style="margin-left:-1px;">
-	            <button class=" w-100 btn btn-md btnSearch text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
+			  <div class="d-grid gap-2 col-lg-2 text-white" style="margin-left:-1px;">
+	            <button class="btn btnSearch text-white" type="button" style="direction: ltr; background-color:#2d3644">검색</button>
 	          </div>
 	          <input type='hidden' name='nowPage' value='${pVo.nowPage }'/> 
 	          <input type='hidden' name='sno' value='${pVo.sno }'/>
 	          <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
-	       
           </div>
           <hr class="my-4" style="width: 990px;">
 		  

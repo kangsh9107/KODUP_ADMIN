@@ -10,6 +10,12 @@ $('.btnSearch').on('click', function() {
 	$('#baik_admin_main').load('jsp/admin_ban', param);
 });
 
+$(".findStr").on("keydown",function(key){
+  if(key.keyCode==13) {
+       $('.btnSearch').click();
+     }
+});
+
 movePage = function(nowPage) {
 	var frm = $('.frm_search3')[0];
 	frm.nowPage.value = nowPage;

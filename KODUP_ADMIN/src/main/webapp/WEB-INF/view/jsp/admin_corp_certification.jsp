@@ -16,7 +16,7 @@
 <body>
 <!-- 기업 정보 미리보기 칸 -->
    <div style="padding-left:40px;">
-	 <h3 style="font-weight: bold;">기업 인증</h3>
+	 <h3 style="font-weight: bold;">기업 인증 관리</h3>
 	    <hr><br>
    </div>
    
@@ -94,7 +94,7 @@
 				<span class='corp_status'>
 				   <c:choose>
 					 <c:when test="${v.corp_status eq 1}">신청</c:when>
-					 <c:when test="${v.corp_status eq 2}">신청 완료</c:when>
+					 <c:when test="${v.corp_status eq 2}">승인 완료</c:when>
 				   </c:choose>
 				</span>
 				<input type="hidden" value="${v.id }">

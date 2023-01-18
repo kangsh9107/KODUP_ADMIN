@@ -4,28 +4,28 @@
  
  /* admin_total_board.jsp*/
  
+ var selectBoxValue = function(value){
+	 console.log(value);
+	
+ }
+ 
  $('.btnSearch').on('click', function() {
 	var frm = $('.frm_search')[0];
+	
 	frm.nowPage.value = 1;
+	console.log(frm.start_day.value);
+	console.log(frm.end_day.value);
+	frm.boardtype.value =
+	console.log(frm.boardtype.value);
 	var param = $(frm).serialize();
 	$('#baik_admin_main').load('jsp/admin_total_board', param);
 });
 
-
-select_search = function() {
-	var selectValue = document.getElementById('selectBox').value;
-	var frm = $('.frm_search')[0];
-	frm.nowPage.value = 1;
-	console.log(selectValue);
-	
-	if(selectValue=="All"){
-	   var param = $(frm).serialize();
-	   $('#baik_admin_main').load('jsp/admin_total_board', param);
-	}else{
-	   var param = $(frm).serialize();
-	   $('#baik_admin_main').load("jsp/admin_total_board_find", param);	
-	}
-}
+$(".findStr").on("keydown",function(key){
+  if(key.keyCode==13) {
+     $('.btnSearch').click();
+     }
+});
 
 movePage = function(nowPage) {
 	var frm = $('.frm_search')[0];
@@ -184,4 +184,24 @@ list_board_restore = function(sno){
 	frm.sno.value=sno;
 	var param = $(frm).serialize();
 	$('#baik_admin_main').load('jsp/admin_total_board_restore', param);
+}
+
+deleteRepl = function(repl_sno){
+	var yn = confirm('댓글을 삭제하시겠습니까?');
+	if( !yn ) return;
+	var frm = $('.frm')[0];
+	frm.repl_sno.value = repl_sno;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board_repl_delete', param);
+    
+}
+
+restoreRepl = function(repl_sno){
+	var yn = confirm('댓글을 복구 하겠습니까?');
+	if( !yn ) return;
+	
+	var frm = $('.frm')[0];
+	frm.repl_sno.value = repl_sno;
+	var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_total_board_repl_restore', param);
 }

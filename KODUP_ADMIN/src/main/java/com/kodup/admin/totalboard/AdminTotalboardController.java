@@ -27,8 +27,7 @@ public class AdminTotalboardController {
 		mv.addObject("list", list);
 		mv.setViewName("jsp/admin_total_board");
 		return mv;
-	}
-	
+	}	
 
 /*--------------------------------view---------------------------------------------------*/	
 	@RequestMapping("jsp/admin_total_freetalking_board_view")
@@ -175,7 +174,7 @@ public class AdminTotalboardController {
 		
 	}
 
-/*------------------------------delete---------------------------------------------*/
+/*------------------------------delete&restore---------------------------------------------*/
 	@RequestMapping("jsp/admin_total_board_delete")
 	public ModelAndView admin_total_board_delete(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		ModelAndView mv = new ModelAndView();
@@ -211,6 +210,35 @@ public class AdminTotalboardController {
 		mv.addObject("pVo", pVo);
 		mv.addObject("list", list);
 		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_repl_delete")
+	public ModelAndView admin_total_board_repl_delete(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.repl_delete(atVo);
+		System.out.println(b);
+		List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_total_board_repl_restore")
+	public ModelAndView admin_total_board_repl_restore(BoardPageVo pVo, AdminTotalboardVo atVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.repl_restore(atVo);
+		System.out.println(b);
+      	List<AdminTotalboardVo> list = service.select(pVo);
+		pVo = service.getpVo();
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("list", list);
+		mv.setViewName("jsp/admin_total_board");
+		
 		return mv;
 	}
 	

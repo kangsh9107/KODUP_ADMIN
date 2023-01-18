@@ -9,6 +9,13 @@
 	$('#baik_admin_main').load('jsp/admin_member_list', param);
 });
 
+$(".findStr").on("keydown",function(key){
+  if(key.keyCode==13) {
+	
+       $('.btnSearch').click();
+     }
+});
+
 movePage = function(nowPage) {
 	var frm = $('.frm_search2')[0];
 	frm.nowPage.value = nowPage;

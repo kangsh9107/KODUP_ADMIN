@@ -20,7 +20,7 @@
     <br>
     </div>
     
-   <form class="frm_search2">
+   <form class="frm_search2" onsubmit="return false;">
     <div class="row g-2" style="padding-left: 48px; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
           <div class="row g-3">
@@ -30,7 +30,6 @@
             
             <div class="col-md-4" style="width:200px; margin-left:-42px;">
 			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option selected>전체</option>
 				  <option value="1">일반</option>
 				  <option value="2">퍼스널</option>
 				  <option value="3">플러스</option>
@@ -54,7 +53,7 @@
 				</select>
 		   </div>
 	          <div class="col-md-4" style="margin-left:-30px;">
-			     <input class="form-control form-control-sm" type="search" name="findStr" value="${mpVo.findStr}" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm findStr" type="search" name="findStr" value="${mpVo.findStr}" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
 	            <button class=" w-100 btn btnSearch btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>

@@ -34,24 +34,15 @@ public class AdminTotalboardService {
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.select(pVo);
 		return list;
 	}
-	
 
 /*-------------------------------------view----------------------------------------------------*/	
 	public AdminTotalboardVo view(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		atVo = AdminTotalboardMapper.view(pVo.getSno(), pVo.getBoardtype());
-    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
-//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
-//		bVo.setAttList(attList);
-		
 		return atVo;
 	}
 	
 	public AdminTotalboardVo mansearch_view(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		atVo = AdminTotalboardMapper.mansearch_view(pVo.getSno(), pVo.getBoardtype());
-    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
-//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
-//		bVo.setAttList(attList);
-		
 		return atVo;
 	}
 	

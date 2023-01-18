@@ -105,7 +105,21 @@
 		            <span id="" style="float:right; padding-right:10px;">${v.repl_nal }</span>
 		         </span>
 		         <span id="board_view_repl_doc" style="width:980px;">
-		              ${v.repl_doc}
+		           <c:choose>
+		              <c:when test="${v.repl_delete eq 0 }"><span>${v.repl_doc}</span></c:when>
+		              <c:when test="${v.repl_delete eq 1 }"><span style="color:red;">${v.repl_doc}(작성자 삭제)</span></c:when>
+		              <c:when test="${v.repl_delete eq 2 }"><span style="color:red;">${v.repl_doc}(삭제 처리)</span></c:when>
+		           </c:choose>
+		           <span style="float:right;">
+			              <span class='delete_btn'>
+							   <button type="button" class="btn btnDelete btn-danger btn-sm"
+							           onclick="deleteRepl(${v.repl_sno})">삭제</button>
+						  </span>
+						  <span class='restore_btn'>
+						    <button type="button" class="btn btnRestore btn-success btn-sm"
+							           onclick="restoreRepl(${v.repl_sno})">복구</button>
+					      </span>
+				      </span>
 		         </span>
 		       </div>
 		    </div>
@@ -126,7 +140,21 @@
 		            <span id="" style=" padding-right:10px;">${v.repl_nal }</span>
 		         </span>
 		         <span id="board_view_repl_doc" style="width:930px;">
-		              ${v.repl_doc}
+		          <c:choose>
+		              <c:when test="${v.repl_delete eq 0 }"><span>${v.repl_doc}</span></c:when>
+		              <c:when test="${v.repl_delete eq 1 }"><span style="color:red;">${v.repl_doc}(작성자 삭제)</span></c:when>
+		              <c:when test="${v.repl_delete eq 2 }"><span style="color:red;">${v.repl_doc}(삭제 처리)</span></c:when>
+		           </c:choose>
+		           <span style="float:right;">
+			              <span class='delete_btn'>
+							   <button type="button" class="btn btnDelete btn-danger btn-sm"
+							           onclick="deleteRepl(${v.repl_sno})">삭제</button>
+						  </span>
+						  <span class='restore_btn'>
+						    <button type="button" class="btn btnRestore btn-success btn-sm"
+							           onclick="restoreRepl(${v.repl_sno})">복구</button>
+					      </span>
+				      </span>
 		         </span>
 		       </div>
 		   </div>
@@ -152,7 +180,7 @@
 		              onclick="board_delete(${pVo.sno})" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
-	 
+	<input type='hidden' name='repl_sno' value='${pVo.repl_sno }'/> 
 	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
 	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
     <input type='hidden' name='sno' value='${pVo.sno }'/>

@@ -21,7 +21,7 @@
    
     <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
        <div class="col-sm-6 col-md-10 col-lg-10">
-          <form class="frm_search3">
+          <form class="frm_search3" onsubmit="return false;">
             <div class="row g-2">
 	           <div class="col-md-4" style="width:200px;">
 				    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
@@ -32,7 +32,7 @@
 					</select>
 			   </div>
 	          <div class="col-md-4">
-			     <input class="form-control form-control-sm" name="findStr" value='${mpVo.findStr}' type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm findStr" name="findStr" value='${mpVo.findStr}' type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-2 text-white">
 	            <button class=" w-100 btn btnSearch btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
