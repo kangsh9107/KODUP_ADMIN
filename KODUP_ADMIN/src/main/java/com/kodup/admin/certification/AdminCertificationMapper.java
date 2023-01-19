@@ -17,4 +17,5 @@ public interface AdminCertificationMapper {
 	public int mento_totlist(CertificationPageVo cpVo);
 	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo);
 	public int change_grade(AdminCertificationVo acVo);
+	public int change_mento_status(AdminCertificationVo acVo);
 }

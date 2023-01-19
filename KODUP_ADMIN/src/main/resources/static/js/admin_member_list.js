@@ -1,10 +1,24 @@
 /**
  * 
  */
-
+ var selectGrade = function(value){
+	 var frm = $('.frm_search2')[0];
+	 frm.grade.value = value;
+	 var param = $(frm).serialize();
+	$('#baik_admin_main').load('jsp/admin_grade_list', param);
+ }
+ 
+ var selectCondition = function(value){
+	 console.log(value);
+      var frm = $('.frm_search2')[0];
+      frm.condition.value = value;
+      
+ }
+ 
  $('.btnSearch').on('click', function() {
 	var frm = $('.frm_search2')[0];
 	frm.nowPage.value = 1;
+	
 	var param = $(frm).serialize();
 	$('#baik_admin_main').load('jsp/admin_member_list', param);
 });

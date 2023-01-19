@@ -10,6 +10,9 @@
 <link defer rel="stylesheet" href="css/admin_total_board.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="js/admin_total_board.js"></script>
+<script>
+
+</script>
 <title>qna/qna_view.jsp</title>
 </head>
 <body>
@@ -37,7 +40,7 @@
 	   <!-- boardtype + / + horsehead -->
 	   <div id="qna_view_horsehead" style="padding-top:20px; width:1000px;">
 	      <label>말머리 :</label>
-	      <label>${atVo.horsehead }</label>
+	      <input type="text" name="horsehead" value="${atVo.horsehead }" style="width:70px;">
 		  <hr>
 	   </div>
 	   
@@ -65,7 +68,12 @@
 	   <!-- 조회수,작성시간 css왼쪽 기준으로 오른쪽에 붙게 빼자 -->
 	       <label style="margin-left:5px;">해쉬태그 :</label>
 		   <span id="qna_view_hashtag">
-		      <span>${atVo.hashtag}</span> 
+		      <span>
+		      <c:forEach var='v' items="${hashtag }" varStatus='status' begin='1'>
+		         <span style= "border: 1px solid #91aedc; margin-left:5px; border-radius: 20px;
+		                       background-color:#91aedc; padding:3px; color:white;">#${v }</span> 
+		      </c:forEach>
+		      </span> 
 		   </span>
 		   <span id="qna_view_info">
 		      <label style="margin-left:5px;">올린 시간 :</label>

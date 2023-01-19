@@ -29,11 +29,13 @@
             </div>
             
             <div class="col-md-4" style="width:200px; margin-left:-42px;">
-			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option value="1">일반</option>
-				  <option value="2">퍼스널</option>
-				  <option value="3">플러스</option>
-				  <option value="4">파트너</option>
+			    <select class="form-select" aria-label="Default select example" size='1' 
+			            style="width:150px;" id="selectBox" onchange="selectGrade(this.value)">
+			      <option value="null">등급</option>
+				  <option value="0">일반</option>
+				  <option value="1">퍼스널</option>
+				  <option value="2">플러스</option>
+				  <option value="3">파트너</option>
 				</select>
 		   </div>
 		  </div>
@@ -45,11 +47,13 @@
               검색어
             </div>
             <div class="col-md-4" style="width:200px; margin-left:-10px;">
-			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option selected>아이디</option>
-				  <option value="1">이메일</option>
-				  <option value="2">닉네임</option>
-				  <option value="3">가입일</option>
+			    <select class="form-select" aria-label="Default select example" 
+			            size='1' style="width:150px;" onchange="selectCondition(this.value)">
+			      <option value="null">검색어</option>
+				  <option value="id">아이디</option>
+				  <option value="email">이메일</option>
+				  <option value="nickname">닉네임</option>
+				  <option value="join_date">가입일</option>
 				</select>
 		   </div>
 	          <div class="col-md-4" style="margin-left:-30px;">
@@ -61,6 +65,8 @@
 		  </div>
 		 <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
 		 <input type='hidden' name='id' value='${mpVo.id }'/>
+		 <input type='hidden' name='grade' value='${mpVo.grade }'/>
+		 <input type='hidden' name='condition' value='${mpVo.condition }'/>
 		 
         </div>
        <hr class="my-4" style="width:1000px;"> 
@@ -76,6 +82,7 @@
 			<span class='no'>No</span>
 			<span class='id'>아이디</span>
 			<span class='nickname'>닉네임</span>
+			<span class="grade">등급</span>
 			<span class='email'>이메일</span>
 			<span class='join_date'>가입일</span>
 		</li>
@@ -85,6 +92,14 @@
 			<span class='no'>${status.count }</span>
 			<span class='id'>${v.id} </span>
 			<span class='nickname'>${v.nickname }</span>
+			<span class='grade'>
+				<c:choose>
+				  <c:when test="${v.grade eq 0}">일반</c:when>
+				  <c:when test="${v.grade eq 1}">퍼스널</c:when>
+				  <c:when test="${v.grade eq 2}">플러스</c:when>
+				  <c:when test="${v.grade eq 3}">파트너</c:when>
+			   </c:choose>
+			</span>
 			<span class='email'>${v.email }</span>
 			<span class='join_date'>${v.join_date }</span>
 			<input type="hidden" value="${v.ban_status }" class="ban_status">

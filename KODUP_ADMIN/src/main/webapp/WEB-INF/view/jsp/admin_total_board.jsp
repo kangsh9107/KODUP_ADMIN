@@ -33,7 +33,8 @@
 	          
             <div class="col-md-4" style="width:200px; margin-left:-50px;">
 			    <select class="form-select" aria-label="Default select example" id="selectBox"
-			            size='1' style="width:150px;" onchange="selectBoxValue(this.value)">
+			            size='1' style="width:150px;" onchange="selectBoxValue(this.value)">      
+			      <option value="null">게시판</option>      
 				  <option value="qna">QnA</option>
 				  <option value="freetalking">자유</option>
 				  <option value="infoshare">정보공유</option>
@@ -77,7 +78,7 @@
     <div class="baik_board_view" >
     <ul>
 		<li class='title'> <!-- 타이틀 -->
-		    <span class="checkbox"></span>
+		   
 		    <div>
 				<span class='sno'>게시글 번호</span>
 				<span class='boardtype'>게시판</span>
@@ -92,7 +93,7 @@
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
 			<li class='item'>
-			    <span class="checkbox list"><input type="checkbox" name="box"></span>
+			    
 			    <div onclick="view(${v.sno },'${v.boardtype}')">
 					<span class='sno'>${v.sno }</span>
 					<span class='boardtype'>
@@ -136,11 +137,7 @@
 		</c:forEach>
 		
 	  </ul>
-	  <div style="margin-left:20px;">
-	  <button type="button" class="btn btn-sm btnSelectAll text-white" style="background-color:#2d3644">전체</button>
-	  <button type="button" class="btn btn-sm btnCancelALl text-white" style="background-color:#2d3644">해제</button>
-	  <button type="button" class="btn btn-danger btn-sm">삭제</button>
-	  </div>
+	  
 	  <!-- PageButton -->
 		<div class="btn-toolbar" style="justify-content: center;" role="toolbar" aria-label="Toolbar with button groups">
 		<c:if test="${pVo.startPage > 1 }">

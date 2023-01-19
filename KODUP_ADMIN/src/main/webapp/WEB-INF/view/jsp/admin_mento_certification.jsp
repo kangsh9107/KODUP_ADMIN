@@ -67,6 +67,7 @@
 			        <input class="form-control form-control-sm" type="text" name="GRADE" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
 		     </div>
+		        <input type="hidden" name="mento_status">
 		     <br>
 		       <div class="row g-2" style="margin-left:170px;">
 			        <div class="col-md-2">
@@ -97,6 +98,7 @@
 			<span class='grade'>현재 등급</span>
 			<span class='email'>이메일</span>
 			<span class='join_date'>가입일</span>
+			<span class="mento_status">신청 상황</span>
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
@@ -115,8 +117,13 @@
 			            </span>
 						<span class='email'>${v.email }</span>
 						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						  <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
 						<input type="hidden" value="${v.career_certificate }">
-						<input type="hidden" value="${v.mento_status }">
 					</li>
 				</c:when>
 				<c:when  test="${v.grade == 1 }">
@@ -133,8 +140,13 @@
 			            </span>
 						<span class='email'>${v.email }</span>
 						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						   <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
 						<input type="hidden" value="${v.career_certificate }">
-						<input type="hidden" value="${v.mento_status }">
 					</li>
 				</c:when>
 				<c:when  test="${v.grade == 2 }">
@@ -151,8 +163,13 @@
 			            </span>
 						<span class='email'>${v.email }</span>
 						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						   <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
 						<input type="hidden" value="${v.career_certificate }">
-						<input type="hidden" value="${v.mento_status }">
 					</li>
 				</c:when>
 				<c:when  test="${v.grade == 3 }">
@@ -169,8 +186,13 @@
 			            </span>
 						<span class='email'>${v.email }</span>
 						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						  <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
 						<input type="hidden" value="${v.career_certificate }">
-						<input type="hidden" value="${v.mento_status }">
 					</li>
 				</c:when>
 			</c:choose>

@@ -3,7 +3,7 @@
 .baik_mento_view{
 	border: 1px solid #c8c9ca;
 	padding: 20px;
-	width: 800px;
+	width: 900px;
 	margin-left:40px;
 }
 .baik_mento_view>form{
@@ -16,13 +16,13 @@
 .baik_mento_view li.title{
 	background-color: #2d3644;
 	color: #fff;
-	width:700px;
+	width:800px;
 	text-align:center;
 	padding:3px;
 }
 .baik_mento_view li.item{
 	display: inline-block;
-	width: 700px;
+	width: 800px;
 	padding:3px;
 	margin-top : 2px;
     border : 1px solid #aaa;
@@ -31,7 +31,7 @@
 .baik_mento_view li.item:hover{
 	background-color: #ccc;
 	cursor: pointer;
-	width: 700px;
+	width: 800px;
 }
 .baik_mento_view li>span{
 	display: inline-block;
@@ -51,6 +51,9 @@
 }
 
 .baik_mento_view li>span.join_date{
+	width: 100px;
+}
+.baik_mento_view li>span.mento_status{
 	width: 100px;
 }
 

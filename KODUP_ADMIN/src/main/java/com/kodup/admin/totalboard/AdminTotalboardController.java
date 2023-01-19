@@ -35,10 +35,12 @@ public class AdminTotalboardController {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
 		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
 		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_freetalking_board_view");
 		return mv;
 	}
@@ -48,24 +50,29 @@ public class AdminTotalboardController {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
 		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
 		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_infoshare_board_view");
 		return mv;
 	}
 	
 	@RequestMapping("jsp/admin_total_mansearch_board_view")
-	public ModelAndView mansearchview(BoardPageVo pVo, AdminTotalboardVo atVo, AdminTotalboardVo atVo1) {
+	public ModelAndView mansearchview(BoardPageVo pVo, AdminTotalboardVo atVo, AdminTotalboardVo atVo2) {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.mansearch_view(pVo, atVo);
-		atVo1 = service.mansearch_view_info(pVo,atVo);
+		atVo2 = service.mansearch_view_info(pVo,atVo);
 		List<AdminTotalboardVo> list = service.premium_review(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
-		mv.addObject("atVo1", atVo1);
+		mv.addObject("atVo2", atVo2);
 		mv.addObject("list", list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_mansearch_board_view");
 		return mv;
 	}
@@ -75,10 +82,12 @@ public class AdminTotalboardController {
 		ModelAndView mv = new ModelAndView();
 		atVo = service.view(pVo, atVo);
 		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
 		
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
 		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_jobsearch_board_view");
 		return mv;
 	}
@@ -89,11 +98,13 @@ public class AdminTotalboardController {
 		atVo = service.qna_view(pVo, atVo);
 		atVo2 = service.repl_selected(pVo,atVo);
 		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
-		
+		String[] hashtag = service.hashtag(pVo);
+
 		mv.addObject("pVo", pVo);
 		mv.addObject("atVo", atVo);
 		mv.addObject("atVo2", atVo2);
 		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_qna_board_view");
 		return mv;
 	}
@@ -106,9 +117,14 @@ public class AdminTotalboardController {
 		System.out.println(b);
 		
 		// alert창으로 수정 완료 메시지 띄우기
-		atVo = service.view(pVo,atVo);
-		mv.addObject("pVo",pVo);
-		mv.addObject("atVo",atVo);
+		atVo = service.view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_freetalking_board_view"); 
 		return mv;
 		
@@ -121,9 +137,14 @@ public class AdminTotalboardController {
 		System.out.println(b);
 		
 		// alert창으로 수정 완료 메시지 띄우기
-		atVo = service.view(pVo,atVo);
-		mv.addObject("pVo",pVo);
-		mv.addObject("atVo",atVo);
+		atVo = service.view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_infoshare_board_view"); 
 		return mv;
 		
@@ -136,39 +157,58 @@ public class AdminTotalboardController {
 		System.out.println(b);
 		
 		// alert창으로 수정 완료 메시지 띄우기
-		atVo = service.view(pVo,atVo);
-		mv.addObject("pVo",pVo);
-		mv.addObject("atVo",atVo);
+		atVo = service.view(pVo, atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("atVo", atVo);
+		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_jobsearch_board_view"); 
 		return mv;
 		
 	}
 	
 	@RequestMapping("jsp/admin_mansearch_board_modify")
-	public ModelAndView admin_mansearch_board_modify(@ModelAttribute BoardPageVo pVo, @ModelAttribute AdminTotalboardVo atVo) {
+	public ModelAndView admin_mansearch_board_modify(@ModelAttribute BoardPageVo pVo, @ModelAttribute AdminTotalboardVo atVo, @ModelAttribute AdminTotalboardVo atVo2) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = service.mansearch_board_modify(atVo);
 		System.out.println(b);
 		
 		// alert창으로 수정 완료 메시지 띄우기
-		atVo = service.view(pVo,atVo);
-		mv.addObject("pVo",pVo);
-		mv.addObject("atVo",atVo);
+		atVo = service.mansearch_view(pVo, atVo);
+		atVo2 = service.mansearch_view_info(pVo,atVo);
+		List<AdminTotalboardVo> list = service.premium_review(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+		
+		mv.addObject("pVo", pVo);
+		mv.addObject("atVo", atVo);
+		mv.addObject("atVo2", atVo2);
+		mv.addObject("list", list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_mansearch_board_view"); 
 		return mv;
 		
 	}
 	
 	@RequestMapping("jsp/admin_qna_board_modify")
-	public ModelAndView admin_qna_board_modify(@ModelAttribute BoardPageVo pVo, @ModelAttribute AdminTotalboardVo atVo) {
+	public ModelAndView admin_qna_board_modify(@ModelAttribute BoardPageVo pVo, @ModelAttribute AdminTotalboardVo atVo, @ModelAttribute AdminTotalboardVo atVo2) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = service.qna_board_modify(atVo);
 		System.out.println(b);
 		
 		// alert창으로 수정 완료 메시지 띄우기
-		atVo = service.view(pVo,atVo);
-		mv.addObject("pVo",pVo);
-		mv.addObject("atVo",atVo);
+		atVo = service.qna_view(pVo, atVo);
+		atVo2 = service.repl_selected(pVo,atVo);
+		List<AdminTotalboardVo> repl_list = service.repl_list(pVo,atVo);
+		String[] hashtag = service.hashtag(pVo);
+
+		mv.addObject("pVo", pVo);
+		mv.addObject("atVo", atVo);
+		mv.addObject("atVo2", atVo2);
+		mv.addObject("repl_list",repl_list);
+		mv.addObject("hashtag",hashtag);
 		mv.setViewName("jsp/admin_total_qna_board_view"); 
 		return mv;
 		

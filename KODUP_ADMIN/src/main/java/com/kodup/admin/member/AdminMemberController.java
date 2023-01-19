@@ -20,6 +20,17 @@ public class AdminMemberController {
 		ModelAndView mv = new ModelAndView();
 		List<AdminMemberVo> list = service.select(mpVo);
 		mpVo = service.getmpVo();
+		mv.addObject("mpVo",mpVo);
+		mv.addObject("list",list);
+		mv.setViewName("jsp/admin_member_list");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_grade_list")
+	public ModelAndView grade_list(MemberPageVo mpVo) {
+		ModelAndView mv = new ModelAndView();
+		List<AdminMemberVo> list = service.select_grade(mpVo);
+		mpVo = service.getmpVo();
 		
 		mv.addObject("mpVo",mpVo);
 		mv.addObject("list",list);
@@ -39,6 +50,19 @@ public class AdminMemberController {
 		mv.addObject("doc_list",doc_list);
 		mv.addObject("repl_list",repl_list);
 		mv.setViewName("jsp/admin_member_list_update");
+		return mv;
+	}
+	@RequestMapping("jsp/admin_member_modify")
+	public ModelAndView modify(MemberPageVo mpVo,AdminMemberVo amVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.member_modify(amVo);
+		System.out.println(b);
+		List<AdminMemberVo> list = service.select(mpVo);
+		mpVo = service.getmpVo();
+		
+		mv.addObject("mpVo",mpVo);
+		mv.addObject("list",list);
+		mv.setViewName("jsp/admin_member_list");
 		return mv;
 	}
 	

@@ -41,4 +41,10 @@
 	   where id = #{id}
 	</update>
 	
+	<update id="change_mento_status" parameterType="com.kodup.admin.certification.AdminCertificationVo">
+	   update member 
+	   set mento_status = 2
+	   where id = #{id}
+	</update>
+	
 </mapper>

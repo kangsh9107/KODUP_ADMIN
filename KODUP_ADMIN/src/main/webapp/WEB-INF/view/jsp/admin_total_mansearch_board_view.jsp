@@ -39,8 +39,8 @@ li {
 	<img src="/images/${atVo.corp_logo }" class="view_corp_logo">
 	<label>${atVo.corp_name }</label>
 </span><br/>
-<div id="task" style="margin-left:40px;">${atVo1.main_task }</div>
-<div id="job_index" style="margin-left:5px;">${atVo1.sub_task }</div>
+<div id="task" style="margin-left:40px;">${atVo2.main_task }</div>
+<div id="job_index" style="margin-left:5px;">${atVo2.sub_task }</div>
 <div class="container text-center">
 	<div class="row justify-content-md-center">
 		<div class="col mansearch_view_subject">
@@ -52,7 +52,7 @@ li {
 		  			<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
 		  			<path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
 				</svg>
-				${atVo1.deadline }
+				${atVo2.deadline }
 			</span>
 		</div>
 	</div>
@@ -66,7 +66,7 @@ li {
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
 		  				<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
 		  				<path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
-					</svg>${atVo1.work_start }
+					</svg>${atVo2.work_start }
 				</dd>
 	      	</dl>	
     	</div>
@@ -76,7 +76,7 @@ li {
 				<dd>
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16">
   						<path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313ZM13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 5.698ZM14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13V4Zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 8.698Zm0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525Z"/>
-					</svg>${atVo1.pay }만원
+					</svg>${atVo2.pay }만원
 				</dd>
 	      	</dl>
     	</div>	
@@ -87,7 +87,7 @@ li {
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
   						<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
   						<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-					</svg>${atVo1.corp_location}
+					</svg>${atVo2.corp_location}
 				</dd>
 	      	</dl>
     	</div>
@@ -100,7 +100,7 @@ li {
       			포지션
       		</div>
       		<div class='element_left_doc'>
-      			${atVo1.position }
+      			${atVo2.position }
       		</div>      		
     	</div>
     	<div class="col-sm element_right">
@@ -108,7 +108,7 @@ li {
       			계약형태
       		</div>
       		<div class='element_right_doc'>
-      			${atVo1.job_type }
+      			${atVo2.job_type }
       		</div>      		
     	</div>
 	</div>
@@ -120,7 +120,7 @@ li {
       			필요경력
       		</div>
       		<div class='element_left_doc'>
-      			${atVo1.required_career }
+      			${atVo2.required_career }
       		</div>
     	</div>
     	<div class="col-sm element_right">
@@ -128,7 +128,7 @@ li {
       			학력사항
       		</div>
       		<div class='element_right_doc'>
-      			${atVo1.education_level }
+      			${atVo2.education_level }
       		</div>
     	</div>
 	</div>
@@ -140,7 +140,7 @@ li {
       			근무방식
       		</div>
 			<div class='element_left_doc'>
-      			${atVo1.work_type }
+      			${atVo2.work_type }
       		</div>      		
     	</div>
     	<div class="col-sm element_right">
@@ -148,7 +148,7 @@ li {
       			급여지급일
       		</div>
       		<div class='element_right_doc'>
-      			${atVo1.pay_date }
+      			${atVo2.pay_date }
       		</div>      		
     	</div>
 	</div>
@@ -160,7 +160,7 @@ li {
       			필수스킬
       		</div>
 			<div class='element_left_doc'>
-      			${atVo1.required_skill }
+      			${atVo2.required_skill }
       		</div>      		
     	</div>
     	<div class="col-sm element_right" style="border:none;">

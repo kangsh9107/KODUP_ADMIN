@@ -5,17 +5,14 @@
  /* admin_total_board.jsp*/
  
  var selectBoxValue = function(value){
-	 console.log(value);
-	
+	 var frm = $('.frm_search')[0];
+	 frm.boardtype.value = value;
+	 console.log(frm.boardtype.value);
  }
  
  $('.btnSearch').on('click', function() {
 	var frm = $('.frm_search')[0];
-	
 	frm.nowPage.value = 1;
-	console.log(frm.start_day.value);
-	console.log(frm.end_day.value);
-	frm.boardtype.value =
 	console.log(frm.boardtype.value);
 	var param = $(frm).serialize();
 	$('#baik_admin_main').load('jsp/admin_total_board', param);

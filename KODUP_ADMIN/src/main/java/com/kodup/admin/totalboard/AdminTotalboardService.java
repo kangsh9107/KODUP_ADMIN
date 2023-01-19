@@ -27,9 +27,26 @@ public class AdminTotalboardService {
 	TransactionStatus status;
 	
 	public List<AdminTotalboardVo> select(BoardPageVo pVo) {
+		String boardType = pVo.getBoardtype();
+		String startDay = pVo.getStart_day();
+		String endDay = pVo.getEnd_day();
+		if(boardType==null) {
+		  boardType = "";  
+		  System.out.println(boardType);
+		}
+		if(startDay==null) {
+			  startDay = "";  
+			  System.out.println(startDay);
+			}
+		if(endDay==null) {
+			  endDay = "";  
+			  System.out.println(endDay);
+			}
 		int totSize = AdminTotalboardMapper.totList(pVo);
-		
 		pVo.setTotSize(totSize);
+		System.out.println(pVo.getBoardtype());
+		System.out.println(pVo.getStart_day());
+		System.out.println(pVo.getEnd_day());
 		this.pVo = pVo;
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.select(pVo);
 		return list;
@@ -58,10 +75,6 @@ public class AdminTotalboardService {
 	
 	public AdminTotalboardVo qna_view(BoardPageVo pVo, AdminTotalboardVo atVo) {
 		atVo = AdminTotalboardMapper.qna_view(pVo.getSno(), pVo.getBoardtype());
-    //  atVo.setAttList(AdminTotalboardMapper.attList(pVo.getSno()));
-//		List<AttVo> attList = boardMapper.attList(pVo.getSno());
-//		bVo.setAttList(attList);
-		
 		return atVo;
 	}
 	
@@ -76,6 +89,17 @@ public class AdminTotalboardService {
 		
 		return atVo;
 	}
+	
+	public String[] hashtag(BoardPageVo pVo) {
+		String hashtag = AdminTotalboardMapper.hashtag(pVo.getSno());
+		System.out.println(hashtag);
+		String[] array = hashtag.split("#");
+		for(int i=0; i<array.length; i++) {
+			System.out.println(array[i]);
+		}
+		return array;		
+	}
+	
 /*---------------modify-----------------------------------------------------------------*/
 	public boolean freetalking_board_modify(AdminTotalboardVo atVo) {
 		boolean flag = true;

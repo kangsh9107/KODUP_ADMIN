@@ -1,7 +1,13 @@
 /**
  * 
  */
- 
+var selectCondition = function(value){
+	 console.log(value);
+      var frm = $('.frm_search3')[0];
+      frm.condition.value = value;
+      
+ }
+  
 $('.btnSearch').on('click', function() {
 	var frm = $('.frm_search3')[0];
 	frm.nowPage.value = 1;

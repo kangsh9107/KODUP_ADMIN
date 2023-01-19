@@ -21,6 +21,7 @@ public interface AdminTotalboardMapper {
 
 	public List<AdminTotalboardVo> repl_list(int sno);
 	public AdminTotalboardVo repl_selected(int sno);
+	public String hashtag(int sno);
 
 /*---------------------------modify--------------------------------------------*/
 	public int freetalking_board_modify(AdminTotalboardVo atVo);

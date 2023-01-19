@@ -1,6 +1,13 @@
 /**
- * 
+ * adin_total_repl 
  */
+
+ var selectBoxValue = function(value){
+	 var frm = $('.frm_search')[0];
+	 frm.boardtype.value = value;
+	 console.log(frm.boardtype.value);
+ }
+ 
 $('.btnSearch').on('click', function() {
 	var frm = $('.frm_search')[0];
 	frm.nowPage.value = 1;

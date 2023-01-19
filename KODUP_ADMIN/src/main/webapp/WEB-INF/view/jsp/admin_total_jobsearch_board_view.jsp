@@ -36,7 +36,7 @@
 	   <!-- boardtype + / + horsehead -->
 	   <div id="jobsearch_view_horsehead" style="padding-top:20px; width:1000px;">
 	      <label style="font-weight: bold;">말머리 :</label>
-	      <label>${atVo.horsehead }</label>
+	      <input type="text" name="horsehead" value="${atVo.horsehead }" style="width:70px;">
 		  <hr>
 	   </div>
 	   
@@ -63,7 +63,12 @@
 	   <!-- 조회수,작성시간 css왼쪽 기준으로 오른쪽에 붙게 빼자 -->
 	       <label style="margin-left:5px;">해쉬태그 :</label>
 		   <span id="jobsearch_view_hashtag">
-		     <span>${atVo.hashtag}</span> 
+		     <span>
+		      <c:forEach var='v' items="${hashtag }" varStatus='status' begin='1'>
+		         <span style= "border: 1px solid #91aedc; margin-left:5px; border-radius: 20px;
+		                       background-color:#91aedc; padding:3px; color:white;">#${v }</span> 
+		      </c:forEach>
+		      </span> 
 		   </span>
 		   <span id="jobsearch_view_info">
 		      <label style="margin-left:5px;">올린 시간 :</label>
