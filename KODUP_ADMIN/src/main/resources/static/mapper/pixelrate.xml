@@ -1,15 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kodup.admin.pixel.AdminPixelMapper">
+	
 	<select id="select_pixelrate" resultType="com.kodup.admin.pixel.AdminPixelVo">
 		select * from pixel_exchange_rate
 	</select>
-	
 	<update id="update_rate" parameterType="com.kodup.admin.pixel.AdminPixelVo">
 		update pixel_exchange_rate set normal=${normal}, personal=${personal}, plus=${plus}, partner=${partner}
 	</update>
 	
-	<select id="select_totPixel" resultType="Integer">
-		select sum(pixel) as totpixel from member;
+	<select id="select_applylist" parameterType="com.kodup.admin.pixel.AdminPixelPageVo" resultType="com.kodup.admin.pixel.AdminPixelVo">
+		select l.pixel_exchange_list_sno, l.id, m.grade, l.apply_pixel, b.bank_name, b.account, b.account_holder,l.apply_date,l.pixel_exchange_status
+		from pixel_exchange_list l left join member m  on  l.id=m.id
+						  		   left join bank   b  on  l.id=b.id
+		order by l.apply_date ${sortFilter}
+		limit ${startNo}, ${listSize}
 	</select>
+	<select id="select_budget" resultType="Integer">
+		select budget from kodupbudget
+	</select>
+	
+	<select id="select_applylist_filter_status1" parameterType="com.kodup.admin.pixel.AdminPixelPageVo" resultType="com.kodup.admin.pixel.AdminPixelVo">
+		select l.pixel_exchange_list_sno, l.id, m.grade, l.apply_pixel, b.bank_name, b.account, b.account_holder,l.apply_date,l.pixel_exchange_status
+		from pixel_exchange_list l left join member m  on  l.id=m.id
+						  		   left join bank   b  on  l.id=b.id
+		order by l.pixel_exchange_status asc, l.apply_date ${sortFilter}
+		limit ${startNo}, ${listSize}
+	</select>
+	<select id="select_applylist_filter_status2" parameterType="com.kodup.admin.pixel.AdminPixelPageVo" resultType="com.kodup.admin.pixel.AdminPixelVo">
+		select l.pixel_exchange_list_sno, l.id, m.grade, l.apply_pixel, b.bank_name, b.account, b.account_holder,l.apply_date,l.pixel_exchange_status
+		from pixel_exchange_list l left join member m  on  l.id=m.id
+						  		   left join bank   b  on  l.id=b.id
+		order by l.pixel_exchange_status desc,l.apply_date ${sortFilter}
+		limit ${startNo}, ${listSize}
+	</select>
+	<select id="totList" parameterType="com.kodup.admin.pixel.AdminPixelPageVo" resultType="Integer">
+		SELECT count(id) totSize FROM pixel_exchange_list
+	</select>
+	<update id="pixel_approve" parameterType="com.kodup.admin.pixel.AdminPixelVo">
+		update pixel_exchange_list set pixel_exchange_status=1 where pixel_exchange_list_sno= ${pixel_exchange_list_sno}
+	</update>
+	
+	<update id="budget_minus" parameterType="com.kodup.admin.pixel.AdminPixelVo">
+		update kodupbudget set budget = budget - ${budget}
+	</update>
+	
+
+	<insert id="pixel_approve_history" parameterType="com.kodup.admin.pixel.AdminPixelVo">
+		insert into pixel_history(id,pixel_log,history_detail) values(#{id},0,'환전승인완료');
+	</insert>
+	
+	<select id="select_totPixel" resultType="Integer">
+		select sum(pixel) as totpixel from member
+	</select>
+	<select id="select_totApplyPixel" resultType="Integer">
+		select sum(apply_pixel) as totApplyPixel from pixel_exchange_list where pixel_exchange_status=0;
+	</select>
+	<select id="select_totPixelByGrade" parameterType="Integer" resultType="Integer">
+		select IFNULL(sum(pixel), 0)
+		from member
+		where grade=${_parameter}
+	</select>
+	<select id="select_totApplyPixelByGrade" parameterType="Integer" resultType="Integer">
+		select IFNULL(sum(apply_pixel), 0)
+		from pixel_exchange_list p join member m on p.id=m.id
+		where m.grade=${_parameter} and p.pixel_exchange_status=0;
+	</select>
+	<!-- 
+	<select id="select_totPersonalPixel"  resultType="Integer">
+		select IFNULL(sum(apply_pixel), 0)as totPersonalPixel from pixel_exchange_list p join member m on p.id=m.id
+		where m.grade=1 and p.pixel_exchange_status=0;
+	</select>
+	<select id="select_totPlusPixel" resultType="Integer">
+		select IFNULL(sum(apply_pixel), 0)as totPlusPixel from pixel_exchange_list p join member m on p.id=m.id
+		where m.grade=2 and p.pixel_exchange_status=0;
+	</select>
+	<select id="select_totPartnerPixel" resultType="Integer">
+		select IFNULL(sum(apply_pixel), 0)as totPartnerPixel from pixel_exchange_list p join member m on p.id=m.id
+		where m.grade=3 and p.pixel_exchange_status=0;
+	</select>
+	 -->
+	
 </mapper>
