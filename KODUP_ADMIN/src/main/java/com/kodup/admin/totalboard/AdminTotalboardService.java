@@ -44,9 +44,7 @@ public class AdminTotalboardService {
 			}
 		int totSize = AdminTotalboardMapper.totList(pVo);
 		pVo.setTotSize(totSize);
-		System.out.println(pVo.getBoardtype());
-		System.out.println(pVo.getStart_day());
-		System.out.println(pVo.getEnd_day());
+	
 		this.pVo = pVo;
 		List<AdminTotalboardVo> list = AdminTotalboardMapper.select(pVo);
 		return list;

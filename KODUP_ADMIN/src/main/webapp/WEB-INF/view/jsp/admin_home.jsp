@@ -106,8 +106,7 @@
 	    </div>
 	  </div>
 	</div>
-	
-	<input type='button' onclick="notification()" value="후순위 시작">
+
 </div>
 </body>
 </html>
