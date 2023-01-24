@@ -17,7 +17,7 @@
 		limit ${startNo}, ${listSize}
 	</select>
 	<select id="select_budget" resultType="Integer">
-		select budget from kodupbudget
+		select ifnull(budget,0) from kodupbudget
 	</select>
 	
 	<select id="select_applylist_filter_status1" parameterType="com.kodup.admin.pixel.AdminPixelPageVo" resultType="com.kodup.admin.pixel.AdminPixelVo">
@@ -51,10 +51,10 @@
 	</insert>
 	
 	<select id="select_totPixel" resultType="Integer">
-		select sum(pixel) as totpixel from member
+		select ifnull(sum(pixel),0) as totpixel from member
 	</select>
 	<select id="select_totApplyPixel" resultType="Integer">
-		select sum(apply_pixel) as totApplyPixel from pixel_exchange_list where pixel_exchange_status=0;
+		select ifnull(sum(apply_pixel),0) as totApplyPixel from pixel_exchange_list where pixel_exchange_status=0;
 	</select>
 	<select id="select_totPixelByGrade" parameterType="Integer" resultType="Integer">
 		select IFNULL(sum(pixel), 0)
