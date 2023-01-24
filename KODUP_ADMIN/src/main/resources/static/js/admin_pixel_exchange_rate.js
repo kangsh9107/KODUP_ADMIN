@@ -89,7 +89,10 @@ function update_pixelrate(){
     if( !yn ) return;
     
 	var param = $("#admin_pixel_rate_form").serialize();
-	$.post("/jsp/update_rate", param, function(data){})
+	$.post("/jsp/update_rate", param, function(data){
+		$('#baik_admin_main').load('jsp/admin_exchange_rate', param);
+			alert(data);
+	})
 }
 
 

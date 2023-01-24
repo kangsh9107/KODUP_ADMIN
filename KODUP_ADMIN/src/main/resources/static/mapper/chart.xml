@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kodup.admin.statistics.AdminStatisticsMapper">
+	<select id="selectMale" resultType="Integer">
+		select count(id) from member where gender="m"
+	</select>
+	<select id="selectFemale" resultType="Integer">
+		select count(id) from member where gender="f"
+	</select>
+	<select id="selectMaleByAge" parameterType="Integer" resultType="Integer">
+		select count(id) from member where gender="m" and age <![CDATA[>=]]> ${_parameter} and age <![CDATA[<=]]> ${_parameter+91130} 
+	</select>
+	<select id="selectFemaleByAge" parameterType="Integer" resultType="Integer">
+		select count(id) from member where gender="f" and age <![CDATA[>=]]> ${_parameter} and age <![CDATA[<=]]> ${_parameter+91130} 
+	</select>
+	<select id="countGrade" parameterType="Integer" resultType="Integer">
+		select count(id) from member where grade=${_parameter};
+	</select>
+	<select id="BoardData" parameterType="com.kodup.admin.statistics.AdminStatisticsVo" resultType="com.kodup.admin.statistics.AdminStatisticsVo">
+		select DATE(nal)as mDate,count(*)as countBoard
+		from board 
+		where boardtype=#{boardtype} and  DATE(nal) between #{startNal} and #{endNal}
+		group by mDate
+		order by mDate asc;
+	</select>
+	<select id="ReplData" parameterType="com.kodup.admin.statistics.AdminStatisticsVo" resultType="com.kodup.admin.statistics.AdminStatisticsVo">
+		select DATE(r.repl_nal)as replmDate, count(r.repl_nal)as countRepl
+		from repl r join board b 
+		on r.sno = b.sno
+		where b.boardtype=#{boardtype} and DATE(r.repl_nal) between #{startNal} and #{endNal}
+		group by replmDate
+		order by replmDate asc;
+	</select>
+	<select id="sumPixelByDate" parameterType="com.kodup.admin.statistics.AdminStatisticsVo" resultType="com.kodup.admin.statistics.AdminStatisticsVo">
+		select date(history_date)as mDate,
+		ifnull(sum(CASE WHEN history_detail="픽셀구매" THEN pixel_log END),0)as plusPixel ,
+		ifnull(sum(CASE WHEN history_detail="픽셀환전" THEN pixel_log END),0)as minusPixel
+		from pixel_history 
+		where history_date BETWEEN #{startNal} and #{endNal} 
+		group by mDate
+		order by mDate asc;
+	</select>
+</mapper>

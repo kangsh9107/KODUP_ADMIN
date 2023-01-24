@@ -1,13 +1,37 @@
 /**
  * 
  */
+frm = $('.frm_chart_board')[0];
+StartNal = function(startNal){
+	frm.startNal.value = startNal;
+}
+EndNal = function(endNal){
+	frm.endNal.value = endNal;
+}
 
+showChart = function(){
+	if(frm.startNal.value.length < 1 || frm.endNal.value.length <1 ){
+		alert("기간을 선택해주세요");
+	}else if(frm.startNal.value.length>1 && frm.endNal.value.length>1){
+		param = $(frm).serialize();
+		$('#baik_admin_main').load('jsp/admin_chart_pixel_sort', param);
+	}
+	
+}
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
+
 drawChart();
 function drawChart() {
+	
+	var arr = [['MM-dd', '픽셀충전', '픽셀환전']];
+	for(let i=1; i <= Number($('#PixelDataSize').val()); i++){
+		arr.push([$("#mDate"+i).val(),Number($("#plusPixel"+i).val()),Number($("#minusPixel"+i).val())]);
+	}
+	var data = google.visualization.arrayToDataTable(arr);
+	/*
 	var data = google.visualization.arrayToDataTable([
 		['MM-dd', '픽셀충전', '픽셀환전'],
 		['1',   400000,      30000],
@@ -16,33 +40,9 @@ function drawChart() {
 		['4',   400000,      60000],
 		['5',   500000,      70000],
 		['6',   550000,      40000],
-		['7',   340000,      60000],
-		['8',   490000,      76000],
-		['9',   400000,      92000],
-		['10',  390000,      14000],
-		['11',  310000,      43000],
-		['12',  350000,      14000],
-		['13',  290000,      14000],
-		['14',  310000,      50000],
-		['15',  290000,      70000],
-		['16',  290000,      50000],
-		['17',  410000,      120000],
-		['18',  300000,      130000],
-		['19',  310000,      140000],
-		['20',  430000,      110000],
-		['21',  290000,      120000],
-		['22',  310000,      130000],
-		['23',  310000,      140000],
-		['24',  300000,      74000],
-		['25',  290000,      84000],
-		['26',  310000,      90000],
-		['27',  290000,      40000],
-		['28',  220000,      70000],
-		['29',  220000,      60000],
-		['30',  250000,      44000]
-		
+		['7',   340000,      60000]
 	]);
-	
+	*/
 	//curveType:'none'을 function' 으로 변경하면 부드러운 곡선으로 출력
 	var options = {
 		title: '기간별 픽셀충전량 / 픽셀환전량',
