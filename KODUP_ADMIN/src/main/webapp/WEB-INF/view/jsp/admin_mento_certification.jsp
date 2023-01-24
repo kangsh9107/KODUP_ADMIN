@@ -14,9 +14,10 @@
 </head>
 <body>
 
+
 <!-- 검색폼 -->
    <div style="padding-left:40px;">
-	<h3 style="font-weight: bold;">멘토 인증</h3>
+	<h3 style="font-weight: bold;">멘토 인증 관리</h3>
 	    <hr><br>
    </div>
 <form class="frm_search5">
@@ -36,7 +37,7 @@
 				  아이디
 		       </div>
 			   <div class="col-md-5">
-				  <input class="form-control form-control-sm" type="text" name="ID" readOnly aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="id" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		    </div>
 		    <br>
@@ -63,29 +64,26 @@
 			       현재 등급
 			    </div>
 		        <div class="col-md-5">
-			        <input class="form-control form-control-sm" type="text" name="grade" readOnly aria-label=".form-control-sm example" style="height:38px;">
+			        <input class="form-control form-control-sm" type="text" name="GRADE" readOnly aria-label=".form-control-sm example" style="height:38px;">
 			    </div>
 		     </div>
+		        <input type="hidden" name="mento_status">
 		     <br>
 		       <div class="row g-2" style="margin-left:170px;">
 			        <div class="col-md-2">
-					    <select id= "selectbox" class="form-select" aria-label="Default select example" size='1' style="width:100px;">
+					    <select id= "selectbox" name="grade" class="form-select" aria-label="Default select example" 
+					            size='1' style="width:100px; margin-left: 75px;">
 						  <option value="0">일반</option>
 						  <option value="1">퍼스널</option>
 						  <option value="2">플러스</option>
 						  <option value="3">파트너</option>
 						</select>
 				   </div>
-				     <div class="d-grid gap-2 col-md-2 text-white" style="margin-left:40px;">
-		              <button class=" w-100 btn btnGradeChange btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" 
-		                      style="direction: ltr; background-color:#2d3644">적용</button>
-		             </div> 
 		        </div>
 		      </div>
 			</div>
 		</div>
 		<input type='hidden' name='nowPage' value='${cpVo.nowPage }'/> 
-		<input type='hidden' name='id' value='${cpVo.id }'/>
 	  <hr class="my-4"  style="width:800px; ">
 	</div>
 </form>
@@ -100,26 +98,104 @@
 			<span class='grade'>현재 등급</span>
 			<span class='email'>이메일</span>
 			<span class='join_date'>가입일</span>
+			<span class="mento_status">신청 상황</span>
 		</li>
 		
 		<c:forEach var='v' items="${list }" varStatus='status'>
-		<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }', '${v.grade }')"> 
-			<span class='no'>${status.count }</span>
-			<span class='id'>${v.id }</span>
-			<span class='grade'>
-		      <c:choose>
-				<c:when test="${v.grade eq '0'}">일반</c:when>
-				<c:when test="${v.grade eq '1'}">퍼스널</c:when>
-				<c:when test="${v.grade eq '2'}">플러스</c:when>
-				<c:when test="${v.grade eq '3'}">파트너</c:when>
-               </c:choose>
-            </span>
-			<span class='email'>${v.email }</span>
-			<span class='join_date'>${v.join_date }</span>
-			<input type="hidden" value="${v.career_certificate }">
-			<input type="hidden" value="${v.mento_status }">
-		</li>
-		
+			<c:choose>
+				<c:when test="${v.grade == 0 }">
+					<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }', '일반')"> 
+						<span class='no'>${status.count }</span>
+						<span class='id'>${v.id }</span>
+						<span class='grade'>
+					      <c:choose>
+							<c:when test="${v.grade eq '0'}">일반</c:when>
+							<c:when test="${v.grade eq '1'}">퍼스널</c:when>
+							<c:when test="${v.grade eq '2'}">플러스</c:when>
+							<c:when test="${v.grade eq '3'}">파트너</c:when>
+			               </c:choose>
+			            </span>
+						<span class='email'>${v.email }</span>
+						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						  <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
+						<input type="hidden" value="${v.career_certificate }">
+					</li>
+				</c:when>
+				<c:when  test="${v.grade == 1 }">
+					<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }', '퍼스널 멘토')"> 
+						<span class='no'>${status.count }</span>
+						<span class='id'>${v.id }</span>
+						<span class='grade'>
+					      <c:choose>
+							<c:when test="${v.grade eq '0'}">일반</c:when>
+							<c:when test="${v.grade eq '1'}">퍼스널</c:when>
+							<c:when test="${v.grade eq '2'}">플러스</c:when>
+							<c:when test="${v.grade eq '3'}">파트너</c:when>
+			               </c:choose>
+			            </span>
+						<span class='email'>${v.email }</span>
+						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						   <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
+						<input type="hidden" value="${v.career_certificate }">
+					</li>
+				</c:when>
+				<c:when  test="${v.grade == 2 }">
+					<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }', '플러스 멘토')"> 
+						<span class='no'>${status.count }</span>
+						<span class='id'>${v.id }</span>
+						<span class='grade'>
+					      <c:choose>
+							<c:when test="${v.grade eq '0'}">일반</c:when>
+							<c:when test="${v.grade eq '1'}">퍼스널</c:when>
+							<c:when test="${v.grade eq '2'}">플러스</c:when>
+							<c:when test="${v.grade eq '3'}">파트너</c:when>
+			               </c:choose>
+			            </span>
+						<span class='email'>${v.email }</span>
+						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						   <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
+						<input type="hidden" value="${v.career_certificate }">
+					</li>
+				</c:when>
+				<c:when  test="${v.grade == 3 }">
+					<li class='item' onclick="view('${v.career_certificate}', '${v.id }','${v.join_date }','${v.email }', '파트너 멘토')"> 
+						<span class='no'>${status.count }</span>
+						<span class='id'>${v.id }</span>
+						<span class='grade'>
+					      <c:choose>
+							<c:when test="${v.grade eq '0'}">일반</c:when>
+							<c:when test="${v.grade eq '1'}">퍼스널</c:when>
+							<c:when test="${v.grade eq '2'}">플러스</c:when>
+							<c:when test="${v.grade eq '3'}">파트너</c:when>
+			               </c:choose>
+			            </span>
+						<span class='email'>${v.email }</span>
+						<span class='join_date'>${v.join_date }</span>
+						<span class="mento_status">
+						  <c:choose>
+						    <c:when test="${v.mento_status eq 1}">인증 신청 </c:when>
+						    <c:when test="${v.mento_status eq 2}">승인 완료 </c:when>
+						  </c:choose>
+						</span>
+						<input type="hidden" value="${v.career_certificate }">
+					</li>
+				</c:when>
+			</c:choose>
 		</c:forEach>
 	  </ul>
 	  

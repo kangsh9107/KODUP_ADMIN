@@ -61,5 +61,43 @@ public class AdminCertificationService {
 		return list;
 	}
 
+	public boolean change_grade(AdminCertificationVo acVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminCertificationMapper.change_grade(acVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+		
+	}
+	
+	public boolean change_mento_status(AdminCertificationVo acVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		
+		int cnt = AdminCertificationMapper.change_mento_status(acVo);
+		
+		System.out.println(cnt);
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+		
+	}
+	
 	public CertificationPageVo getcpVo() {return cpVo;}
 }

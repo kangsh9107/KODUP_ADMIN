@@ -20,7 +20,7 @@
     <br>
     </div>
     
-   <form class="frm_search2">
+   <form class="frm_search2" onsubmit="return false;">
     <div class="row g-2" style="padding-left: 48px; margin-top:-25px;" >
       <div class="col-sm-6 col-md-10 col-lg-10">
           <div class="row g-3">
@@ -29,12 +29,13 @@
             </div>
             
             <div class="col-md-4" style="width:200px; margin-left:-42px;">
-			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option selected>전체</option>
-				  <option value="1">일반</option>
-				  <option value="2">퍼스널</option>
-				  <option value="3">플러스</option>
-				  <option value="4">파트너</option>
+			    <select class="form-select" aria-label="Default select example" size='1' 
+			            style="width:150px;" id="selectBox" onchange="selectGrade(this.value)">
+			      <option value="null">등급</option>
+				  <option value="0">일반</option>
+				  <option value="1">퍼스널</option>
+				  <option value="2">플러스</option>
+				  <option value="3">파트너</option>
 				</select>
 		   </div>
 		  </div>
@@ -46,15 +47,17 @@
               검색어
             </div>
             <div class="col-md-4" style="width:200px; margin-left:-10px;">
-			    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-				  <option selected>아이디</option>
-				  <option value="1">이메일</option>
-				  <option value="2">닉네임</option>
-				  <option value="3">가입일</option>
+			    <select class="form-select" aria-label="Default select example" 
+			            size='1' style="width:150px;" onchange="selectCondition(this.value)">
+			      <option value="null">검색어</option>
+				  <option value="id">아이디</option>
+				  <option value="email">이메일</option>
+				  <option value="nickname">닉네임</option>
+				  <option value="join_date">가입일</option>
 				</select>
 		   </div>
 	          <div class="col-md-4" style="margin-left:-30px;">
-			     <input class="form-control form-control-sm" type="search" name="findStr" value="${mpVo.findStr}" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm findStr" type="search" name="findStr" value="${mpVo.findStr}" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-1 text-white" style="margin-left: 10px;">
 	            <button class=" w-100 btn btnSearch btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
@@ -62,6 +65,8 @@
 		  </div>
 		 <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
 		 <input type='hidden' name='id' value='${mpVo.id }'/>
+		 <input type='hidden' name='grade' value='${mpVo.grade }'/>
+		 <input type='hidden' name='condition' value='${mpVo.condition }'/>
 		 
         </div>
        <hr class="my-4" style="width:1000px;"> 
@@ -77,6 +82,7 @@
 			<span class='no'>No</span>
 			<span class='id'>아이디</span>
 			<span class='nickname'>닉네임</span>
+			<span class="grade">등급</span>
 			<span class='email'>이메일</span>
 			<span class='join_date'>가입일</span>
 		</li>
@@ -86,6 +92,14 @@
 			<span class='no'>${status.count }</span>
 			<span class='id'>${v.id} </span>
 			<span class='nickname'>${v.nickname }</span>
+			<span class='grade'>
+				<c:choose>
+				  <c:when test="${v.grade eq 0}">일반</c:when>
+				  <c:when test="${v.grade eq 1}">퍼스널</c:when>
+				  <c:when test="${v.grade eq 2}">플러스</c:when>
+				  <c:when test="${v.grade eq 3}">파트너</c:when>
+			   </c:choose>
+			</span>
 			<span class='email'>${v.email }</span>
 			<span class='join_date'>${v.join_date }</span>
 			<input type="hidden" value="${v.ban_status }" class="ban_status">

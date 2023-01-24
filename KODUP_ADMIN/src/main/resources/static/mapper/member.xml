@@ -3,19 +3,38 @@
 <mapper namespace="com.kodup.admin.member.AdminMemberMapper">
 
    <select id="totlist" parameterType="com.kodup.admin.member.MemberPageVo" resultType="Integer">
-		select count(id) totSize from member
-		where id = #{findStr}
-		or    email     like '%${findStr}%'
-		or    nickname  like '%${findStr}%'
-		or    join_date like '%${findStr}%'   
+		select count(id) totSize from member 
+		<if test="condition != null and condition != ''">
+		  where ${condition} like '%${findStr}%'   
+		</if>
 	</select>
 	
     <select id="select" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
-        select id, nickname, email, join_date, ban_status from member
-        WHERE id = #{findStr} 
-        OR nickname LIKE '%${findStr}%' 
-        or email LIKE '%${findStr}%'
-        or join_date like '%${findStr}%' 
+        select id, nickname, grade, email, join_date, ban_status from member
+        <if test="condition != null and condition != ''">
+		where ${condition} like '%${findStr}%'   
+		</if> 
+        order by join_date desc
+        limit ${startNo}, ${listSize}
+       
+	</select>
+	
+	<select id="grade_totlist" parameterType="com.kodup.admin.member.MemberPageVo" resultType="Integer">
+		select count(id) totSize from member
+		where grade = '${grade}'
+		and  (id = #{findStr}
+		or    email     like '%${findStr}%'
+		or    nickname  like '%${findStr}%'
+		or    join_date like '%${findStr}%')   
+	</select>
+	
+    <select id="select_grade" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
+        select id, nickname, grade, email, join_date, ban_status from member
+        WHERE grade = '${grade}'
+        and (id = #{findStr} 
+        or  nickname LIKE '%${findStr}%' 
+        or  email LIKE '%${findStr}%'
+        or  join_date like '%${findStr}%') 
         order by join_date desc
         limit ${startNo}, ${listSize}
        
@@ -48,6 +67,12 @@
        limit 1, 5
     </select>
     
+    <update id="member_modify" parameterType="com.kodup.admin.member.AdminMemberVo">
+       update member
+       set pwd = '${pwd}', pixel = ${pixel}, nickname= '${nickname}'
+       where id = #{id}
+    </update>
+    
     <update id="member_delete" parameterType="com.kodup.admin.member.AdminMemberVo">
        update member
        set ban_status = 2
@@ -56,7 +81,9 @@
     
     <select id="banselect" parameterType="com.kodup.admin.member.MemberPageVo" resultType="com.kodup.admin.member.AdminMemberVo">
         select id, nickname, email, ban_status from member
-        WHERE id LIKE '%${findStr}%' OR nickname LIKE '%${findStr}%' or email LIKE '%${findStr}%'
+        <if test="condition != null and condition != ''">
+		  where ${condition} like '%${findStr}%'   
+		</if>
         order by ban_status desc
         limit ${startNo}, ${listSize}
        

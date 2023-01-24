@@ -4,7 +4,7 @@
 .baik_ban_view{
 	border: 1px solid #c8c9ca;
 	padding: 20px;
-	width: 1200px;
+	width: 1150px;
 	margin-left:40px;
 }
 .baik_ban_view>form{
@@ -58,7 +58,7 @@
 	text-align: center;
 }
 .baik_ban_view li>div>span.nickname{
-	width: 100px;
+	width: 150px;
 	text-align: center;
 }
 .baik_ban_view li>div>span.email{
@@ -70,7 +70,7 @@
 	text-align: center;
 }
 .baik_ban_view li>span.ban_active{
-	width: 200px;
+	width: 150px;
 	text-align: center;
 }
 

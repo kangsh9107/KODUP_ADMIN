@@ -87,14 +87,14 @@
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-white btnCorpCertification">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                    <label class="sidebar_list" style="cursor: pointer;">기업 인증</label>
+                                    <label class="sidebar_list" style="cursor: pointer;">기업 인증 관리</label>
                                   </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white btnMentoCertification">
                                   <span class="d-none d-sm-inline" style="margin-left:30px;">
-                                     <label class="sidebar_list" style="cursor: pointer;">멘토 인증</label>
+                                     <label class="sidebar_list" style="cursor: pointer;">멘토 인증 관리</label>
                                   </span>
                                 </a>
                             </li>

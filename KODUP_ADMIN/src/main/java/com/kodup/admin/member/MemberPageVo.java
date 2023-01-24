@@ -11,11 +11,12 @@ public class MemberPageVo {
     int startNo;
     int endNo;
     
-    String  id;
+    String id;
     String findStr;
+    int grade;
+    String condition;
     
-    
-    public MemberPageVo() {}
+	public MemberPageVo() {}
     
     public void pageCompute() {
         // 전체 건수를 사용하여 전체 페이지수 계산
@@ -62,6 +63,10 @@ public class MemberPageVo {
     public void setFindStr(String findStr) {this.findStr = findStr;    }
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
+	public int getGrade() {return grade;}
+	public void setGrade(int grade) {this.grade = grade;}
+	public String getCondition() {return condition;}
+	public void setCondition(String condition) {this.condition = condition;}
     
   
     

@@ -41,7 +41,23 @@ public class AdminCertificationController {
 	public ModelAndView mento_select(CertificationPageVo cpVo) {
 		ModelAndView mv = new ModelAndView();
 		List<AdminCertificationVo> list = service.mento_select(cpVo);
+		
 		cpVo = service.getcpVo();
+		mv.addObject("cpVo",cpVo);
+		mv.addObject("list",list);
+		mv.setViewName("jsp/admin_mento_certification");
+		return mv;
+	}
+	
+	@RequestMapping("jsp/admin_mento_change_grade")
+	public ModelAndView admin_mento_change_grade(CertificationPageVo cpVo,AdminCertificationVo acVo) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = service.change_grade(acVo);
+		boolean b2 = service.change_mento_status(acVo);
+		System.out.println(b);
+		System.out.println(b2);
+		
+		List<AdminCertificationVo> list = service.mento_select(cpVo);
 		mv.addObject("cpVo",cpVo);
 		mv.addObject("list",list);
 		mv.setViewName("jsp/admin_mento_certification");

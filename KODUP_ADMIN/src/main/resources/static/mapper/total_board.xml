@@ -5,41 +5,29 @@
    <select id="totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
 		select count(b.sno) totSize 
 		from board b join member m on b.id = m.id
-		where b.subject  like '%${findStr}%'
-		or m.nickname like '%${findStr}%'
-		or b.nal like '%${findStr}%'
-	</select>
+		where (m.nickname like '%${findStr}%'
+		or b.subject  like '%${findStr}%')
+		<if test="start_day != '' and start_day != null  and end_day != '' and end_day != null">
+		and b.nal BETWEEN '${start_day}' and '${end_day}'
+		</if>
+		<if test="boardtype != '' and boardtype != null">
+		and b.boardtype = '${boardtype}'
+		</if>
+		
 	
-	<select id="qna_totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
-		select count(qb.qna_sno) totSize 
-		from qna_board qb left join board b on  qb.sno = b.sno
-		                  left join member m on b.id = m.id
-		where b.subject  like '%${findStr}%'
-		or m.nickname like '%${findStr}%'
-		or b.nal like '%${findStr}%'
 	</select>
 	
     <select id="select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
         select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
         from board b join member m on m.id = b.id
-        WHERE b.id = #{findStr} 
-        OR b.subject LIKE '%${findStr}%'
-        or m.nickname like '%${findStr}%'
-        or b.boardtype like '%${findStr}%'
-		or b.nal like '%${findStr}%'
-        order by b.sno desc
-        limit ${startNo}, ${listSize}
-       
-	</select>
-	
-	<select id="qna_select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select b.sno, b.boardtype, b.subject, m.nickname, date_format(b.nal, '%Y-%m-%d') nal, b.viewcount, b.board_delete
-        from board b join member m on m.id = b.id
-        WHERE or b.boardtype like "qna"
-        or b.id = #{findStr} 
-        OR b.subject LIKE '%${findStr}%'
-        or m.nickname like '%${findStr}%'
-		or b.nal like '%${findStr}%'
+	    where (b.subject LIKE '%${findStr}%'
+        or m.nickname like '%${findStr}%')
+		<if test="start_day != '' and start_day != null  and end_day != '' and end_day != null">
+		 and b.nal BETWEEN '${start_day}' and '${end_day}'
+		</if>
+		<if test="boardtype != '' and boardtype != null">
+		and b.boardtype = '${boardtype}'
+		</if>
         order by b.sno desc
         limit ${startNo}, ${listSize}
        
@@ -86,7 +74,7 @@
     </select>
     
     <select id="repl_list" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       select b.sno, m.profile_img, m.nickname, r.repl_sno, r.repl_doc, r.repl_nal, r.deep
+       select b.sno, m.profile_img, m.nickname, r.repl_sno, r.repl_doc, r.repl_nal, r.deep,r.repl_delete
               from repl r left join board b  on r.sno = b.sno
                           left join member m on r.id = m.id
        where r.sno = #{sno}
@@ -94,33 +82,45 @@
                
     </select>
     
+    <select id="hashtag"  parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="String">
+      select hashtag from board
+      where sno = #{sno}
+    
+    </select>
+    <select id="repl_selected" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
+       select m.profile_img, m.nickname, r.repl_doc, r.repl_nal, rs.repl_status
+              from repl r left join member m         on r.id = m.id
+                          left join repl_selected rs on r.repl_sno = rs.repl_sno
+       where r.sno = #{sno}
+       and   rs.repl_status = 1
+    </select>
     <update id="freetalking_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       update board
-       set subject=#{subject}
+       update freetalking_board
+       set freetalking_horsehead = #{horsehead}
        where sno=#{sno}
     </update>
     
     <update id="infoshare_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       update board
-       set subject=#{subject}
+       update infoshare_board
+       set infoshare_horsehead = #{horsehead}
        where sno=#{sno}
     </update>
     
     <update id="jobsearch_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       update board
-       set subject=#{subject}
+       update jobsearch_board
+       set jobsearch_horsehead = #{horsehead}
        where sno=#{sno}
     </update>
     
     <update id="mansearch_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       update board
-       set subject=#{subject}
+       update mansearch_board
+       set mansearch_horsehead = #{horsehead}
        where sno=#{sno}
     </update>
     
     <update id="qna_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
-       update board
-       set subject=#{subject}
+       update qna_board
+       set qna_horsehead = #{horsehead}
        where sno=#{sno}
     </update>
     
@@ -140,20 +140,46 @@
     
     <select id="repl_totList" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="Integer">
 		select count(r.repl_sno) totSize 
-		from repl r join member m on r.id = m.id
-		where m.nickname like '%${findStr}%'
-		or r.repl_nal like '%${findStr}%'
+		from repl r left join member m on r.id = m.id
+		            left join board  b on  r.sno = b.sno     
+		where (m.nickname like '%${findStr}%'
+		or r.repl_doc like '%${findStr}%')
+		<if test="start_day != '' and start_day != null  and end_day != '' and end_day != null">
+	       and r.repl_nal BETWEEN '${start_day}' and '${end_day}'
+        </if>
+        <if test="boardtype != '' and boardtype != null">
+		   and b.boardtype = '${boardtype}'
+		</if>
 	</select>
 	
 	<select id="repl_select" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
-        select r.repl_sno, r.repl_doc, m.nickname, date_format(r.repl_nal, '%Y-%m-%d') repl_nal, r.repl_delete
-        from repl r join member m on r.id = m.id
-        WHERE r.id = #{findStr} 
-        OR r.repl_doc LIKE '%${findStr}%'
-        or m.nickname like '%${findStr}%'
-		or r.repl_nal like '%${findStr}%'
+        select r.repl_sno, r.repl_doc, m.nickname, date_format(r.repl_nal, '%Y-%m-%d') repl_nal, r.repl_delete,b.boardtype
+        from repl r left join member m on r.id = m.id
+                    left join board b  on r.sno = b.sno
+        WHERE (r.repl_doc LIKE '%${findStr}%'
+        or m.nickname like '%${findStr}%')
+        <if test="start_day != '' and start_day != null  and end_day != '' and end_day != null">
+	       and r.repl_nal BETWEEN '${start_day}' and '${end_day}'
+        </if>
+        <if test="boardtype != '' and boardtype != null">
+		   and b.boardtype = '${boardtype}'
+		</if>
         order by r.repl_sno desc
         limit ${startNo}, ${listSize}
        
 	</select>
+	
+	<update id="repl_delete" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update repl
+     set repl_delete = 2
+     where repl_sno = #{repl_sno}
+     
+    </update>
+    
+    <update id="repl_restore" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
+     update repl
+     set repl_delete = 0
+     where repl_sno = #{repl_sno}
+     
+    </update>
 </mapper>

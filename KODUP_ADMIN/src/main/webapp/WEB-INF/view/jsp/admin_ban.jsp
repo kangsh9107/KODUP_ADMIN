@@ -21,18 +21,20 @@
    
     <div class="row g-2" style="padding-left:48px; max-width:1000px;" >
        <div class="col-sm-6 col-md-10 col-lg-10">
-          <form class="frm_search3">
+          <form class="frm_search3" onsubmit="return false;">
             <div class="row g-2">
 	           <div class="col-md-4" style="width:200px;">
-				    <select class="form-select" aria-label="Default select example" size='1' style="width:150px;">
-					  <option selected>아이디</option>
-					  <option value="1">이메일</option>
-					  <option value="2">닉네임</option>
-					  <option value="3">가입일</option>
+				    <select class="form-select" aria-label="Default select example" 
+				            size='1' style="width:150px;" onchange="selectCondition(this.value)">
+				      <option value="null">검색어</option>      
+					  <option value="id">아이디</option>
+				      <option value="email">이메일</option>
+				      <option value="nickname">닉네임</option>
+				      <option value="join_date">가입일</option>
 					</select>
 			   </div>
 	          <div class="col-md-4">
-			     <input class="form-control form-control-sm" name="findStr" value='${mpVo.findStr}' type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
+			     <input class="form-control form-control-sm findStr" name="findStr" value='${mpVo.findStr}' type="text" aria-label=".form-control-sm example" placeholder="검색어를 입력하세요" style="height:38px;">
 			   </div>
 			  <div class="d-grid gap-2 col-2 text-white">
 	            <button class=" w-100 btn btnSearch btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">검색</button>
@@ -40,6 +42,7 @@
 		    </div>
 		      <input type='hidden' name='nowPage' value='${mpVo.nowPage }'/> 
 	          <input type='hidden' name='id' value='${mpVo.id }'/>
+	          <input type='hidden' name='condition' value='${mpVo.condition }'/>
 		   <hr class="my-4" style="width:750px; margin-left:-6px;"> 
           </form>
         </div>
@@ -71,6 +74,7 @@
 					   <c:choose>
 					     <c:when test="${v.ban_status eq '0'}">활동</c:when>
 					     <c:when test="${v.ban_status eq '1'}">정지</c:when>
+					     <c:when test="${v.ban_status eq '2'}">탈퇴</c:when>
 					   </c:choose>
 					</span>
 			   </div>

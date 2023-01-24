@@ -10,6 +10,9 @@
 <link defer rel="stylesheet" href="css/admin_total_board.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="js/admin_total_board.js"></script>
+<script>
+
+</script>
 <title>qna/qna_view.jsp</title>
 </head>
 <body>
@@ -37,7 +40,7 @@
 	   <!-- boardtype + / + horsehead -->
 	   <div id="qna_view_horsehead" style="padding-top:20px; width:1000px;">
 	      <label>말머리 :</label>
-	      <label>${atVo.horsehead }</label>
+	      <input type="text" name="horsehead" value="${atVo.horsehead }" style="width:70px;">
 		  <hr>
 	   </div>
 	   
@@ -65,7 +68,12 @@
 	   <!-- 조회수,작성시간 css왼쪽 기준으로 오른쪽에 붙게 빼자 -->
 	       <label style="margin-left:5px;">해쉬태그 :</label>
 		   <span id="qna_view_hashtag">
-		      <span>${atVo.hashtag}</span> 
+		      <span>
+		      <c:forEach var='v' items="${hashtag }" varStatus='status' begin='1'>
+		         <span style= "border: 1px solid #91aedc; margin-left:5px; border-radius: 20px;
+		                       background-color:#91aedc; padding:3px; color:white;">#${v }</span> 
+		      </c:forEach>
+		      </span> 
 		   </span>
 		   <span id="qna_view_info">
 		      <label style="margin-left:5px;">올린 시간 :</label>
@@ -98,6 +106,35 @@
 	   <!-- 댓글 -->
 	   <h5 style="font-weight: bold;">댓글 목록</h5>
 	   
+	   <c:choose>
+	   <c:when test="${atVo2.repl_status eq 0 }">
+	       <span id="board_view_repl_doc" style="width:980px;">
+			   작성자가 채택한 댓글이 없습니다.
+	       </span>
+	   </c:when>
+	   <c:when test="${atVo2.repl_status eq 1 }">
+		   <div id="board_view_repl" class="item" style="margin-bottom:20px;">
+			      <!-- 채택된 댓글 -->
+			      <div class="row g-3" id="board_view_repl_profile" style="margin-left:5px; ">
+			         <span id="board_view_repl_profile_profileimage">
+			            <img id="board_view_repl_profile_profileimage_file" src="images/${atVo2.profile_img }" style="width:20px; height:20px;">
+			         </span>
+			         <span id="board_view_profile_nickname" style="color: #686a6d; width:800px;">
+			            <span style="width:10px;">|</span>
+			            <span>${atVo2.nickname }</span>
+			            <span style="width:10px;">|</span>
+			            <span style="width:10px; color:red;">(채택된 댓글)</span>
+			         </span>
+			         <span style="width:180px; color: #686a6d;">
+			            <span id="" style=" padding-right:10px;">${atVo2.repl_nal }</span>
+			         </span>
+			         <span id="board_view_repl_doc" style="width:980px; border:1px solid red;" >
+			              ${atVo2.repl_doc}
+			         </span>
+			     </div>
+		   </div>
+	   </c:when>
+	   </c:choose>
 	   <c:forEach var='v' items="${repl_list }" varStatus='status'>
 	      <c:choose>
 	        <c:when test="${v.deep eq 0}">
@@ -116,7 +153,21 @@
 		            <span id="" style="float:right; padding-right:10px;">${v.repl_nal }</span>
 		         </span>
 		         <span id="board_view_repl_doc" style="width:980px;">
-		              ${v.repl_doc}
+		              <c:choose>
+			              <c:when test="${v.repl_delete eq 0 }"><span>${v.repl_doc}</span></c:when>
+			              <c:when test="${v.repl_delete eq 1 }"><span style="color:red;">${v.repl_doc}(작성자 삭제)</span></c:when>
+			              <c:when test="${v.repl_delete eq 2 }"><span style="color:red;">${v.repl_doc}(삭제 처리)</span></c:when>
+			          </c:choose>
+		              <span style="float:right;">
+			              <span class='delete_btn'>
+							   <button type="button" class="btn btnDelete btn-danger btn-sm"
+							           onclick="deleteRepl(${v.repl_sno})">삭제</button>
+						  </span>
+						  <span class='restore_btn'>
+						    <button type="button" class="btn btnRestore btn-success btn-sm"
+							           onclick="restoreRepl(${v.repl_sno})">복구</button>
+					      </span>
+				      </span>
 		         </span>
 		       </div>
 		    </div>
@@ -137,7 +188,21 @@
 		            <span id="" style=" padding-right:10px;">${v.repl_nal }</span>
 		         </span>
 		         <span id="board_view_repl_doc" style="width:930px;">
-		              ${v.repl_doc}
+		         <c:choose>
+		              <c:when test="${v.repl_delete eq 0 }"><span>${v.repl_doc}</span></c:when>
+		              <c:when test="${v.repl_delete eq 1 }"><span style="color:red;">${v.repl_doc}(작성자 삭제)</span></c:when>
+		              <c:when test="${v.repl_delete eq 2 }"><span style="color:red;">${v.repl_doc}(삭제 처리)</span></c:when>
+		         </c:choose>
+		              <span style="float:right;">
+			              <span class='delete_btn'>
+							   <button type="button" class="btn btnDelete btn-danger btn-sm"
+							           onclick="deleteRepl(${v.repl_sno})">삭제</button>
+						  </span>
+						  <span class='restore_btn'>
+						    <button type="button" class="btn btnRestore btn-success btn-sm"
+							           onclick="restoreRepl(${v.repl_sno})">복구</button>
+					      </span>
+				      </span>
 		         </span>
 		       </div>
 		   </div>
@@ -164,12 +229,12 @@
 		              onclick="board_delete(${pVo.sno})" style="direction: ltr;">삭제</button>
 		     </div>
 	 </div>
-	 
+	<input type='hidden' name='repl_sno' value='${pVo.repl_sno }'/>
 	<input type='hidden' name='findStr' value='${pVo.findStr }'/>
 	<input type='hidden' name='nowPage' value='${pVo.nowPage }'/>
     <input type='hidden' name='sno' value='${pVo.sno }'/>
     <input type='hidden' name='boardtype' value='${pVo.boardtype }'/>
-    <input type='hidden' name="selectBox" value="${pVo.selectBox }">
+    
 </form>
 </body>
 </html>

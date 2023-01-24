@@ -40,7 +40,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 
 </script>
 <!-- 회원 자체 프로필 -->
-<form class="frm">
+<form class="frm" onsubmit="return false;">
 <div class="profile_wrapper">
 	<div class="profile_main" style="width:1300px; margin-left:12px;">
 		<img src="images/${amVo.profile_img}" class="profileImg">
@@ -71,14 +71,14 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  아이디
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" readOnly type="text" value="${amVo.id }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" name="id" value="${amVo.id }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
 				  비밀번호
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.pwd }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="pwd" value="${amVo.pwd }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -87,14 +87,14 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  이메일
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" readOnly type="text" value="${amVo.email }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" name="email" value="${amVo.email }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			  
 			   <div class="col-2">
 				  닉네임
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.nickname }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="nickname" value="${amVo.nickname }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>
@@ -135,7 +135,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  보유 픽셀
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" value="${amVo.pixel }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" name="pixel" value="${amVo.pixel }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 			   
 			   <div class="col-2">
@@ -158,7 +158,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  정지 회수
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm"  type="text" value="${amVo.ban_number }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" type="text" readOnly value="${amVo.ban_number }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		     </div>
 		   </div>
@@ -193,20 +193,23 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 			   <div class="row g-2" style="padding-left:385px;">
 			      <div class="col-5"></div>
 			      <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">목록</button>
+		            <button class=" w-100 btn btnBackMemberList btn-md text-white" type="button" style="direction: ltr; background-color:#2d3644">목록</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btnMemberModify btn-md text-white" type="button" _msthash="1634243" _msttexthash="35733126" style="direction: ltr; background-color:#2d3644">수정</button>
+		            <button class=" w-100 btn btn-md text-white" type="button" 
+		                    onclick="member_modify(${v.id})" style="direction: ltr; background-color:#2d3644">수정</button>
 		          </div>
 		          <div class="d-grid gap-2 col-2 text-white">
-		            <button class=" w-100 btn btn-md text-white btn-danger" type="button" _
-		                    onclick="member_delete(${v.id})" msthash="1634243" _msttexthash="35733126" style="direction: ltr;">강제 탈퇴</button>
+		            <button class=" w-100 btn btn-md text-white btn-danger" type="button"
+		                    onclick="member_delete(${v.id})" style="direction: ltr;">강제 탈퇴</button>
 		          </div>
 		       </div>
 	    </div>
-	    <input type='hidden' name='findStr' value='${mpVo.findStr }'/>
-		<input type='hidden' name='nowPage' value='${mpVo.nowPage }'/>
-	    <input type='hidden' name='id' value='${mpVo.id }'/>
+	    <input type='hidden'  value='${mpVo.findStr }'/>
+		<input type='hidden'  value='${mpVo.nowPage }'/>
+	    <input type='hidden' value='${mpVo.id }'/>
+	    <input type='hidden' value='${mpVo.grade }'/>
+	    
 </div>
 </form>
 </body>

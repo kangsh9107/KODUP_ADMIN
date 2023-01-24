@@ -37,6 +37,14 @@ public class AdminMemberService {
 		return list;
 	}
 	
+	public List<AdminMemberVo> select_grade(MemberPageVo mpVo) {
+		int totsize = AdminMemberMapper.grade_totlist(mpVo);
+		mpVo.setTotSize(totsize);
+		this.mpVo = mpVo;
+		List<AdminMemberVo> list = AdminMemberMapper.select_grade(mpVo);
+		return list;
+	}
+	
 	public AdminMemberVo view(MemberPageVo mpVo, AdminMemberVo amVo) {
 		amVo = AdminMemberMapper.view(mpVo.getId());
 		return amVo;
@@ -52,13 +60,33 @@ public class AdminMemberService {
 		return list;
 	}
 	
+	public boolean member_modify(AdminMemberVo amVo) {
+		boolean flag = true;
+		
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		savePoint = status.createSavepoint();
+		System.out.println(amVo.getId());
+		System.out.println(amVo.getPwd());
+		System.out.println(amVo.getPixel());
+		int cnt = AdminMemberMapper.member_modify(amVo);
+		System.out.println(cnt);
+		
+		if(cnt<1) {
+			status.rollbackToSavepoint(savePoint);
+			flag = false;
+		}else {
+			manager.commit(status);
+		}
+		return flag;
+	}
+	
 	public boolean member_delete(AdminMemberVo amVo) {
 		boolean flag = true;
 		
 		status = manager.getTransaction(new DefaultTransactionDefinition());
 		savePoint = status.createSavepoint();
 		
-		int cnt = AdminMemberMapper.member_delete(amVo.getId());
+		int cnt = AdminMemberMapper.member_delete(amVo);
 		
 		System.out.println(cnt);
 		if(cnt<1) {

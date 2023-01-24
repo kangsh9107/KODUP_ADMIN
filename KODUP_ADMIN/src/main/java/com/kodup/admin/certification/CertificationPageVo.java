@@ -13,6 +13,7 @@ public class CertificationPageVo {
     int endNo;
     
     String  id;
+    String grade;
     String findStr;
     
     
@@ -63,5 +64,7 @@ public class CertificationPageVo {
     public void setFindStr(String findStr) {this.findStr = findStr;    }
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
+    public String getGrade() {return grade;}
+    public void setGrade(String grade) {this.grade = grade;}
     
 }
