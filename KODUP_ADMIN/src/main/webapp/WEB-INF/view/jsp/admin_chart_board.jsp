@@ -10,7 +10,7 @@
 <title>WEB-INF/view/jsp/admin_chart_board.jsp</title>
 <script defer src='/js/admin_chart_board.js'></script>
 </head>
-<style>
+<style> 
 #admin_chart_board{border : 1px solid #c8c9ca;width : 703px;height : 900px;margin-left: 40px;}
 #admin_chart_board #admin_chart_header{position : relative;height: 50px;border-bottom : 1px solid #c8c9ca;}
 #admin_chart_board #admin_chart_header_left{position : absolute;top : 10px;left :10px;line-height : 30px;}
