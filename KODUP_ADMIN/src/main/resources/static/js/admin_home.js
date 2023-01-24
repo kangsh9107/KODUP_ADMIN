@@ -1,6 +1,8 @@
 /**
- * 
+ * admin_home
  */
+ 
+/* 
 notification = function(){
 Notification.requestPermission();
 var permission = Notification.requestPermission();
@@ -26,3 +28,8 @@ function getNotificationPermission() {
 new Notification("멘토 인증 신청이 요청되었습니다.", 
                  {body:'lgtwins0501 님께서 멘토 인증 신청을 하였습니다.'});
 }
+*/
+
+(setInterval(function() {
+   
+}, 100))();

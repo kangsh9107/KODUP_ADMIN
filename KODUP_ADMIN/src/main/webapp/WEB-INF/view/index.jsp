@@ -159,12 +159,7 @@
                    
                 </ul>
                 <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none " id="logout"  aria-expanded="false">
-                        <span class="d-none d-sm-inline mx-1">LOG OUT</span>
-                    </a>
-                  
-                </div>
+                
             </div>
         </div>
         
