@@ -24,7 +24,7 @@
 <form class='frm_chart_use' style="display:none;">
 	<input type='text' name='nal' value="${asVo.nal}"/>
 </form>
-
+ 
 <div style="display:none;">
 	<input id="before4" type="text"  value="${asVo.before4}">	
 	<input id="before8" type="text"  value="${asVo.before8}">	

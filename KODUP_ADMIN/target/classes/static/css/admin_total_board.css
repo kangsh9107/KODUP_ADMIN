@@ -15,7 +15,7 @@
 	border: 1px solid #c8c9ca;
 	margin-left : 40px;
 	padding: 20px;
-	width: 1350px;
+	width: 1450px;
 }
 .baik_board_view>form{
 	text-align: right;
@@ -28,20 +28,20 @@
 .baik_board_view li.title{
 	background-color: #2d3644;
 	color: #fff;
-	width:1250px;
+	width:1350px;
 }
 .baik_board_view li.item{
 	display: inline-block;
 	padding: 3px;
 	position: relative;
-	width: 1250px;
+	width: 1350px;
 	margin-top:2px;
 	border : 1px solid #aaa;
 }
 .baik_board_view li.item:hover{
 	background-color: #ccc;
 	cursor: pointer;
-	width: 1250px;
+	width: 1350px;
 }
 .baik_board_view li>span{
 	display: inline-block;
@@ -72,7 +72,7 @@
 	text-align: center;
 }
 .baik_board_view li>div>span.nickname{
-	width: 100px;
+	width: 200px;
 	text-align: center;
 }
 .baik_board_view li>div>span.nal{

@@ -87,6 +87,7 @@
       where sno = #{sno}
     
     </select>
+    
     <select id="repl_selected" parameterType="com.kodup.admin.totalboard.BoardPageVo" resultType="com.kodup.admin.totalboard.AdminTotalboardVo">
        select m.profile_img, m.nickname, r.repl_doc, r.repl_nal, rs.repl_status
               from repl r left join member m         on r.id = m.id
@@ -94,6 +95,7 @@
        where r.sno = #{sno}
        and   rs.repl_status = 1
     </select>
+    
     <update id="freetalking_board_modify" parameterType="com.kodup.admin.totalboard.AdminTotalboardVo">
        update freetalking_board
        set freetalking_horsehead = #{horsehead}
