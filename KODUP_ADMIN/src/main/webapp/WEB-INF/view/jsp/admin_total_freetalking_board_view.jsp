@@ -66,7 +66,7 @@
 		     <span>
 		      <c:forEach var='v' items="${hashtag }" varStatus='status' begin='1'>
 		         <span style= "border: 1px solid #91aedc; margin-left:5px; border-radius: 20px;
-		                       background-color:#91aedc; padding:3px; color:white;">#${v }</span> 
+		                       background-color:#91aedc; padding:3px; color:white;">#${v }</span> 		  
 		      </c:forEach>
 		      </span>
 		   </span>
