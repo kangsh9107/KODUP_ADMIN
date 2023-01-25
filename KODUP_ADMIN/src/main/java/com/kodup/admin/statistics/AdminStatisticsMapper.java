@@ -17,4 +17,10 @@ public interface AdminStatisticsMapper {
 	public List<AdminStatisticsVo> BoardData(AdminStatisticsVo asVo);
 	public List<AdminStatisticsVo> ReplData(AdminStatisticsVo asVo);
 	public List<AdminStatisticsVo> sumPixelByDate(AdminStatisticsVo asVo);
+	public int countVisitByDate(String nal);
+	public int countVisitByDate2(String nal);
+	public int countVisitByDate3(String nal);
+	public int countVisitByDate4(String nal);
+	public int countVisitByDate5(String nal);
+	public int countVisitByDate6(String nal);
 }

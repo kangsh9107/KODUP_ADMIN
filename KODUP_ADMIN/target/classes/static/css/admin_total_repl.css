@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+.select_date{
+	width:150px; 
+	height:38px;
+	border: 1px solid #dee2e6;
+    border-radius: 5px;	
+}
+
+.btnFindstr{
+	margin-left:30px;
+}
+
+.baik_board_view{
+	border: 1px solid #c8c9ca;
+	margin-left : 40px;
+	padding: 20px;
+	width: 1350px;
+}
+.baik_board_view>form{
+	text-align: right;
+}
+.baik_board_view>ul{
+	list-style: none;
+	margin-top: 5px;
+	padding:20px;
+}
+.baik_board_view li.title{
+	background-color: #2d3644;
+	color: #fff;
+	width:1250px;
+}
+.baik_board_view li.item{
+	display: inline-block;
+	padding: 3px;
+	position: relative;
+	width: 1250px;
+	margin-top:2px;
+	border : 1px solid #aaa;
+}
+.baik_board_view li.item:hover{
+	background-color: #ccc;
+	width: 1250px;
+}
+.baik_board_view li>span{
+	display: inline-block;
+}
+.baik_board_view li>div{
+	display: inline-block;
+}
+.baik_board_view li>div>span{
+	display: inline-block;
+}
+
+.baik_board_view li>span.checkbox{
+	width:20px;
+	padding-left: 10px;
+    padding-top: 5px;
+}
+.baik_board_view li>div>span.repl_sno{
+	width: 100px;
+	text-align: center;
+	margin-right: 20px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.baik_board_view li>div>span.repl_doc{
+	width: 700px;
+	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.baik_board_view li>div>span.nickname{
+	width: 100px;
+	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.baik_board_view li>div>span.repl_nal{
+	width: 150px;
+	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.baik_board_view li>span.delete_btn{
+	width: 46px;
+	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+
+}
+
+.baik_board_view li>span.restore_btn{
+	width: 46px;
+	text-align: center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+
+}
+
+.btnDelete{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
+}
+
+.btnRestore{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
+}

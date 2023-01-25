@@ -25,8 +25,13 @@ public class AdminStatisticsVo {
 	int plusPixel;
 	int minusPixel;
 	
-	
-	
+	//admin_chart_use
+	int before4;
+	int before8;
+	int before12;
+	int before16;
+	int before20;
+	int before24;
 	public int getCountNormal() {return countNormal;}
 	public void setCountNormal(int countNormal) {this.countNormal = countNormal;}
 	public int getCountPersonal() {return countPersonal;}
@@ -90,6 +95,42 @@ public class AdminStatisticsVo {
 	public void setPlusPixel(int plusPixel) {this.plusPixel = plusPixel;}
 	public int getMinusPixel() {return minusPixel;}
 	public void setMinusPixel(int minusPixel) {this.minusPixel = minusPixel;}
+	public int getBefore4() {
+		return before4;
+	}
+	public void setBefore4(int before4) {
+		this.before4 = before4;
+	}
+	public int getBefore8() {
+		return before8;
+	}
+	public void setBefore8(int before8) {
+		this.before8 = before8;
+	}
+	public int getBefore12() {
+		return before12;
+	}
+	public void setBefore12(int before12) {
+		this.before12 = before12;
+	}
+	public int getBefore16() {
+		return before16;
+	}
+	public void setBefore16(int before16) {
+		this.before16 = before16;
+	}
+	public int getBefore20() {
+		return before20;
+	}
+	public void setBefore20(int before20) {
+		this.before20 = before20;
+	}
+	public int getBefore24() {
+		return before24;
+	}
+	public void setBefore24(int before24) {
+		this.before24 = before24;
+	}
 	
 	
 	

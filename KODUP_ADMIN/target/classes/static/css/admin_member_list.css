@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.baik_member_view{
+	border: 1px solid #c8c9ca;
+	margin-left : 40px;
+	padding: 20px;
+	width: 1120px;
+}
+.baik_member_view>form{
+	text-align: right;
+}
+.baik_member_view>ul{
+	list-style: none;
+	margin-top: 5px;
+	padding:20px;
+}
+.baik_member_view li.title{
+	background-color: #2d3644;
+	color: #fff;
+	width:1020px;
+}
+.baik_member_view li.item{
+	display: inline-block;
+	padding: 3px;
+	position: relative;
+	width: 1020px;
+	margin-top : 2px;
+    border : 1px solid #aaa;
+}
+.baik_member_view li.item:hover{
+	background-color: #ccc;
+	cursor: pointer;
+	width: 1020px;
+}
+.baik_member_view li>span{
+	display: inline-block;
+}
+.baik_member_view li>span.no{
+	width: 50px;
+	text-align: center;
+	margin-right: 20px;
+}
+.baik_member_view li>span.id{
+	width: 250px;
+	text-align: center;
+}
+.baik_member_view li>span.nickname{
+	width: 150px;
+	text-align: center;
+}
+.baik_member_view li>span.grade{
+	width: 100px;
+	text-align: center;
+}
+.baik_member_view li>span.email{
+	width: 250px;
+	text-align: center;
+}
+.baik_member_view li>span.join_date{
+	width: 150px;
+	text-align: center;
+}

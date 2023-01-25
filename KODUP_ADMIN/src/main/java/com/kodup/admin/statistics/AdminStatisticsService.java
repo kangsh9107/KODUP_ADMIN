@@ -50,5 +50,13 @@ public class AdminStatisticsService {
 		List<AdminStatisticsVo> PixelDataList = mapper.sumPixelByDate(asVo);
 		return PixelDataList;
 	}
-	
+	public AdminStatisticsVo countVisitByDate(AdminStatisticsVo asVo) {
+		asVo.setBefore4(mapper.countVisitByDate(asVo.getNal()));
+		asVo.setBefore8(mapper.countVisitByDate2(asVo.getNal()));
+		asVo.setBefore12(mapper.countVisitByDate3(asVo.getNal()));
+		asVo.setBefore16(mapper.countVisitByDate4(asVo.getNal()));
+		asVo.setBefore20(mapper.countVisitByDate5(asVo.getNal()));
+		asVo.setBefore24(mapper.countVisitByDate6(asVo.getNal()));
+		return asVo;
+	}
 }

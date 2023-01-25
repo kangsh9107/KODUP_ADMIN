@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+.select_date{
+	width:150px; 
+	height:38px;
+	border: 1px solid #dee2e6;
+    border-radius: 5px;	
+}
+
+.btnFindstr{
+	margin-left:30px;
+}
+
+.baik_board_view{
+	border: 1px solid #c8c9ca;
+	margin-left : 40px;
+	padding: 20px;
+	width: 1350px;
+}
+.baik_board_view>form{
+	text-align: right;
+}
+.baik_board_view>ul{
+	list-style: none;
+	margin-top: 5px;
+	padding:20px;
+}
+.baik_board_view li.title{
+	background-color: #2d3644;
+	color: #fff;
+	width:1250px;
+}
+.baik_board_view li.item{
+	display: inline-block;
+	padding: 3px;
+	position: relative;
+	width: 1250px;
+	margin-top:2px;
+	border : 1px solid #aaa;
+}
+.baik_board_view li.item:hover{
+	background-color: #ccc;
+	cursor: pointer;
+	width: 1250px;
+}
+.baik_board_view li>span{
+	display: inline-block;
+}
+.baik_board_view li>div{
+	display: inline-block;
+}
+.baik_board_view li>div>span{
+	display: inline-block;
+}
+
+.baik_board_view li>span.checkbox{
+	width:20px;
+	padding-left: 10px;
+    padding-top: 5px;
+}
+.baik_board_view li>div>span.sno{
+	width: 100px;
+	text-align: center;
+	margin-right: 20px;
+}
+.baik_board_view li>div>span.boardtype{
+	width: 100px;
+	text-align: center;
+}
+.baik_board_view li>div>span.subject{
+	width: 500px;
+	text-align: center;
+}
+.baik_board_view li>div>span.nickname{
+	width: 100px;
+	text-align: center;
+}
+.baik_board_view li>div>span.nal{
+	width: 150px;
+	text-align: center;
+}
+.baik_board_view li>div>span.viewcount{
+	width: 100px;
+	text-align: center;
+}
+.baik_board_view li>span.delete_btn{
+	width: 46px;
+	text-align: center;
+
+}
+
+.baik_board_view li>span.restore_btn{
+	width: 46px;
+	text-align: center;
+
+}
+
+.btnDelete{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
+}
+
+.btnRestore{
+	width:46px !important;
+	height:31px !important;
+	font-size: 13px;
+	
+}
+
+#board_view_repl_profile>span{
+	display :inline-block;
+}
+
+
+span#board_view_repl_profile_profileimage{
+	width:30px;
+	height:30px;
+}
+span#board_view_profile_nickname{
+   width:800px;
+}
+
+span#board_repl_doc{
+	width:1000px;
+	
+}
+
+span#board_repl_nal{
+	width:170px;
+	
+}
+
+.board_view {
+	min-height: 300px;
+	background: #eee;
+	width:1050px; 
+	padding-left:20px; 
+	margin-left:40px;
+	padding-bottom: 10px;
+}
+
+#board_view_repl_profile{
+    margin-left:5px;
+}
+
+#board_view_repl_doc{
+	 min-height: 30px;
+	 background: #e5e5e5;
+	 
+	 padding:10px; 
+	 margin-left:10px;
+	 margin-top:5px;
+}

@@ -59,6 +59,12 @@
 				<!-- 지급준비금 ; [(유저전체보유픽셀+전체환전대기픽셀)*등급별 환율]*0.07 -->
 				<div style="padding-left:10px;">
 					◇ 지급준비금(7%) : 
+					<div style="display:none;">
+					노말  보유픽셀 : ${apVo.totNormalPixel}, 환전신청픽셀:${totNormalApplyPixel}, 환율 : ${apVo.normal} <br/>
+					퍼스날 보유픽셀 : ${apVo.totPersonalPixel}, 환전신청픽셀:${totPersonalApplyPixel},환율 : ${apVo.personal}<br/>
+					플러스 보유픽셀 : ${apVo.totPlusPixel}, 환전신청픽셀:${totPlusApplyPixel}, 환율 : ${apVo.plus}<br/>
+					파트너 보유픽셀 : ${apVo.totPartnerPixel}, 환전신청픽셀:${totPartnerApplyPixel}, 환율 : ${apVo.partner}<br/>
+					</div>
 					<fmt:formatNumber 
 					value="${(((apVo.totNormalPixel+apVo.totNormalApplyPixel)*apVo.normal*0.01)
 					+((apVo.totPersonalPixel+apVo.totPersonalApplyPixel)*apVo.personal*0.01)

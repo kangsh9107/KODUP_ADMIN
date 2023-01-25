@@ -21,8 +21,8 @@ public class AdminStatisticsController {
 		ModelAndView mv = new ModelAndView();
 		
 		asVo.setBoardtype("qna");
-		asVo.setStartNal("2023-01-01");
-		asVo.setEndNal("2023-01-07");
+		asVo.setStartNal("2022-01-25");
+		asVo.setEndNal("2022-02-10");
 		List<AdminStatisticsVo> BoardDataList = service.showChartBoard(asVo);
 		List<AdminStatisticsVo> ReplDataList = service.showChartBoard_repl(asVo);
 		mv.addObject("asVo",asVo);
@@ -58,8 +58,8 @@ public class AdminStatisticsController {
 	public ModelAndView select_chart_pixel(AdminStatisticsVo asVo) {
 		ModelAndView mv = new ModelAndView();
 		
-		asVo.setStartNal("2023-01-01");
-		asVo.setEndNal("2023-01-07");
+		asVo.setStartNal("2022-01-25");
+		asVo.setEndNal("2022-02-10");
 		List<AdminStatisticsVo> PixelDataList = service.sumPixelByDate(asVo);
 		mv.addObject("asVo",asVo);
 		mv.addObject("PixelDataList",PixelDataList);
@@ -78,13 +78,25 @@ public class AdminStatisticsController {
 	}
 	
 	@RequestMapping("jsp/admin_chart_use")
-	public ModelAndView select_chart_use() {
+	public ModelAndView select_chart_use(AdminStatisticsVo asVo) {
 		ModelAndView mv = new ModelAndView();
+		
+		asVo.setNal("2023-01-25");
+		asVo = service.countVisitByDate(asVo);
+		mv.addObject("asVo",asVo);
 		mv.setViewName("jsp/admin_chart_use");  
 		return mv;
 	}
 	
-	
+	@RequestMapping("jsp/admin_chart_use_sort")
+	public ModelAndView select_chart_use_sort(AdminStatisticsVo asVo) {
+		ModelAndView mv = new ModelAndView();
+		
+		asVo = service.countVisitByDate(asVo);
+		mv.addObject("asVo",asVo);
+		mv.setViewName("jsp/admin_chart_use");  
+		return mv;
+	}
 
 	
 	

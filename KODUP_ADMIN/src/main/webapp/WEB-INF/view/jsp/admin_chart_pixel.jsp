@@ -40,8 +40,6 @@
 			<input id="plusPixel${status.count}"  type="text" value="${vo.plusPixel}">
 			<input id="minusPixel${status.count}" type="text" 
 			value="${vo.minusPixel*-1}">
-			
-			
 		</div>
 	</c:forEach>
 </div>
