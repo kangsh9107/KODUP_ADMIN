@@ -17,4 +17,13 @@
       where mento_status = 1
    </select>
    
+   <select id="pixel_id" parameterType="com.kodup.admin.home.AdminHomeVo" resultType="String">
+      select id from pixel_exchange_list
+      where pixel_exchange_status = 0
+      order by apply_date desc
+      limit 1
+   </select>
+   
+   
+  
 </mapper>

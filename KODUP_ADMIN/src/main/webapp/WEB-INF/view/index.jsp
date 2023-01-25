@@ -15,7 +15,7 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src='js/admin_chart_board.js'></script>
 </head>
-<body>
+<body class="body">
 <!-- 상단 네비바 -->
 <nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important; min-width:1700px;">
   <div class="container-fluid text-white">

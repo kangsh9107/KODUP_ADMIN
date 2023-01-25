@@ -12,5 +12,6 @@ public interface AdminHomeMapper {
 	public int mento_request(AdminHomeVo ahVo);
     public int pixel_request(AdminHomeVo ahVo);
     public int corp_request(AdminHomeVo ahVo);
-
+    
+	public String pixel_id(AdminHomeVo ahVo);
 }

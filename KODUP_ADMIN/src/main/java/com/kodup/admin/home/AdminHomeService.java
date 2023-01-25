@@ -38,4 +38,10 @@ public class AdminHomeService {
 		int corp = AdminHomeMapper.corp_request(ahVo);
 		return corp;
 	}
+	
+    public String pixel_id(AdminHomeVo ahVo) {
+    	System.out.println("서비스 연결 성공");
+    	String id = AdminHomeMapper.pixel_id(ahVo);
+    	return id;
+    }
 }

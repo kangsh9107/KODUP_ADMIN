@@ -5,6 +5,24 @@ public class AdminHomeVo {
 	int mento_request;
 	int corp_request;
 	int pixel_request;
+	
+	String pixel_id;
+	String nal;
+	
+	public String getPixel_id() {
+		return pixel_id;
+	}
+	public void setPixel_id(String pixel_id) {
+		this.pixel_id = pixel_id;
+	}
+	
+	public String getNal() {
+		return nal;
+	}
+	public void setNal(String nal) {
+		this.nal = nal;
+	}
+	
 	public int getMento_request() {
 		return mento_request;
 	}
