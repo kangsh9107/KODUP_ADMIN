@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,10 +54,9 @@
 	        <h5 class="card-title">멘토 신청</h5>
 	        <hr class="my-2">
 	        <p class="card-text">
-	          <ul style="min-height:92px;">
-	             <li>lgtwins0501 신청!</li>
-	             <li>dustn384    신청!</li>
-	          </ul>
+	        <div>
+	          <span>총 ${mento_request }건의 신청이 있습니다.</span>
+	        </div>
 	        </p>
 	      </div>
 	    </div>
@@ -68,10 +68,9 @@
 	        <h5 class="card-title">환전 신청</h5>
 	        <hr class="my-2">
 	        <p class="card-text">
-	          <ul style="min-height:92px;">
-	             <li>lgtwins0501 신청!</li>
-	             <li>dustn384    신청!</li>
-	          </ul>
+	         <div>
+	          <span>총 ${pixel_request }건의 신청이 있습니다.</span>
+	         </div>
 	        </p>
 	      </div>
 	    </div>
@@ -83,10 +82,9 @@
 	        <h5 class="card-title">기업 신청</h5>
 	        <hr class="my-2">
 	        <p class="card-text">
-	          <ul style="min-height:92px;">
-	             <li>lgtwins0501 신청!</li>
-	             <li>dustn384    신청!</li>
-	          </ul>
+	         <div>
+	          <span>총 ${corp_request }건의 신청이 있습니다.</span>
+	         </div>
 	        </p>
 	      </div>
 	    </div>
@@ -98,9 +96,9 @@
 	        <h5 class="card-title">대량 신고 감지</h5>
 	        <hr class="my-2">
 	        <p class="card-text">
-	          <ul style="min-height:92px;">
-	             <li>추후 오픈 예정입니다...</li>
-	          </ul>
+	          <div>
+	            <span>추후 오픈 예정 입니다...</span>
+	          </div>
 	        </p>
 	      </div>
 	    </div>
