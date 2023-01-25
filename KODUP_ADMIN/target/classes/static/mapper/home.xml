@@ -24,6 +24,20 @@
       limit 1
    </select>
    
+   <select id="mento_id" parameterType="com.kodup.admin.home.AdminHomeVo" resultType="String">
+      select id from certification_date
+      where certification_category = "mento"
+      order by apply_date desc
+      limit 1
+   </select>
+   
+   <select id="corp_id" parameterType="com.kodup.admin.home.AdminHomeVo" resultType="String">
+      select id from certification_date
+      where certification_category = "corp"
+      order by apply_date desc
+      limit 1
+   </select>
+   
    
   
 </mapper>

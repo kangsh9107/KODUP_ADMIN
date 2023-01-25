@@ -129,11 +129,11 @@ var past_pixel_id = "";
 (setInterval(function() {
 	$.ajax({
 		type: 'POST',
-		url: 'jsp/admin_check_alarm',
+		url: 'jsp/admin_check_pixel',
 		dataType: 'html',
 		success: function(data) {
 		   console.log(data);
-		   
+		   past_pixel_id = "";
 		if(past_pixel_id != data){
 		   past_pixel_id = data;
 		   console.log(past_pixel_id);
@@ -153,7 +153,69 @@ var past_pixel_id = "";
             notify();
 	
 		}else{
-		   return;	
+		    console.log("다시실행...");		
+		}
+	  }
+	});
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_check_mento',
+		dataType: 'html',
+		success: function(data) {
+		   console.log(data);
+		   past_mento_id = "";
+		if(past_mento_id != data){
+		   past_mento_id = data;
+		   console.log(past_mento_id);
+		   
+		   notify= function() {
+            if (Notification.permission !== 'granted') {
+                alert('notification is disabled');
+            }
+            else {
+                var notification = new Notification('Notification title', {
+                    icon: 'images/어드민 로고.png',
+                    body: data + '님이 멘토 신청을 하셨습니다.',
+                });
+ 
+             }
+            }
+            notify();
+	
+		}else{
+		   console.log("다시실행...");	
+		}
+	  }
+	});
+	
+	$.ajax({
+		type: 'POST',
+		url: 'jsp/admin_check_corp',
+		dataType: 'html',
+		success: function(data) {
+		   console.log(data);
+		   past_corp_id = "";
+		if(past_corp_id != data){
+		   past_corp_id = data;
+		   console.log(past_corp_id);
+		   
+		   notify= function() {
+            if (Notification.permission !== 'granted') {
+                alert('notification is disabled');
+            }
+            else {
+                var notification = new Notification('Notification title', {
+                    icon: 'images/어드민 로고.png',
+                    body: data + '님이 기업 신청을 하셨습니다.',
+                });
+ 
+             }
+            }
+            notify();
+	
+		}else{
+		    console.log("다시실행...");	
 		}
 	  }
 	});
