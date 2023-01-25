@@ -90,12 +90,17 @@ public class AdminTotalboardService {
 	
 	public String[] hashtag(BoardPageVo pVo) {
 		String hashtag = AdminTotalboardMapper.hashtag(pVo.getSno());
-		System.out.println(hashtag);
-		String[] array = hashtag.split("#");
-		for(int i=0; i<array.length; i++) {
-			System.out.println(array[i]);
+		if(hashtag != null) {
+			System.out.println(hashtag);
+			String[] array = hashtag.split("#");
+			for(int i=0; i<array.length; i++) {
+				System.out.println(array[i]);
+			}
+			return array;		
+		}else {
+			String[] array = {"해쉬태그 미설정"};
+			return array;
 		}
-		return array;		
 	}
 	
 /*---------------modify-----------------------------------------------------------------*/

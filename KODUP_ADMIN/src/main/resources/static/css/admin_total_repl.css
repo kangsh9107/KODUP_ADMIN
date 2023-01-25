@@ -67,11 +67,18 @@
 }
 .baik_board_view li>div>span.repl_doc{
 	width: 700px;
+	height:24px;
 	text-align: center;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
 }
+
+.baik_board_view li>div>span.repl_doc p{
+	display:inline-block;
+}
+
+
 .baik_board_view li>div>span.nickname{
 	width: 100px;
 	text-align: center;

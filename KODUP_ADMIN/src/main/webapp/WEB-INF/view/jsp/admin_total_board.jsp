@@ -100,7 +100,7 @@
 					   <c:choose>
 					 	   <c:when test="${v.boardtype eq 'freetalking'}">자유</c:when>
 					 	   <c:when test="${v.boardtype eq 'mansearch'}">구인</c:when>
-					 	   <c:when test="${v.boardtype eq 'jobsearch'}">구직</c:when>
+					 	   <c:when test="${v.boardtype eq 'JOBSearCh'}">구직</c:when>
 					 	   <c:when test="${v.boardtype eq 'qna'}">Q&A</c:when>
 					 	   <c:when test="${v.boardtype eq 'infoshare'}">정보공유</c:when>
 				         </c:choose>

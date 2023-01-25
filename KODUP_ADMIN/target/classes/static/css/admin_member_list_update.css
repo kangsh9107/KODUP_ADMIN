@@ -130,24 +130,28 @@
 
 .member_activity li>span.subject{
 	width: 360px;
+	height: 24px;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
 }
 .member_activity li>span.nal{
 	width: 100px;
+	height: 24px;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
 }
 .member_activity li>span.repl_doc{
 	width: 360px;
+	height: 24px;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
 }
 .member_activity li>span.repl_nal{
 	width: 100px;
+	height: 24px;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
