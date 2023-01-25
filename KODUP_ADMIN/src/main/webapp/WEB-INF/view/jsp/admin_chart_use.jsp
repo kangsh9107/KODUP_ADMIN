@@ -32,7 +32,7 @@
 	<input id="before16" type="text" value="${asVo.before16}">	
 	<input id="before20" type="text" value="${asVo.before20}">	
 	<input id="before24" type="text" value="${asVo.before24}">	
-</div>
+</div> 
 	<div style="padding-left:40px;">
 	  <h3 style="font-weight: bold;">이용 통계</h3>
 		  <hr><br>
