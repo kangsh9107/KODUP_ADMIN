@@ -78,7 +78,7 @@ if(frm.email_status.value == 2)  frm.email_status.value = "인증 완료";
 				  비밀번호
 		       </div>
 			   <div class="col-4">
-				  <input class="form-control form-control-sm" type="text" name="pwd" value="${amVo.pwd }" aria-label=".form-control-sm example" style="height:38px;">
+				  <input class="form-control form-control-sm" readOnly type="text" name="pwd" value="${amVo.pwd }" aria-label=".form-control-sm example" style="height:38px;">
 			   </div>
 		   </div>
 		   <br>

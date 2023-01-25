@@ -213,7 +213,7 @@
 		              style="background-color: #2d3644;">${i}</button>
 		   </div>
 		</c:forEach>
-		<c:if test="${cpVo.endPage lt pageVo.totPage }">
+		<c:if test="${cpVo.endPage lt cpVo.totPage }">
 		   <div class="btn-group" role="group" aria-label="Third group">
 		      <button type="button" class="btn btn-outline-light btn-sm" onclick='movePage(${cpVo.endPage + 1})'
 		              style="background-color: #2d3644;">></button>
