@@ -7,7 +7,7 @@
 	margin-left:20px;
 }
 
-.card-body ul{
+.card-body div{
    list-style: none;
    padding:20px;
    border: 1px dotted #c8c9ca;
