@@ -27,7 +27,7 @@
 	</select>
 	
 	<select id="mento_select" parameterType="com.kodup.admin.certification.CertificationPageVo" resultType="com.kodup.admin.certification.AdminCertificationVo">
-        select m.id, m.mento_status, m.join_date, m.email, m.grade, c.career_certificate
+        select m.id, m.mento_status,date_format(m.join_date, '%Y-%m-%d') join_date, m.email, m.grade, c.career_certificate
         from member m join career_certification c on m.id = c.id
         where m.mento_status = 1 or m.mento_status = 2 
         order by m.mento_status asc
