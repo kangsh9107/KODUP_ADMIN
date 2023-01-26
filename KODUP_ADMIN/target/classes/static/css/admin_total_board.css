@@ -53,45 +53,65 @@
 	display: inline-block;
 }
 
-.baik_board_view li>span.checkbox{
-	width:20px;
-	padding-left: 10px;
-    padding-top: 5px;
-}
+
 .baik_board_view li>div>span.sno{
 	width: 100px;
 	text-align: center;
 	margin-right: 20px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.boardtype{
 	width: 100px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.subject{
 	width: 500px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.nickname{
 	width: 200px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.nal{
 	width: 150px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>div>span.viewcount{
 	width: 100px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 .baik_board_view li>span.delete_btn{
 	width: 46px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 
 }
 
 .baik_board_view li>span.restore_btn{
 	width: 46px;
 	text-align: center;
+		overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 
 }
 

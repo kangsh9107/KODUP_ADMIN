@@ -15,14 +15,13 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src='js/admin_chart_board.js'></script>
 </head>
-<body>
+<body class="body">
 <!-- 상단 네비바 -->
 <nav class="navbar bg-body-tertiary text-white" style="background-color:#2d3644 !important; min-width:1700px;">
   <div class="container-fluid text-white">
     <span class="navbar-brand mb-0 h1 text-white"><img src="/images/어드민 로고.png" style="width:40px; height:30px;">ADMIN KODUP</span>
   </div>
-</nav>
- 
+</nav> 
 <!-- 사이드바 -->
 <!-- a태그 class에 data-bs-toggle="collapse"속성 추가하면 펼쳐지고 닫힘기능 추가 ul class 명에 show 추가하면 첫 페이지에 펼쳐져있음 -->
 <div class="container-fluid">

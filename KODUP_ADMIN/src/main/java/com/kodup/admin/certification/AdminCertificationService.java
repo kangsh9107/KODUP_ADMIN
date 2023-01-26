@@ -55,6 +55,7 @@ public class AdminCertificationService {
 /*-------------------------mento-----------------------------------------------------------*/	
 	public List<AdminCertificationVo> mento_select(CertificationPageVo cpVo) {
 		int totsize = AdminCertificationMapper.mento_totlist(cpVo);
+		System.out.println(totsize);
 		cpVo.setTotSize(totsize);
 		this.cpVo = cpVo;
 		List<AdminCertificationVo> list = AdminCertificationMapper.mento_select(cpVo);
