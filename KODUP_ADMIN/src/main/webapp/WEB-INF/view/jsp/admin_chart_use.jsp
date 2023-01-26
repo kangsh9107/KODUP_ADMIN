@@ -24,7 +24,7 @@
 <form class='frm_chart_use' style="display:none;">
 	<input type='text' name='nal' value="${asVo.nal}"/>
 </form>
- 
+
 <div style="display:none;">
 	<input id="before4" type="text"  value="${asVo.before4}">	
 	<input id="before8" type="text"  value="${asVo.before8}">	
@@ -41,7 +41,7 @@
 		<div id="admin_chart_header">
 			<div id="admin_chart_header_right">
 				<span>조회일자</span>
-				<input id="searchNal" type='date' value="${asVo.nal}" onchange="searchNal(this.value)"> <!-- 디폴트로 오늘날짜찍히도록 -->
+				<input id="searchNal" type='date' value="${asVo.nal}" onchange="searchNal(this.value)"> 
 				<input type='button' value="조회" onclick="showChart()">
 			</div>
 		</div>
