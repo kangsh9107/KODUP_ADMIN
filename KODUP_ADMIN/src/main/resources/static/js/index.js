@@ -70,7 +70,7 @@ $('.btnMemberBan').on('click',function(){
     $('#baik_admin_main').load('jsp/admin_mento_certification');
  });
   
- $('.center').load('jsp/admin_home');
+ $('.center').load('jsp/admin_test');
  
 /*
 
@@ -125,19 +125,17 @@ function getNotificationPermission() {
 };    
             
 var past_pixel_id = "";
+var past_mento_id = "";
+var past_corp_id  = "";
 
 (setInterval(function() {
 	$.ajax({
 		type: 'POST',
 		url: 'jsp/admin_check_pixel',
 		dataType: 'html',
-		success: function(data) {
-		   console.log(data);
-		   past_pixel_id = "";
+		success: function(data) {	   
 		if(past_pixel_id != data){
-		   past_pixel_id = data;
-		   console.log(past_pixel_id);
-		   
+		   past_pixel_id = data;		   
 		   notify= function() {
             if (Notification.permission !== 'granted') {
                 alert('notification is disabled');
@@ -158,17 +156,14 @@ var past_pixel_id = "";
 	  }
 	});
 	
+
 	$.ajax({
 		type: 'POST',
 		url: 'jsp/admin_check_mento',
 		dataType: 'html',
-		success: function(data) {
-		   console.log(data);
-		   past_mento_id = "";
+		success: function(data) {		 
 		if(past_mento_id != data){
 		   past_mento_id = data;
-		   console.log(past_mento_id);
-		   
 		   notify= function() {
             if (Notification.permission !== 'granted') {
                 alert('notification is disabled');
@@ -194,12 +189,8 @@ var past_pixel_id = "";
 		url: 'jsp/admin_check_corp',
 		dataType: 'html',
 		success: function(data) {
-		   console.log(data);
-		   past_corp_id = "";
 		if(past_corp_id != data){
-		   past_corp_id = data;
-		   console.log(past_corp_id);
-		   
+		   past_corp_id = data;		   
 		   notify= function() {
             if (Notification.permission !== 'granted') {
                 alert('notification is disabled');
