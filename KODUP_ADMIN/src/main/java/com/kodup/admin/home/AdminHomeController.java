@@ -36,29 +36,29 @@ public class AdminHomeController {
 	
 	@RequestMapping("jsp/admin_check_pixel")
 	public void check_pixel(AdminHomeVo ahVo,HttpServletResponse resp) throws IOException {
-		System.out.println("컨트롤러 연결 성공");
 		String pixel_id = service.pixel_id(ahVo);
-		System.out.println(pixel_id);
 		PrintWriter out = resp.getWriter();
         out.print(pixel_id);
 	}
 	
 	@RequestMapping("jsp/admin_check_mento")
 	public void check_mento(AdminHomeVo ahVo,HttpServletResponse resp) throws IOException {
-		System.out.println("컨트롤러 연결 성공");
 		String mento_id = service.mento_id(ahVo);
-		System.out.println(mento_id);
 		PrintWriter out = resp.getWriter();
         out.print(mento_id);
 	}
 	
 	@RequestMapping("jsp/admin_check_corp")
 	public void check_corp(AdminHomeVo ahVo,HttpServletResponse resp) throws IOException {
-		System.out.println("컨트롤러 연결 성공");
 		String corp_id = service.corp_id(ahVo);
-		System.out.println(corp_id);
 		PrintWriter out = resp.getWriter();
         out.print(corp_id);
 	}
 	
+	@RequestMapping("jsp/admin_test")
+	public ModelAndView test() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("jsp/test");
+		return mv;
+	}
 }

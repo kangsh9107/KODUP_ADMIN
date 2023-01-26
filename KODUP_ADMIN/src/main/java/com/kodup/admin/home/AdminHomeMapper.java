@@ -1,7 +1,5 @@
 package com.kodup.admin.home;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

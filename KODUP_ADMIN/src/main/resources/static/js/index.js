@@ -70,7 +70,7 @@ $('.btnMemberBan').on('click',function(){
     $('#baik_admin_main').load('jsp/admin_mento_certification');
  });
   
- $('.center').load('jsp/admin_home');
+ $('.center').load('jsp/admin_test');
  
 /*
 
@@ -141,7 +141,7 @@ var past_corp_id  = "";
                 alert('notification is disabled');
             }
             else {
-                var notification = new Notification('Notification title', {
+                var notification = new Notification('KODUP for admin', {
                     icon: 'images/어드민 로고.png',
                     body: data + '님이 환전 신청을 하셨습니다.',
                 });
@@ -169,7 +169,7 @@ var past_corp_id  = "";
                 alert('notification is disabled');
             }
             else {
-                var notification = new Notification('Notification title', {
+                var notification = new Notification('KODUP for admin', {
                     icon: 'images/어드민 로고.png',
                     body: data + '님이 멘토 신청을 하셨습니다.',
                 });
@@ -196,7 +196,7 @@ var past_corp_id  = "";
                 alert('notification is disabled');
             }
             else {
-                var notification = new Notification('Notification title', {
+                var notification = new Notification('KODUP for admin', {
                     icon: 'images/어드민 로고.png',
                     body: data + '님이 기업 신청을 하셨습니다.',
                 });
