@@ -70,7 +70,7 @@ $('.btnMemberBan').on('click',function(){
     $('#baik_admin_main').load('jsp/admin_mento_certification');
  });
   
- $('.center').load('jsp/admin_test');
+ $('.center').load('jsp/admin_home');
  
 /*
 

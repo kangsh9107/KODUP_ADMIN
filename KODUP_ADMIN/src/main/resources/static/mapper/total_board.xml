@@ -28,7 +28,7 @@
 		<if test="boardtype != '' and boardtype != null">
 		and b.boardtype = '${boardtype}'
 		</if>
-        order by b.sno desc
+        order by b.nal desc, b.sno desc
         limit ${startNo}, ${listSize}
        
 	</select>
